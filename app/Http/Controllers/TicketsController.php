@@ -36,7 +36,8 @@ class TicketsController extends Controller
      */
     public function store(Request $request)
     {
-        $datos_ticket = request()->all();
+        $datos_ticket = request()->except('_token');
+        Tickets::insert($datos_ticket);
         return response()->json($datos_ticket);
     }
 
