@@ -14,7 +14,8 @@ class TicketsController extends Controller
      */
     public function index()
     {
-        return view('ticket.ticket_index');
+        $datos['tickets'] = Tickets::paginate(5);
+        return view('ticket.ticket_index', $datos);
     }
 
     /**
@@ -81,8 +82,9 @@ class TicketsController extends Controller
      * @param  \App\Models\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tickets $tickets)
+    public function destroy($id_ticket)
     {
-        //
+        
+        Tickets::destroy($id_ticket);
     }
 }
