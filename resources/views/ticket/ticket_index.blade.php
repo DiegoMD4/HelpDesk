@@ -21,7 +21,11 @@
             <td>{{ $ticket->tecnico_asignado }}</td>
             <td>{{ $ticket->area }}</td>
 
-            <td>Editar |
+            <td>
+                
+                <a href= "{{ url('/ticket/'.$ticket->id.'/edit')}}">Editar</a>
+                
+                |
 
                 <form action="{{ url('/ticket/'.$ticket->id) }}" method="POST">
                     @csrf

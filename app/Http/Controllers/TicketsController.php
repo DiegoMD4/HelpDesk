@@ -59,9 +59,10 @@ class TicketsController extends Controller
      * @param  \App\Models\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tickets $tickets)
+    public function edit($id)
     {
-        //
+        $ticket = Tickets::findOrFail($id);
+        return view('ticket.edit', compact('ticket'));
     }
 
     /**
@@ -71,9 +72,14 @@ class TicketsController extends Controller
      * @param  \App\Models\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tickets $tickets)
+    public function update(Request $request, $id)
     {
-        //
+        $datos_ticket = request()->except(['_token', '_method']);
+        Tickets::where('id', '=', $id)->update($datos_ticket);
+
+        $ticket = Tickets::findOrFail($id);
+        return view('ticket.edit', compact('ticket'));
+
     }
 
     /**
@@ -85,5 +91,7 @@ class TicketsController extends Controller
     public function destroy($id)
     {
         Tickets::destroy($id);
+        return redirect('ticket');
+        
     }
 }
