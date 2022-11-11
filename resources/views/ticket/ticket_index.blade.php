@@ -1,3 +1,5 @@
+<a href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a>
+
 <table class="table table-dark">
 
     <thead class="thead-light">
