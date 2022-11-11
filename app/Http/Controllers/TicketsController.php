@@ -75,10 +75,10 @@ class TicketsController extends Controller
     public function update(Request $request, $id)
     {
         $datos_ticket = request()->except(['_token', '_method']);
-        Tickets::where('id', '=', $id)->update($datos_ticket);
+        Tickets::where('id','=',$id)->update($datos_ticket);
 
         $ticket = Tickets::findOrFail($id);
-        return view('ticket.edit', compact('ticket'));
+        return view('ticket.edit', compact('ticket')); 
 
     }
 
