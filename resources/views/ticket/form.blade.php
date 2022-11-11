@@ -18,4 +18,4 @@
 
         <input type="submit" value="Enviar Ticket">
 
-        <a href="{{ url('/ticket') }}"> Regresar</a>
+        <a href="{{ url('/ticket') }}">Regresar</a>

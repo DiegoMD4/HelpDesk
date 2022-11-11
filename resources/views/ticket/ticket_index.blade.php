@@ -1,3 +1,7 @@
+@if(Session::has('mensaje'))
+{{Session::get('mensaje')}}
+@endif
+
 <a href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a>
 
 <table class="table table-dark">

@@ -39,7 +39,8 @@ class TicketsController extends Controller
     {
         $datos_ticket = request()->except('_token');
         Tickets::insert($datos_ticket);
-        return response()->json($datos_ticket);
+        //return response()->json($datos_ticket);
+        return redirect('ticket')->with('mensaje', 'Ticket creado y enviado');
     }
 
     /**
