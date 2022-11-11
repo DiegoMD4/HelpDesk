@@ -92,7 +92,7 @@ class TicketsController extends Controller
     public function destroy($id)
     {
         Tickets::destroy($id);
-        return redirect('ticket');
+        return redirect('ticket')->with('mensaje', 'Ticket borrado');
         
     }
 }
