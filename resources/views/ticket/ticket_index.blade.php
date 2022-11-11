@@ -14,7 +14,7 @@
     <tbody>
         @foreach( $tickets as $ticket)
         <tr>
-            <td>{{ $ticket->id_ticket }}</td>
+            <td>{{ $ticket->id }}</td>
             <td>{{ $ticket->descripcion }}</td>
             <td>{{ $ticket->nombre_usuario }}</td>
             <td>{{ $ticket->estado }}</td>
@@ -23,10 +23,10 @@
 
             <td>Editar |
 
-                <form action="{{url('/ticket/'.$ticket->id_ticket)}}" method="POST">
+                <form action="{{ url('/ticket/'.$ticket->id) }}" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
-                    
+                  
                 <input type="submit" onclick="return confirm('¿Eliminar?')" value = "Borrar">
                 </form>
 

@@ -19,6 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 route::resource('ticket', TicketsController::class);
