@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tickets;
+use Illuminate\Contracts\View\View as ViewContract; 
 use Illuminate\Http\Request;
 
 class TicketsController extends Controller
@@ -12,7 +13,7 @@ class TicketsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : ViewContract
     {
         $datos['tickets'] = Tickets::paginate(5);
         return view('ticket.ticket_index', $datos);
@@ -23,7 +24,7 @@ class TicketsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() : ViewContract
     {
         return view('ticket.create');
         
@@ -39,7 +40,7 @@ class TicketsController extends Controller
     {
         $datos_ticket = request()->except('_token');
         Tickets::insert($datos_ticket);
-        //return response()->json($datos_ticket);
+       
         return redirect('ticket')->with('mensaje', 'Ticket creado y enviado');
     }
 
@@ -49,10 +50,11 @@ class TicketsController extends Controller
      * @param  \App\Models\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function show(Tickets $tickets)
+
+   /*  public function show(Tickets $tickets) 
     {
-        //
-    }
+        
+    } */
 
     /**
      * Show the form for editing the specified resource.
@@ -60,7 +62,7 @@ class TicketsController extends Controller
      * @param  \App\Models\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id) : ViewContract
     {
         $ticket = Tickets::findOrFail($id);
         return view('ticket.edit', compact('ticket'));
@@ -73,7 +75,7 @@ class TicketsController extends Controller
      * @param  \App\Models\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) : ViewContract
     {
         $datos_ticket = request()->except(['_token', '_method']);
         Tickets::where('id','=',$id)->update($datos_ticket);

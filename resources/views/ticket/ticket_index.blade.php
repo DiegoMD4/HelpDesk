@@ -20,20 +20,20 @@
     <tbody>
         @foreach( $tickets as $ticket)
         <tr>
-            <td>{{ $ticket->id }}</td>
-            <td>{{ $ticket->descripcion }}</td>
-            <td>{{ $ticket->nombre_usuario }}</td>
-            <td>{{ $ticket->estado }}</td>
-            <td>{{ $ticket->tecnico_asignado }}</td>
-            <td>{{ $ticket->area }}</td>
+            <td>{{ $ticket["id"] }}</td>
+            <td>{{ $ticket["descripcion"] }}</td>
+            <td>{{ $ticket["nombre_usuario"] }}</td>
+            <td>{{ $ticket["estado"] }}</td>
+            <td>{{ $ticket["tecnico_asignado"] }}</td>
+            <td>{{ $ticket["area"] }}</td>
 
             <td>
                 
-                <a href= "{{ url('/ticket/'.$ticket->id.'/edit')}}">Editar</a>
+                <a href= "{{ url('/ticket/'.$ticket["id"].'/edit')}}">Editar</a>
                 
                 |
 
-                <form action="{{ url('/ticket/'.$ticket->id) }}" method="POST">
+                <form action="{{ url('/ticket/'.$ticket["id"]) }}" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
                   
