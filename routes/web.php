@@ -16,11 +16,17 @@ use Symfony\Component\Routing\Router;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-route::resource('ticket', TicketsController::class);
+route::resource('ticket', TicketsController::class)->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [TicketsController::class, 'index'])->name('home');
+
+Route::middleware('auth')->group(function () {
+    
+Route::get('/', [TicketsController::class, 'index'])->name('home');
+
+});

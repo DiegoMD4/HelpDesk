@@ -1,10 +1,18 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container"> 
+
 @if(Session::has('mensaje'))
 {{Session::get('mensaje')}}
 @endif
 
-<a href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a>
+<a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a>
 
-<table class="table table-dark">
+<br/>
+<br/>
+
+<table class="table table-hover">
 
     <thead class="thead-light">
         <tr>
@@ -29,15 +37,15 @@
 
             <td>
                 
-                <a href= "{{ url('/ticket/'.$ticket["id"].'/edit')}}">Editar</a>
+                <a class="btn btn-warning" href= "{{ url('/ticket/'.$ticket["id"].'/edit')}}">Editar</a>
                 
                 |
 
-                <form action="{{ url('/ticket/'.$ticket["id"]) }}" method="POST">
+                <form action="{{ url('/ticket/'.$ticket["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
                   
-                <input type="submit" onclick="return confirm('¿Eliminar?')" value = "Borrar">
+                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Eliminar?')" value = "Borrar">
                 </form>
 
             </td>
@@ -46,3 +54,5 @@
     </tbody>
 
 </table>
+</div>
+@endsection
