@@ -2,6 +2,6 @@
 
 <form action="{{ url('/ticket')}}" method="POST" enctype="multipart/form-data">
     @csrf 
-    @include('ticket.form');
+    @include('ticket.form' , ['modo'=>'Crear']);
     
 </form>

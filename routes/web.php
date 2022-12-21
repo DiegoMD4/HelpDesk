@@ -20,3 +20,7 @@ Route::get('/', function () {
 });
 
 route::resource('ticket', TicketsController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

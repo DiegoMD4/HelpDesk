@@ -16,6 +16,6 @@
         <input type="text" name="area" 
         value="{{ isset($ticket["area"])?$ticket["area"]:'' }}" id="area">
 
-        <input type="submit" value="Enviar Ticket">
+        <input type="submit" value="{{$modo}} Ticket">
 
         <a href="{{ url('/ticket') }}">Regresar</a>
