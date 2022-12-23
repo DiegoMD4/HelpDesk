@@ -1,21 +1,24 @@
 <h2>Formulario</h2>
 
-<label for="descripcion"> Descripcion </label>
-        <input type="text" name="descripcion" 
-        value="{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}" id="decripcion">
+
+
+    <label for="descripcion"> Descripcion </label>
+        <input class="form-control" type="text" name="descripcion" 
+        value="{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}" id="decripcion">     
     <label for="nombre_usuario"> Nombre usuario </label>
-        <input type="text" name="nombre_usuario" 
+        <input class="form-control" type="text" name="nombre_usuario" 
         value="{{ isset($ticket["nombre_usuario"])?$ticket["nombre_usuario"]:'' }}" id="nombre_usuario">
     <label for="estado"> Estado </label>
-        <input type="text" name="estado" 
+        <input class="form-control" type="text" name="estado" 
         value="{{ isset($ticket["estado"])?$ticket["estado"]:'' }}" id="estado">
     <label for="tecnicoasignado"> Tecnico Asignado </label>
-        <input type="text" name="tecnico_asignado" 
+        <input class="form-control" type="text" name="tecnico_asignado" 
         value="{{ isset($ticket["tecnico_asignado"])?$ticket["tecnico_asignado"]:'' }}" id="tecnico_asignado">
     <label for="area"> Area </label>
-        <input type="text" name="area" 
+        <input class="form-control" type="text" name="area" 
         value="{{ isset($ticket["area"])?$ticket["area"]:'' }}" id="area">
 
-        <input type="submit" value="{{$modo}} Ticket">
+<br>
+        <input class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
 
-        <a href="{{ url('/ticket') }}">Regresar</a>
+        <a class="btn btn-secondary" href="{{ url('/ticket') }}">Regresar</a>
