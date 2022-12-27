@@ -38,6 +38,20 @@ class TicketsController extends Controller
      */
     public function store(Request $request)
     {
+
+        $campos_requeridos = [
+            'nombre_usuario'=>'required|string|max:250',
+            'descripcion'=>'required|string|max:250',
+            'area'=>'required|string|max:250',
+            'estado'=>'required|string|max:250',
+            'tecnico_asignado'=>'required|string|max:250',
+        ];
+        $alert = [
+             'required'=>' :attribute es requerido'
+        ];
+
+        $this->validate($request, $campos_requeridos, $alert);
+
         $datos_ticket = request()->except('_token');
         Tickets::insert($datos_ticket);
        
@@ -75,13 +89,14 @@ class TicketsController extends Controller
      * @param  \App\Models\Tickets  $tickets
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) : ViewContract
+    public function update(Request $request, $id) 
     {
         $datos_ticket = request()->except(['_token', '_method']);
         Tickets::where('id','=',$id)->update($datos_ticket);
 
         $ticket = Tickets::findOrFail($id);
-        return view('ticket.edit', compact('ticket')); 
+        return redirect('ticket')->with('mensaje', 'Ticket Modificado');
+         
 
     }
 

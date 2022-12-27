@@ -1,6 +1,15 @@
-<h2>Formulario</h2>
+@if(count($errors)>0)
 
 
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+   
+    <div>
+    @foreach($errors->all() as $error) 
+      <li>  {{ $error }} </li>
+    @endforeach
+    </div>
+</div>
+@endif
 
     <label for="descripcion"> Descripcion </label>
         <input class="form-control" type="text" name="descripcion" 
