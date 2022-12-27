@@ -54,7 +54,6 @@
     </tbody>
 
 </table>
-
-
+{!! $tickets->links() !!}
 </div>
 @endsection
