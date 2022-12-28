@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 route::resource('ticket', TicketsController::class)->middleware('auth');
 
-Auth::routes();
+Auth::routes(['reset'=>false]);
 
 Route::get('/home', [TicketsController::class, 'index'])->name('home');
 
