@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container"> 
+<div class="container" style="margin-top: 50px;"> 
 
 <h1>Editar Ticket</h1>
 

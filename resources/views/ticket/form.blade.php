@@ -12,7 +12,7 @@
 @endif
 
     <label for="descripcion"> Descripcion </label>
-        <textarea rows="10" class="form-control" type="text" name="descripcion" 
+        <textarea rows="8" class="form-control" type="text" name="descripcion" 
          id="decripcion">{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}</textarea> 
     <label for="nombre_usuario"> Nombre usuario </label>
         <input class="form-control" type="text" name="nombre_usuario" 
@@ -28,6 +28,6 @@
         value="{{ isset($ticket["area"])?$ticket["area"]:'' }}" id="area">
 
 <br>
-        <input class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
+        <input  class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
 
         <a class="btn btn-secondary" href="{{ url('/ticket') }}">Atrás</a>

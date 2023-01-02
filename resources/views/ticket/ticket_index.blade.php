@@ -6,15 +6,16 @@
 @if(Session::has('mensaje'))
 {{Session::get('mensaje')}}
 @endif
-<br/>
+
 {{-- <a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a> --}}
 
+<div style="margin-top: 50px;">
 <h1>Historial de tickets enviados</h1>
 
 <br/>
 
 
-<table class="table table-hover"  style="table-layout: fixed">
+<table class="table table-hover">
     <caption>Lista de tickets</caption>
     <thead class="thead-light">
         <tr>
@@ -31,7 +32,7 @@
         @foreach( $tickets as $ticket)
         <tr>
             <td>{{ $ticket["id"] }}</td>
-            <td>{{ $ticket["descripcion"] }}</td>
+            <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{ $ticket["descripcion"] }}</td>
             <td>{{ $ticket["nombre_usuario"] }}</td>
             <td>{{ $ticket["estado"] }}</td>
             <td>{{ $ticket["tecnico_asignado"] }}</td>
@@ -57,5 +58,6 @@
 
 </table>
 {!! $tickets->links() !!}
+</div>
 </div>
 @endsection
