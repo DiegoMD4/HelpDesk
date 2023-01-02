@@ -39,8 +39,8 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('Area o departamento') }}</label>
+                        {{-- <div class="row mb-3">
+                            <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('Departamento') }}</label>
 
                             <div class="col-md-6">
                                 <input id="area" type="text" class="form-control @error('area') is-invalid @enderror" area="area" value="{{ old('area') }}" required autocomplete="area" autofocus>
@@ -51,7 +51,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>

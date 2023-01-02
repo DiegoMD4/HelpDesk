@@ -6,14 +6,16 @@
 @if(Session::has('mensaje'))
 {{Session::get('mensaje')}}
 @endif
+<br/>
+{{-- <a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a> --}}
 
-<a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a>
+<h1>Historial de tickets enviados</h1>
 
 <br/>
-<br/>
 
-<table class="table table-hover">
 
+<table class="table table-hover"  style="table-layout: fixed">
+    <caption>Lista de tickets</caption>
     <thead class="thead-light">
         <tr>
             <th>#id_ticket</th>

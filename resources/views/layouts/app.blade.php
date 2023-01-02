@@ -21,16 +21,19 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+                  {{-- <img src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height="50px" width=""> --}}
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+             
 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar //aca se modifica la navbar -->
+                    <ul class="nav nav-pills">
+                        <a href="{{ url('/ticket/create') }}" class="nav-link active">Crear Ticket</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

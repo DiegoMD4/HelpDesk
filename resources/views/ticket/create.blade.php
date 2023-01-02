@@ -7,9 +7,11 @@
 
 <form action="{{ url('/ticket')}}" method="POST" enctype="multipart/form-data">
     @csrf 
-    @include('ticket.form' , ['modo'=>'Crear']);
+    @include('ticket.form' , ['modo'=>'Mandar']);
     
     
 </form>
+
+</div>
 
 @endsection

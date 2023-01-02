@@ -90,7 +90,21 @@ class TicketsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) 
+    
     {
+        $campos_requeridos = [
+            'nombre_usuario'=>'required|string|max:250',
+            'descripcion'=>'required|string|max:250',
+            'area'=>'required|string|max:250',
+            'estado'=>'required|string|max:250',
+            'tecnico_asignado'=>'required|string|max:250',
+        ];
+        $alert = [
+             'required'=>' :attribute no puede quedar vacío'
+        ];
+
+        $this->validate($request, $campos_requeridos, $alert);
+
         $datos_ticket = request()->except(['_token', '_method']);
         Tickets::where('id','=',$id)->update($datos_ticket);
 
