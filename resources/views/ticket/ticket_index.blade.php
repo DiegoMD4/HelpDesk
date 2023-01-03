@@ -9,11 +9,10 @@
 
 {{-- <a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a> --}}
 
-<div style="margin-top: 50px;">
+<div style="margin-top: 50px;" >
 <h1>Historial de tickets enviados</h1>
 
 <br/>
-
 
 <table class="table table-hover">
     <caption>Lista de tickets</caption>

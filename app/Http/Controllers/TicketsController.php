@@ -15,7 +15,7 @@ class TicketsController extends Controller
      */
     public function index() : ViewContract
     {
-        $datos['tickets'] = Tickets::paginate(5);
+        $datos['tickets'] = Tickets::paginate(7);
         return view('ticket.ticket_index', $datos);
     }
 
