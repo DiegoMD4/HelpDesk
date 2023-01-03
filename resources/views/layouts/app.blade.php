@@ -32,10 +32,13 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar //aca se modifica la navbar -->
+                    @auth
                     <ul class="nav nav-pills">
                         <a href="{{ url('/ticket/create') }}" class="nav-link active">Crear Ticket</a>
                     </ul>
-
+                    @else
+                    
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
