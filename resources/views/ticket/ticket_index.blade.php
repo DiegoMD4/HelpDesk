@@ -1,15 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container"> 
+<div class="container" style="margin-top: 50px;"> 
 
-@if(Session::has('mensaje'))
-{{Session::get('mensaje')}}
-@endif
 
+    @if(Session::has('mensaje'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{Session::get('mensaje')}}
+    <button  class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+    </div>
+    @endif
+
+    
 {{-- <a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a> --}}
 
-<div style="margin-top: 50px;" >
+<div>
 <h1>Historial de tickets enviados</h1>
 
 <br/>
