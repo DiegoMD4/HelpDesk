@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin-top: 50px;"> 
+<div class="container" style="margin-top: 50px; back"> 
 
 
     @if(Session::has('mensaje'))
@@ -21,7 +21,7 @@
 
 <br/>
 
-<table class="table table-hover">
+<table class="table table-hover" >
     <caption>Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
@@ -32,6 +32,7 @@
             <th>Tecnico Asignado</th>
             <th>Area</th>
             <th>Fecha</th>
+            <th></th>
             
         </tr>
     </thead>
@@ -40,7 +41,7 @@
         @foreach( $tickets as $ticket)
         <tr>
             <td>{{ $ticket["id"] }}</td>
-            <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">{{ $ticket["descripcion"] }}</td>
+            <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
             <td>{{ $ticket["nombre_usuario"] }}</td>
             <td>{{ $ticket["estado"] }}</td>
             <td>{{ $ticket["tecnico_asignado"] }}</td>

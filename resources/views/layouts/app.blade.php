@@ -16,9 +16,9 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body style="background-color: ">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="position: fixed; width: 100%; top: 0;">
+        <nav class="navbar navbar-expand-md navbar-light navbar-dark bg-dark shadow-sm" style="position: fixed; width: 100%; top: 0;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                   {{-- <img src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height="50px" width=""> --}}

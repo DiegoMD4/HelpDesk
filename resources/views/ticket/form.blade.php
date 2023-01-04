@@ -15,7 +15,7 @@
         <textarea rows="8" class="form-control" type="text" name="descripcion" 
          id="decripcion">{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}</textarea> 
     <label for="nombre_usuario"> Nombre usuario </label>
-        <input readonly="true" class="form-control" type="text" name="nombre_usuario" 
+        <input disabled readonly="true" class="form-control" type="text" name="nombre_usuario" 
         value="{{ Auth::user()->name }}" id="nombre_usuario">
    {{--  <label for="estado"> Estado </label>
         <input class="form-control" type="text" name="estado" 
