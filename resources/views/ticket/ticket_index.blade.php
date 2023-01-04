@@ -16,13 +16,14 @@
 {{-- <a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a> --}}
 
 <div>
-<h1>Historial de tickets enviados</h1>
+<h1>Historial de tickets enviados</h1> 
+
 
 <br/>
 
 <table class="table table-hover">
     <caption>Lista de tickets</caption>
-    <thead class="thead-light">
+    <thead class="table-dark">
         <tr>
             <th>#id_ticket</th>
             <th>Descripcion</th>
@@ -30,6 +31,8 @@
             <th>Estado</th>
             <th>Tecnico Asignado</th>
             <th>Area</th>
+            <th>Fecha</th>
+            
         </tr>
     </thead>
 
@@ -42,6 +45,7 @@
             <td>{{ $ticket["estado"] }}</td>
             <td>{{ $ticket["tecnico_asignado"] }}</td>
             <td>{{ $ticket["area"] }}</td>
+            <td>{{ $ticket["created_at"] }}</td>
 
             <td>
                 

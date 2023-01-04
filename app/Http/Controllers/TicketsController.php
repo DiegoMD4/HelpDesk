@@ -43,8 +43,8 @@ class TicketsController extends Controller
             'nombre_usuario'=>'required|string|max:250',
             'descripcion'=>'required|string|max:800',
             'area'=>'required|string|max:250',
-            'estado'=>'required|string|max:250',
-            'tecnico_asignado'=>'required|string|max:250',
+            /* 'estado'=>'required|string|max:250',
+            'tecnico_asignado'=>'required|string|max:250', */
         ];
         $alert = [
              'required'=>' :attribute es requerido'
@@ -96,8 +96,8 @@ class TicketsController extends Controller
             'nombre_usuario'=>'required|string|max:250',
             'descripcion'=>'required|string|max:800',
             'area'=>'required|string|max:250',
-            'estado'=>'required|string|max:250',
-            'tecnico_asignado'=>'required|string|max:250',
+            /* 'estado'=>'required|string|max:250',
+            'tecnico_asignado'=>'required|string|max:250', */
         ];
         $alert = [
              'required'=>' :attribute no puede quedar vacío'
