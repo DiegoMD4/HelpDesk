@@ -25,13 +25,13 @@
     <caption>Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
-            <th>#id_ticket</th>
+            <th >#id_ticket</th>
             <th>Descripcion</th>
             <th>Nombre de Usuario</th>
             <th>Estado</th>
             <th>Tecnico Asignado</th>
             <th>Area</th>
-            <th>Fecha</th>
+            <th>Fecha de envio</th>
             <th></th>
             
         </tr>
@@ -40,13 +40,13 @@
     <tbody>
         @foreach( $tickets as $ticket)
         <tr>
-            <td>{{ $ticket["id"] }}</td>
-            <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
-            <td>{{ $ticket["nombre_usuario"] }}</td>
-            <td>{{ $ticket["estado"] }}</td>
-            <td>{{ $ticket["tecnico_asignado"] }}</td>
-            <td>{{ $ticket["area"] }}</td>
-            <td>{{ $ticket["created_at"] }}</td>
+            <td class="h5" >{{ $ticket["id"] }}</td>
+            <td class="h5" style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
+            <td class="h5" >{{ $ticket["nombre_usuario"] }}</td>
+            <td class="h5" >{{ $ticket["estado"] }}</td>
+            <td class="h5" >{{ $ticket["tecnico_asignado"] }}</td>
+            <td class="h5" >{{ $ticket["area"] }}</td>
+            <td class="h5" >{{ $ticket["created_at"] }}</td>
 
             <td>
                 
