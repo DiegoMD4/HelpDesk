@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container table-responsive" style="margin-top: 80px;  max-width: 90%; "> 
+<div class="container table-responsive-xl" style="margin-top: 90px;  max-width: 90%; "> 
 
 
     @if(Session::has('mensaje'))
@@ -21,7 +21,7 @@
 
 <br/>
 
-<table class="table table-hover table-bordered table-responsive">
+<table class="table table-hover table-bordered ">
     <caption>Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
