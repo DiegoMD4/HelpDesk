@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin-top: 50px; back"> 
+<div class="container" style="margin-top: 50px; "> 
 
 
     @if(Session::has('mensaje'))
@@ -13,7 +13,7 @@
     @endif
 
     
-{{-- <a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a> --}}
+
 
 <div>
 <h1>Historial de tickets enviados</h1> 
@@ -25,14 +25,14 @@
     <caption>Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
-            <th >#id_ticket</th>
+            <th>#id_ticket</th>
             <th>Descripcion</th>
             <th>Nombre de Usuario</th>
             <th>Estado</th>
             <th>Tecnico Asignado</th>
             <th>Area</th>
             <th>Fecha de envio</th>
-            <th></th>
+            
             
         </tr>
     </thead>
@@ -40,19 +40,20 @@
     <tbody>
         @foreach( $tickets as $ticket)
         <tr>
-            <td class="h5" >{{ $ticket["id"] }}</td>
-            <td class="h5" style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
-            <td class="h5" >{{ $ticket["nombre_usuario"] }}</td>
-            <td class="h5" >{{ $ticket["estado"] }}</td>
-            <td class="h5" >{{ $ticket["tecnico_asignado"] }}</td>
-            <td class="h5" >{{ $ticket["area"] }}</td>
-            <td class="h5" >{{ $ticket["created_at"] }}</td>
+            <td>{{ $ticket["id"] }}</td>
+            <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
+            <td>{{ $ticket["nombre_usuario"] }}</td>
+            <td>{{ $ticket["estado"] }}</td>
+            <td>{{ $ticket["tecnico_asignado"] }}</td>
+            <td>{{ $ticket["area"] }}</td>
+            <td>{{ $ticket["created_at"] }}</td>
 
             <td>
                 
                 <a class="btn btn-warning" href= "{{ url('/ticket/'.$ticket["id"].'/edit')}}">Editar</a>
                 
                 |
+
 
                 <form action="{{ url('/ticket/'.$ticket["id"]) }}" class="d-inline" method="POST">
                     @csrf
