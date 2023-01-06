@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -33,9 +33,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar //aca se modifica la navbar -->
                     @auth
-                    <ul class="nav nav-pills">
-                        <a href="{{ url('/ticket/create') }}" class="nav-link active">Crear Ticket</a>
-                    </ul>
+                    <div class="btn-group">
+                        <a href="{{ url('/ticket/create')}}" class="btn btn-primary" aria-current="page">Crear Ticket</a> 
+                        <a href="#" class="btn btn-primary">Historial</a>
+                        <a href="#" class="btn btn-primary">En progreso</a>
+                      </div>
                     @else
                     
                     @endauth

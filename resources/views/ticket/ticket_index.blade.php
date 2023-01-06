@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin-top: 50px; "> 
+<div class="container" style="margin-top: 50px; back"> 
 
 
     @if(Session::has('mensaje'))
@@ -21,7 +21,7 @@
 
 <br/>
 
-<table class="table table-hover" >
+<table class="table table-hover table-bordered ">
     <caption>Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
