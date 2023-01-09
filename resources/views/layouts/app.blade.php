@@ -12,13 +12,14 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+   
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-dark bg-dark shadow-sm" style="position: fixed; width: 100%; top: 0;">
+        <nav class="navbar navbar-expand-md navbar-light navbar-dark bg-primary shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                   {{-- <img src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height="50px" width=""> --}}
@@ -34,8 +35,8 @@
                     <!-- Left Side Of Navbar //aca se modifica la navbar -->
                     @auth
                     <div class="btn-group">
+                        <a href="{{url('/ticket')}}" class="btn btn-primary">Historial</a>
                         <a href="{{ url('/ticket/create')}}" class="btn btn-primary" aria-current="page">Crear Ticket</a> 
-                        <a href="#" class="btn btn-primary">Historial</a>
                         <a href="#" class="btn btn-primary">En progreso</a>
                       </div>
                     @else
