@@ -38,7 +38,7 @@
     <caption>Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
-            <th >#id_ticket</th>
+            <th>#id_ticket</th>
             <th>Descripcion</th>
             <th>Nombre de Usuario</th>
             <th>Estado</th>
