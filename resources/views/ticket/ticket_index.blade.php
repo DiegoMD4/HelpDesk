@@ -10,7 +10,7 @@
     <script type="text/javascript">
         setTimeout(function () {
             $('#alert').alert('close');
-        }, 1300);
+        }, 1100);
     </script>
 
     @if(Session::has('mensaje'))
@@ -64,9 +64,7 @@
             <td>
                 
                 <a class="btn btn-warning" href= "{{ url('/ticket/'.$ticket["id"].'/edit')}}">Editar</a>
-                
                 |
-
                 <form action="{{ url('/ticket/'.$ticket["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
