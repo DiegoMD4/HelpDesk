@@ -35,7 +35,7 @@
                     @auth
                     <div class="btn-group">
                         <a href="{{ url('/ticket/create')}}" class="btn btn-primary" aria-current="page">Crear Ticket</a> 
-                        <a href="#" class="btn btn-primary">Historial</a>
+                        <a href="{{ url('/ticket')}}" class="btn btn-primary">Historial</a>
                         <a href="#" class="btn btn-primary">En progreso</a>
                       </div>
                     @else

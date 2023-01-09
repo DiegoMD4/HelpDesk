@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin-top: 50px; back"> 
+<div class="container" style="margin-top: 100px; back"> 
 
 
     @if(Session::has('mensaje'))
@@ -32,6 +32,7 @@
             <th>Tecnico Asignado</th>
             <th>Area</th>
             <th>Fecha de envio</th>
+            <th></th>
             
             
         </tr>
@@ -39,6 +40,8 @@
 
     <tbody>
         @foreach( $tickets as $ticket)
+        @if($ticket["nombre_usuario"] == Auth::user()->name)
+        
         <tr>
             <td>{{ $ticket["id"] }}</td>
             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
@@ -61,9 +64,11 @@
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Eliminar?')" value = "Borrar">
                 </form>
+            @endif
 
             </td>
         </tr>
+        
         @endforeach
     </tbody>
 
