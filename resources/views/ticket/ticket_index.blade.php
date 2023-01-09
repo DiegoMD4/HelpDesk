@@ -3,22 +3,35 @@
 @section('content')
 <div class="container table-responsive-xl" style="margin-top: 90px;  max-width: 90%; "> 
 
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
+        </script>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            $('#alert').alert('close');
+        }, 1300);
+    </script>
 
     @if(Session::has('mensaje'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{Session::get('mensaje')}}
+    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{Session::get('mensaje')}}</strong>
     <button  class="btn-close" data-bs-dismiss="alert" aria-label="Close">
     </button>
     </div>
     @endif
 
     
-{{-- <a class="btn btn-primary" href="{{ url('/ticket/create') }}"> Crear Nuevo Ticket</a> --}}
+
 
 <div>
-<h1>Historial de tickets enviados</h1> 
+<h1 style = "float: left">Historial de tickets enviados</h1> 
 
-
+<div style="width: 25%; float: right;"><form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Buscar ticket" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+</div>
 <br/>
 
 <table class="table table-hover table-bordered ">
@@ -58,7 +71,7 @@
                     @csrf
                     {{ method_field('DELETE') }}
                   
-                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Eliminar?')" value = "Borrar">
+                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
                 </form>
 
             </td>
