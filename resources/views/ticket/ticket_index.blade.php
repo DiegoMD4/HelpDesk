@@ -3,23 +3,29 @@
 @section('content')
 <div class="container table-responsive-xl" style="margin-top: 90px;  max-width: 90%; "> 
 
-    <script src=
+     <script src=
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
         </script>
 
     <script type="text/javascript">
         setTimeout(function () {
             $('#alert').alert('close');
-        }, 1100);
-    </script>
+        }, 1220);
+    </script> 
 
     @if(Session::has('mensaje'))
-    <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>{{Session::get('mensaje')}}</strong>
-    <button  class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    <div id="alert" class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 p-3; width: 590px" role="alert" style="z-index: 11; margin: 60px">
+        <div class="d-flex">
+            <div class="toast-body">
+            {{Session::get('mensaje')}}
+    <button  class="btn-close" data-bs-dismiss="toast" aria-label="Close">
     </button>
+</div>
+</div>
     </div>
     @endif
+
+    
 
     
 
