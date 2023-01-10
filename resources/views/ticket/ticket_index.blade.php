@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container table-responsive-xl" style="margin-top: 90px;  max-width: 90%; "> 
+<div class="container" style="margin-top: 90px;  max-width: 90%; "> 
 
      <script src=
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
@@ -25,22 +25,18 @@
     </div>
     @endif
 
-    
-
-    
-
-
 <div>
 <h1 style = "float: left">Historial de tickets enviados</h1> 
 
-<div style="width: 25%; float: right;"><form class="d-flex">
-    <input class="form-control me-2" type="search" placeholder="Buscar ticket" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Buscar</button>
-  </form>
-</div>
+<div class="container-fluid" style="width: 28%; float: right">
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Buscar Tickets" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Buscar</button>
+    </form>
+  </div>
 <br/>
 
-<table class="table table-hover table-bordered ">
+<table class="table table-hover table-bordered table-responsive-xl ">
     <caption>Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
