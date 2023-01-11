@@ -35,8 +35,8 @@
                     <!-- Left Side Of Navbar //aca se modifica la navbar -->
                     @auth
                     <div class="btn-group">
-                        <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
                         <a href="{{ url('/ticket/create')}}" class="btn btn-dark" aria-current="page">Crear Ticket</a> 
+                        <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
                         <a href="#" class="btn btn-dark">Pendientes</a>
                       </div>
                     @else
