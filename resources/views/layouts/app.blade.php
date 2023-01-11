@@ -19,9 +19,9 @@
 </head>
 <body class="">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-dark bg-primary shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+        <nav class="navbar navbar-expand-md navbar-light navbar-dark bg-dark shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
+            <div class="container" style="max-width: 90%">
+                <a class="navbar-brand"  href="{{ url('/') }}">
                   {{-- <img src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height="50px" width=""> --}}
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -35,9 +35,9 @@
                     <!-- Left Side Of Navbar //aca se modifica la navbar -->
                     @auth
                     <div class="btn-group">
-                        <a href="{{url('/ticket')}}" class="btn btn-primary">Historial</a>
-                        <a href="{{ url('/ticket/create')}}" class="btn btn-primary" aria-current="page">Crear Ticket</a> 
-                        <a href="#" class="btn btn-primary">En progreso</a>
+                        <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
+                        <a href="{{ url('/ticket/create')}}" class="btn btn-dark" aria-current="page">Crear Ticket</a> 
+                        <a href="#" class="btn btn-dark">Pendientes</a>
                       </div>
                     @else
                     

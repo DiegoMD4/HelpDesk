@@ -3,6 +3,7 @@
 @section('content')
 <div class="container" style="margin-top: 90px;  max-width: 90%; "> 
 
+    {{-- alerta --}}
      <script src=
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
         </script>
@@ -14,7 +15,8 @@
     </script> 
 
     @if(Session::has('mensaje'))
-    <div id="alert" class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 p-3; width: 590px" role="alert" style="z-index: 11; margin: 60px">
+    <div id="alert" class="alert alert-success alert-dismissible fade show position-fixed bottom-0 end-0 p-3;
+     width: 590px" role="alert" style="z-index: 11; margin: 60px; float: left;">
         <div class="d-flex">
             <div class="toast-body">
             {{Session::get('mensaje')}}
@@ -24,6 +26,8 @@
 </div>
     </div>
     @endif
+    {{-- alerta --}}
+
 
 <div>
 <h1 style = "float: left">Historial de tickets enviados</h1> 
@@ -37,7 +41,7 @@
 <br/>
 
 <table class="table table-hover table-bordered table-responsive-xl ">
-    <caption>Lista de tickets</caption>
+    <caption style="max-width: 50%">Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
             <th>#id_ticket</th>
@@ -80,7 +84,7 @@
     </tbody>
 
 </table>
-{!! $tickets->links() !!}
+<div style="max-width: 50%">{!! $tickets->links() !!}</div>
 </div>
 </div>
 @endsection
