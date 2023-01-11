@@ -24,8 +24,8 @@
         <input class="form-control" type="text" name="tecnico_asignado" 
         value="{{ isset($ticket["tecnico_asignado"])?$ticket["tecnico_asignado"]:'' }}" id="tecnico_asignado"> --}}
     <label for="area"> Area </label>
-        <input class="form-control" type="text" name="area" 
-        value="{{ isset($ticket["area"])?$ticket["area"]:'' }}" id="area">
+        <input readonly ="true" class="form-control" type="text" name="area" 
+        value="{{Auth::user()->area }}" id="area">
 
 <br>
         <input  class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
