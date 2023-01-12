@@ -58,6 +58,8 @@
 
     <tbody>
         @foreach( $tickets as $ticket)
+       {{--  @if($results = DB::select('select * from tickets where nombre_usuario = ?', array(Auth::user()->name))) --}}
+        @if($ticket["nombre_usuario"] == Auth::user()->name)
         <tr>
             <td>{{ $ticket["id"] }}</td>
             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
@@ -77,9 +79,11 @@
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
                 </form>
+            @endif
 
             </td>
         </tr>
+        
         @endforeach
     </tbody>
 
