@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre_usuario');
             $table->text('descripcion');
             $table->string('area');
-            $table->string('estado');
+            $table->string('estado'); 
             $table->string('tecnico_asignado');
             $table->timestamps();
 

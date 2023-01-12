@@ -15,7 +15,7 @@ class TicketsController extends Controller
      */
     public function index() : ViewContract
     {
-        $datos['tickets'] = Tickets::paginate(7);
+        $datos['tickets'] = Tickets::paginate(10);
         return view('ticket.ticket_index', $datos);
     }
 
@@ -42,7 +42,7 @@ class TicketsController extends Controller
         $campos_requeridos = [
             'nombre_usuario'=>'required|string|max:250',
             'descripcion'=>'required|string|max:800',
-            'area'=>'required|string|max:250',
+            //'area'=>'required|string|max:250',
             /* 'estado'=>'required|string|max:250',
             'tecnico_asignado'=>'required|string|max:250', */
         ];
@@ -95,7 +95,7 @@ class TicketsController extends Controller
         $campos_requeridos = [
             'nombre_usuario'=>'required|string|max:250',
             'descripcion'=>'required|string|max:800',
-            'area'=>'required|string|max:250',
+           // 'area'=>'required|string|max:250',
             /* 'estado'=>'required|string|max:250',
             'tecnico_asignado'=>'required|string|max:250', */
         ];
