@@ -30,7 +30,7 @@
 
 
 <div>
-<h1 style = "float: left">Historial de tickets enviados</h1> 
+<h1 style = "float: left">Historial de tickets enviados por {{Auth::user()->name}}</h1> 
 
 <div class="container-fluid" style="width: 28%; float: right">
     <form class="d-flex">
@@ -40,7 +40,7 @@
   </div>
 <br/>
 
-<table class="table table-hover table-bordered table-responsive-xl ">
+<table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">
     <caption style="max-width: 50%">Lista de tickets</caption>
     <thead class="table-dark">
         <tr>
@@ -51,7 +51,7 @@
             <th>Tecnico Asignado</th>
             <th>Area</th>
             <th>Fecha de envio</th>
-            <th></th>
+            <th>Opciones</th>
             
         </tr>
     </thead>
