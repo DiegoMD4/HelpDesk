@@ -25,7 +25,7 @@ route::resource('ticket', TicketsController::class)->middleware('auth');
 Auth::routes(['reset'=>false]);
 
 
-Route::middleware(['auth', 'auth.admin'])->group(function () {
+Route::middleware('auth')->group(function () {
     
 Route::get('/', [TicketsController::class, 'index'])->name('home');
 
