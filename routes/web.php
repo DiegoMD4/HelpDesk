@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TicketsController;
 use Symfony\Component\Routing\Router;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,12 @@ route::resource('ticket', TicketsController::class)->middleware('auth');
 
 Auth::routes(['reset'=>false]);
 
-/* Route::get('/ticket', [TicketsController::class, 'index'])->name('ticket');
- */
-Route::middleware('auth')->group(function () {
+
+Route::middleware(['auth', 'auth.admin'])->group(function () {
     
 Route::get('/', [TicketsController::class, 'index'])->name('home');
 
 });
+
+Route::get('/admin', [AdminController::class, 'index'])->middleware('auth.admin')
+->name('admin.index');
