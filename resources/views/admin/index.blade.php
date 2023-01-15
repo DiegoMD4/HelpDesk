@@ -1,1 +1,4 @@
-<h1>Admin View</h1>
+@extends('layouts.admin')
+@section('content')
+    
+@endsection
