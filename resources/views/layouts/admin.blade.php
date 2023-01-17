@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -73,13 +73,13 @@
 
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Therichpost </div>
+        <div class="sidebar-heading">HelpDesk</div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+            <a href="{{ url('/admin/crear_usuario')}}" class="list-group-item list-group-item-action bg-light">Crear Ticket</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Historial</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Pendientes</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Crear Usuario</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Ver Calificaciones</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
         </div>
         </div>
@@ -108,11 +108,11 @@
                     Dropdown
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+                    <a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
             </ul>
             </div>
