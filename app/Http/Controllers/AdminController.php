@@ -26,7 +26,7 @@ class AdminController extends Controller
      */
     public function create(): ViewContract
     {
-        return view('admin.create_usuario');
+        return view('admin.create');
     }
 
     /**

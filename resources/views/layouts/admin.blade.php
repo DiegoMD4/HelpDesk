@@ -73,12 +73,12 @@
 
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">HelpDesk</div>
+        <div class="sidebar-heading">HelpDesk Admin</div>
         <div class="list-group list-group-flush">
-            <a href="{{ url('/admin/crear_usuario')}}" class="list-group-item list-group-item-action bg-light">Crear Ticket</a>
+            <a href="{{url('/admin')}}" class="list-group-item list-group-item-action bg-light">Lista de Usuarios</a>
+            <a href="{{ url('/admin/create')}}" class="list-group-item list-group-item-action bg-light">Crear Usuario</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Historial</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Pendientes</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Crear Usuario</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Ver Calificaciones</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
         </div>
