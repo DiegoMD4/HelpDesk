@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
 
@@ -16,7 +16,8 @@ class AdminController extends Controller
      */
     public function index(): ViewContract
     {
-        return view('admin.index');
+        $datos['users'] = User::paginate(10);
+        return view('admin.index', $datos);
     }
 
     /**
@@ -38,11 +39,10 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $campos_requeridos = [
-            'nombre_usuario' => 'required|string|max:250',
-            'descripcion' => 'required|string|max:800',
-            //'area'=>'required|string|max:250',
-            /* 'estado'=>'required|string|max:250',
-            'tecnico_asignado'=>'required|string|max:250', */
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'area' => ['required', 'string', 'max:255'],
         ];
         $alert = [
             'required' => ' :attribute es requerido'
@@ -50,10 +50,10 @@ class AdminController extends Controller
 
         $this->validate($request, $campos_requeridos, $alert);
 
-        $datos_ticket = request()->except('_token');
-        Tickets::insert($datos_ticket);
+        $datos_usuario = request()->except('_token');
+        User::insert($datos_usuario);
 
-        return redirect('ticket')->with('mensaje', 'Ticket creado y enviado');
+        return redirect('admin')->with('mensaje', 'Usuario creado');
     }
 
     /**
