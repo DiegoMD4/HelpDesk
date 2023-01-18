@@ -19,14 +19,15 @@
 <label for="role">Role</label>
     <input  class="form-control" type="text" name="role"  id="role">
 <label for="password">Contraseña</label>
-    <input type="password"  class="form-control" type="text" name="password"  id="password">    
-<label for="password-confirm">Confirmar contraseña</label>
-    <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
+    <input type="password"  class="form-control @error('password') is-invalid @enderror" type="text" name="password"  id="password">  
     @error('password')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
         </span>
-   @enderror
+   @enderror  
+    <label for="password-confirm">Confirmar contraseña</label>
+    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+    
     
 
 <br>
