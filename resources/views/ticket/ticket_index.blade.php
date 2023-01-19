@@ -32,12 +32,12 @@
 <div>
 <h1 style = "float: left">Historial de tickets enviados por {{Auth::user()->name}}</h1> 
 
-<div class="container-fluid" style="width: 28%; float: right">
+<div class="container-fluid" style="width: 8%; float: right">
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Buscar Tickets" aria-label="Search">
-      <button class="btn btn-outline-primary" type="submit">Buscar</button>
+      <a href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">Nuevo Ticket</a>
     </form>
   </div>
+
 <br/>
 
 <table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">

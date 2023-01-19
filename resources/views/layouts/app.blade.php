@@ -35,17 +35,24 @@
                     <!-- Left Side Of Navbar //aca se modifica la navbar -->
                     @auth
                     <div class="btn-group">
-                        <a href="{{ url('/ticket/create')}}" class="btn btn-dark" aria-current="page">Crear Ticket</a> 
                         <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
                         <a href="#" class="btn btn-dark">Pendientes</a>
                         @if(auth()->user()->role == 'admin')
                         <a href="{{url('/admin')}}" class="btn btn-dark">Vista Administrador</a>
                         @endif
                       </div>
+
+                      <div class="container-fluid" style="width: 28%; float: right">
+                        <form class="d-flex">
+                          <input class="form-control me-2" type="search" placeholder="Buscar Tickets" aria-label="Search">
+                        </form>
+                      </div>
                     @else
+                    
                     
                     @endauth
                     <!-- Right Side Of Navbar -->
+                  
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
