@@ -6,6 +6,7 @@ use App\Models\Tickets;
 use Illuminate\Contracts\View\View as ViewContract; 
 use Illuminate\Http\Request;
 
+
 class TicketsController extends Controller
 {
     /**
