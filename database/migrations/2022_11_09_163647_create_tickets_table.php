@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nombre_usuario');
             $table->text('descripcion');
             $table->string('area');
-            $table->string('estado'); 
-            $table->string('tecnico_asignado');
+            $table->string('estado')->nullable(); 
+            $table->string('tecnico_asignado')->nullable();
             $table->timestamps();
 
         });
