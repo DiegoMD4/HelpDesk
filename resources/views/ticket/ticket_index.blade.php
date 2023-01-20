@@ -32,12 +32,10 @@
 <div>
 <h1 style = "float: left">Historial de tickets enviados por {{Auth::user()->name}}</h1> 
 
-<div class="container-fluid" style="width: 8%; float: right">
     <form class="d-flex">
-      <a href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">Nuevo Ticket</a>
+      <a style="margin-left: 80%; " href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">Nuevo Ticket</a>
     </form>
-  </div>
-
+ 
 <br/>
 
 <table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">
