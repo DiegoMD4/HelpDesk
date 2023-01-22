@@ -33,7 +33,7 @@
 
 <div class="container-fluid" style="width: 28%; float: right">
     <form class="d-flex">
-        <a style="margin-left: 80%; " href="{{ url('/admin/create')}}"  class="btn btn-primary" type="submit">Crear Usuario</a>
+        <a style="margin-left: 80%;" href="{{ url('/admin/create')}}"  class="btn btn-primary" type="submit">Crear Usuario</a>
       </form>
   </div>
 <br/>
@@ -55,7 +55,7 @@
 
     <tbody>
         @foreach( $users as $user)
-       {{--  @if($results = DB::select('select * from tickets where nombre_usuario = ?', array(Auth::user()->name))) --}}
+       
         <tr>
             <td>{{ $user["id"] }}</td>
             <td>{{ $user["name"] }}</td>
@@ -65,9 +65,9 @@
 
             <td>
                 
-                <a class="btn btn-warning" href= "">Editar</a>
+                <a class="btn btn-warning" href= "{{ url('/admin/'.$user["id"].'/edit')}}">Editar</a>
                 |
-                <form action="" class="d-inline" method="POST">
+                <form action="{{ url('/admin/'.$user["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
                   

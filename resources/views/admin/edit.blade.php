@@ -1,16 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('content1')
 <div class="container" style="margin-top: 90px;"> 
 
-<h1>Editar Ticket</h1>
+<h1>Editar Usuario</h1>
 
-<form action="{{ url('/ticket/'.$ticket["id"]) }}" method="post" enctype="multipart/form-data">
+<form action="{{ url('/admin/'.$user["id"]) }}" method="post" enctype="multipart/form-data">
     @csrf
     {{ method_field('PATCH') }}  
-    @include('ticket.form', ['modo'=>'Editar'])
-    
-
+    @include('admin.form', ['modo'=>'Editar'])
 </form>
 </div>
 @endsection

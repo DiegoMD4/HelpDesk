@@ -9,11 +9,7 @@ use Illuminate\Contracts\View\View as ViewContract;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index(): ViewContract
     {
         $datos['users'] = User::paginate(10);
@@ -42,7 +38,7 @@ class AdminController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'area' => ['required', 'string', 'max:255'],
+            
         ];
         $alert = [
             'required' => ' :attribute es requerido'
@@ -56,48 +52,44 @@ class AdminController extends Controller
         return redirect('admin')->with('mensaje', 'Usuario creado');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Admin $admin)
+   
+    public function show(User $user)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Admin $admin)
+    
+    public function edit(User $id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin.edit', compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, $id)
     {
-        //
+        $campos_requeridos = [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
+        ];
+        $alert = [
+            'required' => ' :attribute es requerido'
+        ];
+
+        $this->validate($request, $campos_requeridos, $alert);
+
+        $datos_usuario = request()->except(['_token', '_method']);
+        User::where('id','=',$id)->update($datos_usuario);
+
+        $users = User::findOrFail($id);
+        return redirect('admin')->with('mensaje', 'Elemento Modificado');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Admin  $admin
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Admin $admin)
+    
+    public function destroy(User $id)
     {
-        //
+        User::destroy($id);
+        return redirect('admin')->with('mensaje', 'Elemento borrado');
     }
 }

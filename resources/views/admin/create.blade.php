@@ -5,9 +5,9 @@
 
 <h1>Crear Usuario</h1>
 
-<form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('/admin') }}" method="POST" enctype="multipart/form-data">
     @csrf 
-    @include('admin.form' , ['modo'=>'Mandar'])
+    @include('admin.form' , ['modo'=>'Crear'])
     
     
 </form>

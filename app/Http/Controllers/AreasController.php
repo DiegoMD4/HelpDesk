@@ -48,7 +48,7 @@ class AreasController extends Controller
     }
 
    
-    public function show(Admin $admin)
+    public function show(Areas $area)
     {
         
     }
@@ -75,7 +75,7 @@ class AreasController extends Controller
         $datos_area = request()->except(['_token', '_method']);
         Areas::where('id','=',$id)->update($datos_area);
 
-        $ticket = Areas::findOrFail($id);
+        $areas = Areas::findOrFail($id);
         return redirect('areas')->with('mensaje', 'Elemento Modificado');
     }
 
