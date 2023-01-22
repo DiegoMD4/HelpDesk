@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TicketsController;
 use Symfony\Component\Routing\Router;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AreasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('/', function () {
 
 route::resource('ticket', TicketsController::class)->middleware('auth');
 route::resource('admin', AdminController::class)->middleware('auth.admin');
+route::resource('areas', AreasController::class)->middleware('auth.admin');
 
 
 Auth::routes(['reset'=>false]);
@@ -38,4 +40,7 @@ Route::get('/', [TicketsController::class, 'index'])->name('home');
 
 Route::middleware('auth.admin')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+});
+Route::middleware('auth.admin')->group(function () {
+    Route::get('/areas', [AreasController::class, 'index'])->name('admin.areas.index');
 });

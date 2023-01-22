@@ -29,25 +29,23 @@
 
 
 <div>
-<h1 style = "float: left">Listado de usuarios</h1> 
+<h1 style = "float: left">Listado de areas</h1> 
 
 <div class="container-fluid" style="width: 28%; float: right">
     <form class="d-flex">
-        <a style="margin-left: 80%; " href="{{ url('/admin/create')}}"  class="btn btn-primary" type="submit">Crear Usuario</a>
+        <a style="margin-left: 80%; " href="{{ url('/areas/create')}}"  class="btn btn-primary" type="submit">Nueva Area</a>
       </form>
   </div>
 <br/>
 
 <table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">
-    <caption style="max-width: 50%">Lista de usuarios</caption>
+    <caption style="max-width: 50%">Areas creadas</caption>
     <thead class="table-dark">
         <tr>
-            <th>#id_usuario</th>
-            <th>Usuario</th>
-            <th>Correo</th>
+            <th>#id_area</th>
+        
             <th>Area</th>
-            <th>Role</th>
-            <th>Opciones</th>
+          
 
             
         </tr>
@@ -58,10 +56,8 @@
        {{--  @if($results = DB::select('select * from tickets where nombre_usuario = ?', array(Auth::user()->name))) --}}
         <tr>
             <td>{{ $user["id"] }}</td>
-            <td>{{ $user["name"] }}</td>
-            <td>{{ $user["email"] }}</td>
             <td>{{ $user["area"] }}</td>
-            <td>{{ $user["role"] }}</td>
+          
 
             <td>
                 
