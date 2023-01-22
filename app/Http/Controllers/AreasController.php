@@ -15,7 +15,7 @@ class AreasController extends Controller
      */
     public function index(): ViewContract
     {
-        $datos['users'] = Areas::paginate(10);
+        $datos['areas'] = Areas::paginate(10);
         return view('admin.areas.index', $datos);
     }
 
@@ -33,10 +33,7 @@ class AreasController extends Controller
     public function store(Request $request)
     {
         $campos_requeridos = [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'area' => ['required', 'string', 'max:255'],
+            'nombre_area' => ['required', 'string', 'max:255'],
         ];
         $alert = [
             'required' => ' :attribute es requerido'
@@ -44,10 +41,10 @@ class AreasController extends Controller
 
         $this->validate($request, $campos_requeridos, $alert);
 
-        $datos_usuario = request()->except('_token');
-        Areas::insert($datos_usuario);
+        $datos_area = request()->except('_token');
+        Areas::insert($datos_area);
 
-        return redirect('admin')->with('mensaje', 'Usuario creado');
+        return redirect('areas')->with('mensaje', 'Usuario creado');
     }
 
    
@@ -56,21 +53,37 @@ class AreasController extends Controller
         
     }
 
-    public function edit(Admin $admin)
+    public function edit($id)
     {
-        
+        $area = Areas::findOrFail($id);
+        return view('admin.areas.edit', compact('area'));
     }
 
    
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, $id)
     {
-        
+        $campos_requeridos = [
+            'nombre_area'=>'required|string|max:250',
+            
+        ];
+        $alert = [
+             'required'=>' :attribute no puede quedar vacío'
+        ];
+
+        $this->validate($request, $campos_requeridos, $alert);
+
+        $datos_area = request()->except(['_token', '_method']);
+        Areas::where('id','=',$id)->update($datos_area);
+
+        $ticket = Areas::findOrFail($id);
+        return redirect('areas')->with('mensaje', 'Elemento Modificado');
     }
 
    
      
-    public function destroy(Admin $admin)
+    public function destroy($id)
     {
-        
+        Areas::destroy($id);
+        return redirect('areas')->with('mensaje', 'Elemento borrado');
     }
 }

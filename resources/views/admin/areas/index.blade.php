@@ -3,7 +3,7 @@
 <div class="container" style="margin-top: 90px;  max-width: 90%; "> 
 
     {{-- alerta --}}
-     <script src=
+    {{--  <script src=
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
         </script>
 
@@ -24,7 +24,7 @@
 </div>
 </div>
     </div>
-    @endif
+    @endif --}}
     {{-- alerta --}}
 
 
@@ -43,33 +43,27 @@
     <thead class="table-dark">
         <tr>
             <th>#id_area</th>
-        
             <th>Area</th>
-          
-
-            
+            <th>Opciones</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach( $users as $user)
-       {{--  @if($results = DB::select('select * from tickets where nombre_usuario = ?', array(Auth::user()->name))) --}}
+        @foreach( $areas as $area)
         <tr>
-            <td>{{ $user["id"] }}</td>
-            <td>{{ $user["area"] }}</td>
+            <td>{{ $area["id"] }}</td>
+            <td>{{ $area["nombre_area"] }}</td>
           
-
             <td>
                 
-                <a class="btn btn-warning" href= "">Editar</a>
+                <a class="btn btn-warning" href= "{{ url('/areas/'.$area["id"].'/edit')}}">Editar</a>
                 |
-                <form action="" class="d-inline" method="POST">
+                <form action="{{ url('/areas/'.$area["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
                 </form>
-          
 
             </td>
         </tr>
@@ -78,7 +72,7 @@
     </tbody>
 
 </table>
-<div style="max-width: 50%"> {!! $users->links() !!} </div>
+<div style="max-width: 50%"> {!! $areas->links() !!} </div>
 </div>
 </div>
 @endsection

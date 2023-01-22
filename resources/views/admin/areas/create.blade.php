@@ -5,11 +5,10 @@
 
 <h1>Crear Area</h1>
 
-<form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('/areas')}}" method="POST" enctype="multipart/form-data">
     @csrf 
-    @include('admin.areas.form' , ['modo'=>'Mandar'])
-    
-    
+    @include('admin.areas.form' , ['modo'=>'Crear'])
+
 </form>
 
 </div>
