@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
-
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -91,5 +91,16 @@ class AdminController extends Controller
     {
         User::destroy($id);
         return redirect('admin')->with('mensaje', 'Elemento borrado');
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'area' => ['required', 'string', 'max:255'],
+
+        ]);
     }
 }
