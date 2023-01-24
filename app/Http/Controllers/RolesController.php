@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Roles;
 use Illuminate\Http\Request;
-use Iluminate\Contracts\View as ViewContract;
+use Iluminate\Contracts\View\View as ViewContract;
 
 class RolesController extends Controller
 {
     
-    public function index()
+    public function index()  
     {
         $datos['roles'] = Roles::paginate(10);
         return view('admin.roles.index', $datos);
@@ -46,10 +46,10 @@ class RolesController extends Controller
      * @param  \App\Models\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function show(Roles $roles)
+    /* public function show(Roles $roles)
     {
         
-    }
+    } */
 
     
     public function edit($id)
