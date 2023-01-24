@@ -3,7 +3,7 @@
 <div class="container" style="margin-top: 90px;  max-width: 90%; "> 
 
     {{-- alerta --}}
-     <script src=
+    {{--  <script src=
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
         </script>
 
@@ -24,7 +24,7 @@
 </div>
 </div>
     </div>
-    @endif
+    @endif --}}
     {{-- alerta --}}
 
 
