@@ -5,6 +5,7 @@ use App\Http\Controllers\TicketsController;
 use Symfony\Component\Routing\Router;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AreasController;
+use App\Http\Controllers\RolesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::get('/', function () {
 route::resource('ticket', TicketsController::class)->middleware('auth');
 route::resource('admin', AdminController::class)->middleware('auth.admin');
 route::resource('areas', AreasController::class)->middleware('auth.admin');
+route::resource('roles', RolesController::class)->middleware('auth.admin');
 
 
 Auth::routes(['reset'=>false]);
@@ -43,4 +45,7 @@ Route::middleware('auth.admin')->group(function () {
 });
 Route::middleware('auth.admin')->group(function () {
     Route::get('/areas', [AreasController::class, 'index'])->name('admin.areas.index');
+});
+Route::middleware('auth.admin')->group(function () {
+    Route::get('/roles', [RolesController::class, 'index'])->name('admin.roles.index');
 });

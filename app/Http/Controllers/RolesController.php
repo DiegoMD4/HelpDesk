@@ -4,38 +4,40 @@ namespace App\Http\Controllers;
 
 use App\Models\Roles;
 use Illuminate\Http\Request;
+use Iluminate\Contracts\View as ViewContract;
 
 class RolesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $datos['roles'] = Roles::paginate(10);
+        return view('admin.roles.index', $datos);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
-        //
+        return view('admin.roles.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-        //
+        $campos_requeridos = [
+            'roles' => ['require', 'string', 'max: 255'],
+        ];
+        $alert = [
+            'require' => ':attribute es requerido'
+        ];
+
+        $this->validate($request, $campos_requeridos, $alert);
+
+        $datos_roles = request()->except('_token');
+        Roles::insert($datos_roles);
+
+        return redirect('roles')->with('mensaje', 'Elemento creado');
+
     }
 
     /**
@@ -46,40 +48,39 @@ class RolesController extends Controller
      */
     public function show(Roles $roles)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Roles  $roles
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Roles $roles)
+    
+    public function edit($id)
     {
-        //
+        $rol = Roles::findOrFail($id);
+        return view('admin.roles.edit', compact('rol'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Roles  $roles
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Roles $roles)
+    
+    public function update(Request $request, $id)
     {
-        //
+        $campos_requeridos = [
+            'roles' => ['require', 'string', 'max: 255'],
+        ];
+        $alert = [
+            'require' => ':attribute es requerido'
+        ];
+
+        $this->validate($request, $campos_requeridos, $alert);
+
+        $datos_roles = request()->except(['_token', '_method']);
+        Roles::where('id', '=', $id)->update($datos_roles);
+
+        $roles = Roles::findOrFail($id);
+        return redirect('roles')->with('mensaje', 'Elemnto borrado');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Roles  $roles
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Roles $roles)
+    
+    public function destroy($id)
     {
-        //
+        Roles::destroy($id);
+        return redirect('roles')->with('mensaje', 'Elemnto borrado');
     }
 }
