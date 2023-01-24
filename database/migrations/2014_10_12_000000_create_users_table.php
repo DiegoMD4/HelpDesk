@@ -23,6 +23,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('area');
             $table->string('role')->nullable();
+            /* $table->string('role')->default('0'); */
         });
     }
 
