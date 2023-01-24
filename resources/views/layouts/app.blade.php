@@ -37,9 +37,9 @@
                     <div class="btn-group">
                         <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
                         <a href="#" class="btn btn-dark">Pendientes</a>
-                        @if(auth()->user()->role == 'admin')
+                        {{-- @if(auth()->user()->role == 'admin')
                         <a href="{{url('/admin')}}" class="btn btn-dark">Vista Administrador</a>
-                        @endif
+                        @endif --}}
                       </div>
 
                       <div class="container-fluid" style="width: 28%; float: right">
@@ -78,6 +78,9 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar Sesión') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{url('/admin')}}">
+                                        {{ __('Panel de Administrador') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
