@@ -31,11 +31,8 @@
 <div>
 <h1 style = "float: left">Lista de Roles</h1> 
 
-<div class="container-fluid" style="width: 28%; float: right">
-    <form class="d-flex">
-        <a style="margin-left: 80%; " href="{{ url('/roles/create')}}"  class="btn btn-primary" type="submit">Nuevo Rol</a>
-      </form>
-  </div>
+    <a style="margin-left: 65%; " href="{{ url('/roles/create')}}"  class="btn btn-primary" type="submit">Nuevo Rol</a>
+  
 <br/>
 
 <table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">
@@ -44,7 +41,7 @@
         <tr>
             <th>#id_rol</th>
             <th>Rol</th>
-            <th>Opciones</th>
+            <th style="text-align: right">Opciones</th>
         </tr>
     </thead>
 
@@ -54,7 +51,7 @@
             <td>{{ $rol["id"] }}</td>
             <td>{{ $rol["nombre_rol"] }}</td>
           
-            <td>
+            <td style="align-content: flex-end">
                 
                 <a class="btn btn-warning" href= "{{ url('/roles/'.$rol["id"].'/edit')}}">Editar</a>
                 |

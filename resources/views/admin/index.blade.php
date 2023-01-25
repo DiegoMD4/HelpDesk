@@ -31,11 +31,10 @@
 <div>
 <h1 style = "float: left">Listado de usuarios</h1> 
 
-<div class="container-fluid" style="width: 28%; float: right">
-    <form class="d-flex">
-        <a style="margin-left: 80%;" href="{{ url('/admin/create')}}"  class="btn btn-primary" type="submit">Crear Usuario</a>
-      </form>
-  </div>
+
+    <a style="margin-left: 65%;" href="{{ url('/admin/create')}}"  class="btn btn-primary" type="submit">Crear Usuario</a>
+      
+  
 <br/>
 
 <table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">
