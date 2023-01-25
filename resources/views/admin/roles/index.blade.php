@@ -41,7 +41,7 @@
         <tr>
             <th>#id_rol</th>
             <th>Rol</th>
-            <th style="text-align: right">Opciones</th>
+            <th>Opciones</th>
         </tr>
     </thead>
 
@@ -51,7 +51,7 @@
             <td>{{ $rol["id"] }}</td>
             <td>{{ $rol["nombre_rol"] }}</td>
           
-            <td style="align-content: flex-end">
+            <td>
                 
                 <a class="btn btn-warning" href= "{{ url('/roles/'.$rol["id"].'/edit')}}">Editar</a>
                 |
