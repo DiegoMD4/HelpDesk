@@ -12,8 +12,8 @@
 @endif
 
     <label  for="descripcion"> Descripcion </label>
-        <textarea rows="8" class="form-control" type="text" name="descripcion" 
-         id="decripcion">{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}</textarea> 
+        <textarea style="resize: none" rows="8" class="form-control" type="text" name="descripcion" 
+         id="decripcion" required>{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}</textarea> 
 
     <label for="nombre_usuario"> Nombre usuario </label>
         <input readonly="true" class="form-control" type="text" name="nombre_usuario" 
