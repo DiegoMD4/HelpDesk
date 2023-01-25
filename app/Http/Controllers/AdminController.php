@@ -33,23 +33,26 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+/* protected function validator(array $data)
     {
-        $campos_requeridos = [
+        return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' =>Hash::make('$request->password')
-            
-            
-        ];
-        $alert = [
-            'required' => ' :attribute es requerido'
-        ];
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'area' => ['required', 'string', 'max:255'],
 
-        $this->validate($request, $campos_requeridos, $alert);
+        ]);
+    } */
 
-        $datos_usuario = request()->except('_token');
-        User::insert($datos_usuario);
+    public function store(Request $request)
+    {
+        $request->request->add([
+           
+            'password'=>Hash::make($request->input('password'))
+
+        ]);
+        User::create($request->all());
 
         return redirect('admin')->with('mensaje', 'Usuario creado');
     }
@@ -95,14 +98,5 @@ class AdminController extends Controller
         return redirect('admin')->with('mensaje', 'Elemento borrado');
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'area' => ['required', 'string', 'max:255'],
-
-        ]);
-    }
+    
 }
