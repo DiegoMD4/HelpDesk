@@ -83,7 +83,7 @@ class AdminController extends Controller
     }
 
     
-    public function destroy(User $id)
+    public function destroy($id)
     {
         User::destroy($id);
         return redirect('admin')->with('mensaje', 'Elemento borrado');

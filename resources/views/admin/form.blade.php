@@ -11,13 +11,18 @@
 @endif
 
 <label for="name">Nombre usuario </label>
-    <input  class="form-control" type="text" name="name"  id="name" value="{{ isset($user["name"])?$user["name"]:'' }}">
+    <input  class="form-control" type="text" name="name"  id="name" value="{{ isset($user["name"])?$user["name"]:'' }}" required>
 <label for="email">Correo</label>
-    <input type="email" class="form-control" type="text" name="email"  id="email" value="{{ isset($user["email"])?$user["email"]:'' }}">
+    <input type="email" class="form-control @error('email') is-invalid @enderror" type="text" name="email"  id="email" value="{{ isset($user["email"])?$user["email"]:'' }}" required>
+    @error('email')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
 <label for="area">Area</label>
-    <input  class="form-control" type="text" name="area"  id="area" value="{{ isset($user["area"])?$user["area"]:'' }}">
+    <input  class="form-control" type="text" name="area"  id="area" value="{{ isset($user["area"])?$user["area"]:'' }}" required>
 <label for="role">Role</label>
-    <input  class="form-control" type="text" name="role"  id="role" value="{{ isset($user["role"])?$user["role"]:'' }}">
+    <input  class="form-control" type="text" name="role"  id="role" value="{{ isset($user["role"])?$user["role"]:'' }}" required>
 <label for="password">Contraseña</label>
     <input type="password"  class="form-control @error('password') is-invalid @enderror" type="text" name="password"  id="password" 
     value="{{ isset($user["password"])?$user["password"]:'' }}">  
