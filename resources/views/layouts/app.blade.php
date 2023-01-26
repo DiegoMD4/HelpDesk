@@ -44,7 +44,7 @@
 
                       <div class="container-fluid" style="width: 28%; float: right">
                         <form class="d-flex">
-                          <input class="form-control me-2" type="search" placeholder="Buscar Tickets" aria-label="Search">
+                          <input class="form-control sm-2" type="search" placeholder="Buscar Tickets" aria-label="Search">
                         </form>
                       </div>
                     @else

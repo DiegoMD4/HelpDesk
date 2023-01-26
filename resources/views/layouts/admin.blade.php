@@ -72,12 +72,12 @@
         <div class="d-flex" id="wrapper">
 
         <!-- Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">HelpDesk Admin</div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/admin')}}" class="list-group-item list-group-item-action bg-light">Usuarios</a>
-            <a href="{{url('/areas')}}" class="list-group-item list-group-item-action bg-light">Areas</a>
-            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action bg-light">Roles</a>
+            <a href="{{url('/admin')}}" class="list-group-item list-group-item-action ">Usuarios</a>
+            <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">Areas</a>
+            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">Roles</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Estados</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Ver Calificaciones</a>
         </div>
@@ -87,7 +87,7 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom navbar-light navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg border-bottom bg-dark navbar-dark">
             <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
