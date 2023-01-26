@@ -63,23 +63,16 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
-        $campos_requeridos = [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', ],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        $request->merge([
+           
+            'password'=>Hash::make($request->input('password')),
             
-        ];
-        $alert = [
-            'required' => ' :attribute es requerido'
-        ];
 
-        $this->validate($request, $campos_requeridos, $alert);
+        ]);
+        $datos_user = request()->except(['_token', '_method', 'password_confirmation']);
+        User::where('id','=',$id)->update($datos_user);
 
-        $datos_usuario = request()->except(['_token', '_method']);
-        User::where('id','=',$id)->update($datos_usuario);
-
-        $users = User::findOrFail($id);
-        return redirect('admin')->with('mensaje', 'Elemento Modificado');
+        return redirect('admin')->with('mensaje', 'Usuario editado');
     }
 
     
