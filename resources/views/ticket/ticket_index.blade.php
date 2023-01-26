@@ -77,6 +77,8 @@
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
                 </form>
+                |
+                <a class="btn btn-primary" href= "{{ route('ticket.show',$ticket->id) }}">Ver</a>
             @endif
 
             </td>

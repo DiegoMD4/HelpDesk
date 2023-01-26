@@ -64,10 +64,12 @@ class TicketsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-   /*  public function show(Tickets $tickets) 
+     public function show($id) : ViewContract
     {
-        
-    } */
+        $ticket = Tickets::find($id);
+
+        return view('ticket.show', compact('ticket'));
+    } 
 
     /**
      * Show the form for editing the specified resource.
