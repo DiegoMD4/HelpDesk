@@ -7,7 +7,7 @@
 
 <form action="{{ url('/admin') }}" method="POST" enctype="multipart/form-data">
     @csrf 
-    @include('admin.form' , ['modo'=>'Crear'])
+    @include('admin.usuarios.form' , ['modo'=>'Crear'])
     
     
 </form>

@@ -31,14 +31,9 @@ route::resource('roles', RolesController::class)->middleware('auth.admin');
 Auth::routes(['reset'=>false]);
 
 
-Route::middleware('auth')->group(function () {
-    
-Route::get('/', [TicketsController::class, 'index'])->name('home');
-
+Route::middleware('auth')->group(function () {    
+    Route::get('/', [TicketsController::class, 'index'])->name('ticket.index');
 });
-
-
-
 
 Route::middleware('auth.admin')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

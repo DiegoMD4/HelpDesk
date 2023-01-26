@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function index(): ViewContract
     {
         $datos['users'] = User::paginate(10);
-        return view('admin.index', $datos);
+        return view('admin.usuarios.index', $datos);
     }
 
     /**
@@ -24,7 +24,7 @@ class AdminController extends Controller
      */
     public function create(): ViewContract
     {
-        return view('admin.create');
+        return view('admin.usuarios.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.edit', compact('user'));
+        return view('admin.usuarios.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
