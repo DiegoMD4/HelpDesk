@@ -22,7 +22,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('area');
-            $table->string('role')->nullable();
+            $table->string('role')->default('user');
             /* $table->string('role')->default('0'); */
         });
     }

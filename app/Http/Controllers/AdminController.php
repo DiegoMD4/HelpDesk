@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function index(): ViewContract
     {
         $datos['users'] = User::paginate(10);
-        return view('admin.index', $datos);
+        return view('admin.usuarios.index', $datos);
     }
 
     /**
@@ -24,7 +24,7 @@ class AdminController extends Controller
      */
     public function create(): ViewContract
     {
-        return view('admin.create');
+        return view('admin.usuarios.create');
     }
 
     /**
@@ -58,28 +58,21 @@ class AdminController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.edit', compact('user'));
+        return view('admin.usuarios.edit', compact('user'));
     }
 
     public function update(Request $request, $id)
     {
-        $campos_requeridos = [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', ],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        $request->merge([
+           
+            'password'=>Hash::make($request->input('password')),
             
-        ];
-        $alert = [
-            'required' => ' :attribute es requerido'
-        ];
 
-        $this->validate($request, $campos_requeridos, $alert);
+        ]);
+        $datos_user = request()->except(['_token', '_method', 'password_confirmation']);
+        User::where('id','=',$id)->update($datos_user);
 
-        $datos_usuario = request()->except(['_token', '_method']);
-        User::where('id','=',$id)->update($datos_usuario);
-
-        $users = User::findOrFail($id);
-        return redirect('admin')->with('mensaje', 'Elemento Modificado');
+        return redirect('admin')->with('mensaje', 'Usuario editado');
     }
 
     

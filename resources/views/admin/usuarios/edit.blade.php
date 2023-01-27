@@ -8,7 +8,7 @@
 <form action="{{ url('/admin/'.$user["id"]) }}" method="post" enctype="multipart/form-data">
     @csrf
     {{ method_field('PATCH') }}  
-    @include('admin.form', ['modo'=>'Editar'])
+    @include('admin.usuarios.form', ['modo'=>'Editar'])
 </form>
 </div>
 @endsection

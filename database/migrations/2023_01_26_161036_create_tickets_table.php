@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('area');
             $table->string('estado')->nullable(); 
             $table->string('tecnico_asignado')->nullable();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            
 
         });
     }

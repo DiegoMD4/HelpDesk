@@ -33,7 +33,7 @@
 <h1 style = "float: left">Historial de tickets enviados por {{Auth::user()->name}}</h1> 
 
     <form class="d-flex">
-      <a style="margin-left: 80%; " href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">Nuevo Ticket</a>
+      <a style="margin-left: 80%; " href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">+ Nuevo Ticket</a>
     </form>
  
 <br/>
@@ -77,6 +77,8 @@
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
                 </form>
+                |
+                <a class="btn btn-info" href= "{{ route('ticket.show',$ticket->id) }}">Ver</a>
             @endif
 
             </td>
