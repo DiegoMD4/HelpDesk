@@ -38,9 +38,13 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'email' => ['required', 'email', 'regex:/(.*)@chumbagua\.com$/i'],
+        ]);
         $request->request->add([
            
-            'password'=>Hash::make($request->input('password'))
+            'password'=>Hash::make($request->input('password')),
+            
 
         ]);
         User::create($request->all());

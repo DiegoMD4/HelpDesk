@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nombre_usuario');
             $table->text('descripcion');
             $table->string('area');
-            $table->string('estado')->nullable(); 
-            $table->string('tecnico_asignado')->nullable();
+            $table->string('estado')->default('Pendiente'); 
+            $table->string('tecnico_asignado')->default('Sin asignar');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
             
