@@ -67,6 +67,10 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'email' => ['required', 'email', 'regex:/(.*)@chumbagua\.com$/i'],
+        ]);
+        
         $request->merge([
            
             'password'=>Hash::make($request->input('password')),
