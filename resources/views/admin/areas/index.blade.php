@@ -31,9 +31,9 @@
 <div>
 <h1 style = "float: left">Listado de areas</h1> 
 
-
+<form class="d-flex">
         <a style="margin-left: 65%;" href="{{ url('/areas/create')}}"  class="btn btn-primary" type="submit">Nueva Area</a>
-    
+</form>
 <br/>
 
 <table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">
