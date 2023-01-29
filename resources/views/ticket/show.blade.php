@@ -12,10 +12,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Ticket</span>
+                            <span class="card-title">Detalles de Ticket</span>
                         </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('ticket.index') }}"> Back</a>
+                        <div class="float-left">
+                            <a class="btn btn-primary" href="{{ route('ticket.index') }}">Volver</a>
                         </div>
                     </div>
 
@@ -26,8 +26,16 @@
                             {{ $ticket->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Estado:</strong>
+                            <strong>Estado:</strong>
                             {{ $ticket->id_estado }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Area:</strong>
+                            {{ $ticket->area }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha de envio:</strong>
+                            {{ $ticket->created_at }}
                         </div>
 
                     </div>
