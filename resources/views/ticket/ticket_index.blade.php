@@ -41,7 +41,8 @@
                 <caption style="max-width: 50%">Lista de tickets enviados por {{Auth::user()->name}}</caption>
                     <thead class="table-dark">
                         <tr>
-                        <th>#id_ticket</th>
+                        {{-- <th>#id_ticket</th> --}}
+                        <th>#</th>
                         <th>Descripcion</th>
                         <th>Nombre de Usuario</th>
                         <th>Estado</th>
@@ -57,7 +58,8 @@
        {{--  @if($results = DB::select('select * from tickets where nombre_usuario = ?', array(Auth::user()->name))) --}}
         @if($ticket["nombre_usuario"] == Auth::user()->name)
                             <tr>
-                            <td>{{ $ticket["id"] }}</td>
+                                <td>{{ ++$i }}</td>
+                           {{--  <td>{{ $ticket["id"] }}</td> --}}
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket["nombre_usuario"] }}</td>
                             <td>{{ $ticket["estado"] }}</td>
