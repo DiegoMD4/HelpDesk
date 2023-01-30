@@ -19,8 +19,19 @@
 <strong>{{ $message }}</strong>
 </span>
 @enderror
-<label for="area">Area</label>
-    <input  class="form-control" type="text" name="area"  id="area" value="{{ isset($user["area"])?$user["area"]:'' }}" required>
+{{-- <label for="area">Area</label>
+    <input  class="form-control" type="text" name="area"  id="area" value="{{ isset($user["area"])?$user["area"]:'' }}" required> --}}
+
+    <br>
+
+    <select required class="form-control" id="area" name="area">
+        @foreach($areas as $area)
+        <option class="form-control" id="area">{{$area["nombre_area"]}}</option>
+        @endforeach
+    </select>
+
+
+
 <label for="role">Role</label>
     <input  class="form-control" type="text" name="role"  id="role" value="{{ isset($user["role"])?$user["role"]:'' }}" required>
 <label for="password">Contraseña</label>

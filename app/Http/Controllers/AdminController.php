@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Areas;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,6 +15,8 @@ class AdminController extends Controller
     
     public function index(): ViewContract
     {
+       
+        
         $datos['users'] = User::paginate(10);
         return view('admin.usuarios.index', $datos);
     }
@@ -24,7 +28,9 @@ class AdminController extends Controller
      */
     public function create(): ViewContract
     {
-        return view('admin.usuarios.create');
+        $areas = Areas::all();
+       /*  $datos = DB::select('select * from areas'); */
+        return view('admin.usuarios.create', compact('areas'));
     }
 
     /**
@@ -39,7 +45,8 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'email' => ['required', 'email', 'regex:/(.*)@chumbagua\.com$/i'],
+           /*  'email' => ['required', 'email', 'unique:users', 'regex:/(.*)@chumbagua\.com$/i'], */
+            'email' => ['required', 'email', 'unique:users'],
         ]);
         $request->request->add([
            
@@ -61,14 +68,16 @@ class AdminController extends Controller
     
     public function edit($id)
     {
+         $areas = Areas::all();
         $user = User::findOrFail($id);
-        return view('admin.usuarios.edit', compact('user'));
+        return view('admin.usuarios.edit', compact('user', 'areas'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'email' => ['required', 'email', 'regex:/(.*)@chumbagua\.com$/i'],
+           /*  'email' => ['required', 'email', 'regex:/(.*)@chumbagua\.com$/i'], */
+            'email' => ['required', 'email'],
         ]);
         
         $request->merge([
