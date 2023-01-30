@@ -10,7 +10,7 @@
     <script type="text/javascript">
         setTimeout(function () {
             $('#alert').alert('close');
-        }, 1220);
+        }, 1325);
     </script> 
 
     @if(Session::has('mensaje'))

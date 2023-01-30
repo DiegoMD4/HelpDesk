@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $ticket->id_estado }}
+                            {{ $ticket->estado }}
                         </div>
                         <div class="form-group">
                             <strong>Area:</strong>
