@@ -22,6 +22,10 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>id de ticket:</strong>
+                            {{ $ticket->id}}
+                        </div>
+                        <div class="form-group">
                             <strong>Descripcion:</strong>
                             {{ $ticket->descripcion }}
                         </div>
