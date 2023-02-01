@@ -22,18 +22,17 @@
 {{-- <label for="area">Area</label>
     <input  class="form-control" type="text" name="area"  id="area" value="{{ isset($user["area"])?$user["area"]:'' }}" required> --}}
 
-    <br>
-
-    <select required class="form-control" id="area" name="area">
-        @foreach($areas as $area)
-        <option class="form-control" id="area">{{$area["nombre_area"]}}</option>
-        @endforeach
-    </select>
-
-
-
-<label for="role">Role</label>
-    <input  class="form-control" type="text" name="role"  id="role" value="{{ isset($user["role"])?$user["role"]:'' }}" required>
+    <div class="form-group">
+        {{ Form::label('id_area') }}
+        {{ Form::select('id_area', $areas, $user->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
+        {!! $errors->first('id_area', '<div class="invalid-feedback">:message</div>') !!}
+    </div>
+    <div class="form-group">
+        {{ Form::label('id_rol') }}
+        {{ Form::select('id_rol', $roles, $user->id_rol, ['class' => 'form-control' . ($errors->has('id_rol') ? ' is-invalid' : ''), 'placeholder' => 'Id Rol']) }}
+        {!! $errors->first('id_rol', '<div class="invalid-feedback">:message</div>') !!}
+    </div> 
+    
 <label for="password">Contraseña</label>
     <input type="password"  class="form-control @error('password') is-invalid @enderror" type="text" name="password"  id="password">  
     @error('password')

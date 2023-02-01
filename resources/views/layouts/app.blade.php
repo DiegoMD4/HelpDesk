@@ -73,7 +73,7 @@
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    @if(Auth()->check() && auth()->user()->role == 'admin')
+                                    @if(Auth()->check() && auth()->user()->id_rol == '1')
                                     
                                     <a class="dropdown-item" href="{{url('/admin')}}">
                                         {{ __('Panel de Administrador') }}

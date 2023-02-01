@@ -39,7 +39,7 @@
                             </div>
                         </div>
 
-                         <div class="row mb-3">
+                        {{--  <div class="row mb-3">
                             <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('Departamento') }}</label>
 
                             <div class="col-md-6">
@@ -50,7 +50,15 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> 
+                        </div> --}} 
+                        <div class="row mb-3">
+                            <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('Departamento') }}</label>
+                            <div class="col-md-6">
+                           
+                                {{ Form::select('id_area', $areas, $users->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
+                                {!! $errors->first('id_area', '<div class="invalid-feedback">:message</div>') !!}
+                            </div> 
+                        </div>
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>

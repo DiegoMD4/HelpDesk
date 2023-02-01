@@ -17,13 +17,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+
+            $table->unsignedBigInteger('id_area');
+            $table->foreign('id_area')->references('id')->on('areas')->onDelete('cascade');
+            $table->unsignedBigInteger('id_rol')->default(1);
+            $table->foreign('id_rol')->references('id')->on('roles')->onDelete('cascade');
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('area');
-            $table->string('role')->default('user');
-            /* $table->string('role')->default('0'); */
         });
     }
 

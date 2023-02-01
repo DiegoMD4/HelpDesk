@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Areas;
+use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
@@ -28,9 +29,11 @@ class AdminController extends Controller
      */
     public function create(): ViewContract
     {
-        $areas = Areas::all();
-       /*  $datos = DB::select('select * from areas'); */
-        return view('admin.usuarios.create', compact('areas'));
+        $user = new User();
+        $areas = Areas::Pluck('nombre_area', 'id');
+        $roles = Roles::Pluck('nombre_rol', 'id');
+      
+        return view('admin.usuarios.create', compact('user', 'areas', 'roles'));
     }
 
     /**
@@ -68,7 +71,8 @@ class AdminController extends Controller
     
     public function edit($id)
     {
-         $areas = Areas::all();
+        $areas = Areas::Pluck('nombre_area', 'id');
+        $roles = Roles::Pluck('nombre_rol', 'id');
         $user = User::findOrFail($id);
         return view('admin.usuarios.edit', compact('user', 'areas'));
     }

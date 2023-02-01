@@ -59,8 +59,8 @@
             <td>{{ $user["id"] }}</td>
             <td>{{ $user["name"] }}</td>
             <td>{{ $user["email"] }}</td>
-            <td>{{ $user["area"] }}</td>
-            <td>{{ $user["role"] }}</td>
+            <td>{{ $user->area->nombre_area }}</td>
+            <td>{{ $user->role->nombre_rol }}</td>
 
             <td>
                 
