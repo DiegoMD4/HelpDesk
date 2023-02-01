@@ -74,7 +74,7 @@ class AdminController extends Controller
         $areas = Areas::Pluck('nombre_area', 'id');
         $roles = Roles::Pluck('nombre_rol', 'id');
         $user = User::findOrFail($id);
-        return view('admin.usuarios.edit', compact('user', 'areas'));
+        return view('admin.usuarios.edit', compact('user', 'areas', 'roles'));
     }
 
     public function update(Request $request, $id)

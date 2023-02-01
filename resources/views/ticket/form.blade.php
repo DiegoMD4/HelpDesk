@@ -21,7 +21,7 @@
         
     <label for="area"> Area </label>
         <input readonly ="true" class="form-control" type="text" name="area" 
-        value="{{Auth::user()->area }}" id="area">
+        value="{{Auth::user()->area->nombre_area }}" id="area">
 
 <br>
         <input  class="btn btn-primary" type="submit" value="{{$modo}} Ticket">

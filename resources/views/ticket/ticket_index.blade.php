@@ -62,9 +62,9 @@
                            {{--  <td>{{ $ticket["id"] }}</td> --}}
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket["nombre_usuario"] }}</td>
-                            <td>{{ $ticket["estado"] }}</td>
+                            <td>{{ $ticket->estado->tipo_estado}}</td>
                             <td>{{ $ticket["tecnico_asignado"] }}</td>
-                            <td>{{ $ticket["area"] }}</td>
+                            <td>{{ $ticket->user->area->nombre_area}}</td>
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>
                 

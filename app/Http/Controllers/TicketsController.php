@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estados;
 use App\Models\Tickets;
 use Illuminate\Contracts\View\View as ViewContract; 
 use Illuminate\Http\Request;
@@ -16,9 +17,10 @@ class TicketsController extends Controller
      */
     public function index() : ViewContract
     {
+        
         $tickets = Tickets::paginate();
-       /*  $datos['tickets'] = Tickets::paginate(10); */
-        return view('ticket.ticket_index', compact('tickets'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());;
+        $estados = Estados::Pluck('tipo_estado', 'id');
+        return view('ticket.ticket_index', compact('tickets', 'estados'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());;
     }
 
     /**
@@ -42,7 +44,6 @@ class TicketsController extends Controller
     {
 
         $campos_requeridos = [
-            'nombre_usuario'=>'required|string|max:250',
             'descripcion'=>'required|string|max:800',
           
         ];
@@ -95,7 +96,6 @@ class TicketsController extends Controller
     
     {
         $campos_requeridos = [
-            'nombre_usuario'=>'required|string|max:250',
             'descripcion'=>'required|string|max:800',
            
         ];
