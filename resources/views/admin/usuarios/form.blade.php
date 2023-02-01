@@ -24,12 +24,12 @@
 
     <div class="form-group">
         {{ Form::label('id_area') }}
-        {{ Form::select('id_area', $areas, $user->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
+        {{ Form::select('id_area', $areas, $user->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione un area']) }}
         {!! $errors->first('id_area', '<div class="invalid-feedback">:message</div>') !!}
     </div>
     <div class="form-group">
         {{ Form::label('id_rol') }}
-        {{ Form::select('id_rol', $roles, $user->id_rol, ['class' => 'form-control' . ($errors->has('id_rol') ? ' is-invalid' : ''), 'placeholder' => 'Id Rol']) }}
+        {{ Form::select('id_rol', $roles, $user->id_rol, ['class' => 'form-control' . ($errors->has('id_rol') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione un Rol']) }}
         {!! $errors->first('id_rol', '<div class="invalid-feedback">:message</div>') !!}
     </div> 
     
