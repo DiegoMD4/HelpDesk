@@ -19,8 +19,7 @@
 <strong>{{ $message }}</strong>
 </span>
 @enderror
-{{-- <label for="area">Area</label>
-    <input  class="form-control" type="text" name="area"  id="area" value="{{ isset($user["area"])?$user["area"]:'' }}" required> --}}
+
 
     <div class="form-group">
         {{ Form::label('id_area') }}
