@@ -10,3 +10,6 @@ Command to integrate ui from bootstrap: php artisan ui bootstrap --auth & use np
 php artisan make:model -mcr
 On development must be running apache server, php artisan serve and npm run dev
 
+$users = new User();
+        $areas = Areas::Pluck('nombre_area', 'id');
+        return view('auth.register', compact('users', 'areas'));
