@@ -6,6 +6,7 @@ use App\Models\Estados;
 use App\Models\Tickets;
 use Illuminate\Contracts\View\View as ViewContract; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class TicketsController extends Controller
@@ -17,8 +18,8 @@ class TicketsController extends Controller
      */
     public function index() : ViewContract
     {
-        
-        $tickets = Tickets::paginate();
+        /* $tickets = DB::table('tickets', 'users')->where('id_usuario', '=', 'users.id')->paginate(); */ 
+         $tickets = Tickets::paginate(); 
         $estados = Estados::Pluck('tipo_estado', 'id');
         return view('ticket.ticket_index', compact('tickets', 'estados'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());;
     }

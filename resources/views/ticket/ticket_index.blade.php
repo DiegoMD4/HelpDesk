@@ -54,9 +54,9 @@
                      </thead>
 
                 <tbody>
-        @foreach( $tickets as $ticket)
-       {{--  @if($results = DB::select('select * from tickets where nombre_usuario = ?', array(Auth::user()->name))) --}}
-        @if($ticket->user->name == Auth::user()->name)
+        @forelse( $tickets as $ticket)
+      
+       @if($ticket->user->name == Auth::user()->name)
                             <tr>
                                 <td>{{ ++$i }}</td>
                            {{--  <td>{{ $ticket["id"] }}</td> --}}
@@ -78,10 +78,13 @@
                 </form>
                 |
                 <a class="btn btn-info" href= "{{ route('ticket.show',$ticket->id) }}">Ver</a>
-            @endif
+           @endif
                             </td>
                             </tr>
-            @endforeach
+                            @empty 
+                            
+                            
+            @endforelse
                 </tbody>
 
                 </table>
