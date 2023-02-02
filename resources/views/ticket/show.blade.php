@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $ticket->estado }}
+                            {{ $ticket->estado->tipo_estado }}
                         </div>
                         <div class="form-group">
                             <strong>Area:</strong>

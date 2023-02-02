@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_usuario');
-            $table->text('descripcion');
 
-            $table->unsignedBigInteger('area');
-            $table->foreign('area')->references('id_area')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('id_usuario')->default(1);
+            $table->foreign('id_usuario')->references('id')->on('users')->onDelete('cascade');
+
+            $table->text('descripcion');
 
             $table->unsignedBigInteger('id_estado')->default(1);
             $table->foreign('id_estado')->references('id')->on('estados')->onDelete('cascade');

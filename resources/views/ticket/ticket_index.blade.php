@@ -56,12 +56,12 @@
                 <tbody>
         @foreach( $tickets as $ticket)
        {{--  @if($results = DB::select('select * from tickets where nombre_usuario = ?', array(Auth::user()->name))) --}}
-        @if($ticket["nombre_usuario"] == Auth::user()->name)
+        @if($ticket->user->name == Auth::user()->name)
                             <tr>
                                 <td>{{ ++$i }}</td>
                            {{--  <td>{{ $ticket["id"] }}</td> --}}
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
-                            <td>{{ $ticket["nombre_usuario"] }}</td>
+                            <td>{{ $ticket->user->name}}</td>
                             <td>{{ $ticket->estado->tipo_estado}}</td>
                             <td>{{ $ticket["tecnico_asignado"] }}</td>
                             <td>{{ $ticket->user->area->nombre_area}}</td>

@@ -9,11 +9,8 @@ class Tickets extends Model
 {
     
     static $rules = [
-		'nombre_usuario' => 'required',
 		'descripcion' => 'required',
-		'area' => 'required',
-		'estado' => 'required',
-		'tecnico_asignado' => 'required',
+
     ];
 
     protected $perPage = 20;
@@ -23,7 +20,7 @@ class Tickets extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre_usuario','descripcion','area','estado','tecnico_asignado'];
+    protected $fillable = ['descripcion'];
 
 
     /**
@@ -39,7 +36,7 @@ class Tickets extends Model
      */
     public function user()
     {
-        return $this->hasOne('App\Models\User', 'id_area', 'area');
+        return $this->hasOne('App\Models\User', 'id', 'id_usuario');
     }
 
     

@@ -30,6 +30,7 @@ class TicketsController extends Controller
      */
     public function create() : ViewContract
     {
+        
         return view('ticket.create');
         
     }
