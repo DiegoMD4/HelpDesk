@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Areas;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -23,6 +24,13 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
+    public function showRegistrationForm()
+    {
+        $users = new User();
+        $areas = Areas::Pluck('nombre_area', 'id');
+        return view('auth.register', compact('users', 'areas'));
+    }
 
     /**
      * Where to redirect users after registration.
