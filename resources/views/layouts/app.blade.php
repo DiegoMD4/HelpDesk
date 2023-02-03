@@ -79,6 +79,13 @@
                                         {{ __('Panel de Administrador') }}
                                     </a>
                                     @endif
+                                    @if(Auth()->check() && auth()->user()->id_rol == '2')
+                                    
+                                    <a class="dropdown-item" href="{{url('/tecnico')}}">
+                                        {{ __('Panel de Tecnico') }}
+                                    </a>
+                                    @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -21,7 +21,7 @@ class TicketsController extends Controller
         /* $tickets = DB::table('tickets', 'users')->where('id_usuario', '=', 'users.id')->paginate(); */ 
          $tickets = Tickets::paginate(); 
         $estados = Estados::Pluck('tipo_estado', 'id');
-        return view('ticket.ticket_index', compact('tickets', 'estados'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());;
+        return view('ticket.ticket_index', compact('tickets', 'estados'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());
     }
 
     /**

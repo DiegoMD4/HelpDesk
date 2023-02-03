@@ -73,14 +73,12 @@
 
         <!-- Sidebar -->
         <div class=" border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">HelpDesk Admin</div>
+        <div class="sidebar-heading">HelpDesk Tecnico</div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Bandeja de entrada</a>
-            <a href="{{url('/admin')}}" class="list-group-item list-group-item-action ">Usuarios</a>
-            <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">Areas</a>
-            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">Roles</a>
+            <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action bg-light">Bandeja de entrada</a>
+            <a href="#" class="list-group-item list-group-item-action ">Usuarios</a>
+            <a href="#" class="list-group-item list-group-item-action ">Areas</a> 
             <a href="#" class="list-group-item list-group-item-action bg-light">Estados</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Ver Calificaciones</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -120,7 +118,7 @@
 
         <div class="container-fluid">
             <main class="py-4;">
-                @yield('content1')
+                @yield('content2')
             </main>
         </div>
         </div>
