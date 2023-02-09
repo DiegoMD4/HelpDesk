@@ -82,7 +82,7 @@
                                     @if(Auth()->check() && auth()->user()->id_rol == '2')
                                     
                                     <a class="dropdown-item" href="{{url('/tecnico')}}">
-                                        {{ __('Panel de Tecnico') }}
+                                        {{ __('Panel de Técnico') }}
                                     </a>
                                     @endif
 

@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Area:</strong>
-                            {{ $ticket->area }}
+                            {{ $ticket->user->area->nombre_area }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha de envio:</strong>
