@@ -36,7 +36,7 @@
             
 <br/>
             <table class="table table-hover  {{-- table-bordered --}} table-responsive-xl ">
-                <caption style="max-width: 50%">Lista de tickets enviados por {{Auth::user()->name}}</caption>
+                <caption style="max-width: 50%">Tickets recibidos recientemente</caption>
                     <thead class="table-dark">
                         <tr>
                         {{-- <th>#id_ticket</th> --}}
@@ -54,7 +54,6 @@
                 <tbody>
         @forelse( $tickets as $ticket)
       
-       @if($ticket->user->name == Auth::user()->name)
                             <tr>
                                 <td>{{ ++$i }}</td>
                            {{--  <td>{{ $ticket["id"] }}</td> --}}
@@ -76,7 +75,6 @@
                 </form>
                 |
                 <a class="btn btn-info" href= "{{ route('tecnico.show',$ticket->id) }}">Ver</a>
-           @endif
                             </td>
                             </tr>
                             @empty 

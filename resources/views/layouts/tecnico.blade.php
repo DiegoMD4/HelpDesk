@@ -75,10 +75,10 @@
         <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">HelpDesk Técnico</div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action bg-light">Bandeja de entrada</a>
+            <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">Bandeja de entrada</a>
             <a href="#" class="list-group-item list-group-item-action ">Usuarios</a>
             <a href="#" class="list-group-item list-group-item-action ">Areas</a> 
-            <a href="#" class="list-group-item list-group-item-action bg-light">Estados</a>
+            <a href="#" class="list-group-item list-group-item-action">Estados</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->

@@ -75,12 +75,11 @@
         <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">HelpDesk Admin</div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Bandeja de entrada</a>
             <a href="{{url('/admin')}}" class="list-group-item list-group-item-action ">Usuarios</a>
             <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">Areas</a>
             <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">Roles</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Estados</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Ver Calificaciones</a>
+            <a href="{{url('/estados')}}" class="list-group-item list-group-item-action">Estados</a>
+            <a href="#" class="list-group-item list-group-item-action">Ver Calificaciones</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->

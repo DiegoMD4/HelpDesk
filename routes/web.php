@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AreasController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\TecnicoController;
+use App\Http\Controllers\EstadosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ route::resource('ticket', TicketsController::class)->middleware('auth');
 route::resource('admin', AdminController::class)->middleware('auth.admin');
 route::resource('areas', AreasController::class)->middleware('auth.admin');
 route::resource('roles', RolesController::class)->middleware('auth.admin');
+route::resource('estados', EstadosController::class)->middleware('auth.admin');
 route::resource('tecnico', TecnicoController::class)->middleware('auth.tecnico');
 
 
@@ -37,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [TicketsController::class, 'index'])->name('ticket.index');
 });
 
+
+
 Route::middleware('auth.admin')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
@@ -46,6 +50,12 @@ Route::middleware('auth.admin')->group(function () {
 Route::middleware('auth.admin')->group(function () {
     Route::get('/roles', [RolesController::class, 'index'])->name('admin.roles.index');
 });
+Route::middleware('auth.admin')->group(function () {
+    Route::get('/estados', [EstadosController::class, 'index'])->name('admin.estados.index');
+});
+
+
+
 Route::middleware('auth.tecnico')->group(function () {
     Route::get('/tecnico', [TecnicoController::class, 'index'])->name('tecnico.index');
 });
