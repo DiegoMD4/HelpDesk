@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 @section('content1')
+
 <div class="container" style="margin-top: 90px;  max-width: 90%; "> 
-
-
 <div>
 <h1 style = "float: left">Listado de Estados</h1> 
 

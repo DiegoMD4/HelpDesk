@@ -2,34 +2,6 @@
 
 @section('content2')
 <div class="container-fluid" style="margin-top: 90px;  max-width: 90%; "> 
-
-    {{-- alerta --}}
-    {{--  <script src=
-    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
-    </script>
-    <script type="text/javascript">
-        setTimeout(function () {
-            $('#alert').alert('close');
-        }, 1325);
-    </script> 
-
-    @if(Session::has('mensaje'))
-        <div id="alert" class="toast alert-dismissible fade show position-fixed bottom-0 end-0 p-3;
-     width: 590px" role="alert" style="z-index: 11; margin: 60px; float: left;">
-            <div class="d-flex">
-                <div class="toast-header">
-                    <strong class="me-auto">Notificación</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                        <div class="toast-body">
-                        {{Session::get('mensaje')}}
-                </div>
-            </div>
-        </div>
-    @endif --}}
-    {{-- alerta --}}
-
-
 <div class="card">
         <div class="card-header">
             <h1 style = "float: left">Bandeja de entrada</h1> 
