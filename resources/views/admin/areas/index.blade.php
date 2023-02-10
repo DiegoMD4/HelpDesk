@@ -29,7 +29,7 @@
 
 
 <div>
-<h1 style = "float: left">Listado de areas</h1> 
+<h1 style = "float: left">Listado de Areas</h1> 
 
 <form class="d-flex">
         <a style="margin-left: 65%;" href="{{ url('/areas/create')}}"  class="btn btn-primary" type="submit">Nueva Area</a>

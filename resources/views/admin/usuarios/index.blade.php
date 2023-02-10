@@ -29,7 +29,7 @@
 
 
 <div>
-<h1 style = "float: left">Listado de usuarios</h1> 
+<h1 style = "float: left">Listado de Usuarios</h1> 
 
     <form class="d-flex">
     <a style="float: right; margin-left: 65%;" href="{{ url('/admin/create')}}"  class="btn btn-primary" type="submit">Crear Usuario</a>
