@@ -4,9 +4,7 @@
 <div class="container-fluid" style="margin-top: 90px;  max-width: 90%; "> 
 
     {{-- alerta --}}
-     <script src=
-    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
-    </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script type="text/javascript">
         setTimeout(function () {
             $('#alert').alert('close');

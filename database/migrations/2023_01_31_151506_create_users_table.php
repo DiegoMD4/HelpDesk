@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->unsignedBigInteger('id_area');
             $table->foreign('id_area')->references('id')->on('areas')->onDelete('cascade');
-            $table->unsignedBigInteger('id_rol')->default(1);
+            $table->unsignedBigInteger('id_rol')->default(3);
             $table->foreign('id_rol')->references('id')->on('roles')->onDelete('cascade');
 
             $table->timestamp('email_verified_at')->nullable();
