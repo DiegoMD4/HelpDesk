@@ -36,10 +36,7 @@
                     @auth
                     <div class="btn-group">
                         <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
-                        <a href="{{url('/ticket/pendiente')}}" class="btn btn-dark">Pendientes</a>
-                        {{-- @if(auth()->user()->role == 'admin')
-                        <a href="{{url('/admin')}}" class="btn btn-dark">Vista Administrador</a>
-                        @endif --}}
+                        <a href="{{url('/pendiente')}}" class="btn btn-dark">Pendientes</a>
                       </div>
 
                       <div class="container-fluid" style="width: 28%; float: right">

@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TicketsController;
-use Symfony\Component\Routing\Router;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AreasController;
 use App\Http\Controllers\RolesController;
@@ -37,11 +36,14 @@ Auth::routes(['reset'=>false]);
 
 Route::middleware('auth')->group(function () {    
     Route::get('/', [TicketsController::class, 'index'])->name('ticket.index');
+    
+    Route::get('/pendiente', [TicketsController::class, 'pendiente'])->name('ticket.pendiente');
+
 });
 
 
 
-Route::middleware('auth.admin')->group(function () {
+/* Route::middleware('auth.admin')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
 Route::middleware('auth.admin')->group(function () {
@@ -58,4 +60,4 @@ Route::middleware('auth.admin')->group(function () {
 
 Route::middleware('auth.tecnico')->group(function () {
     Route::get('/tecnico', [TecnicoController::class, 'index'])->name('tecnico.index');
-});
+}); */

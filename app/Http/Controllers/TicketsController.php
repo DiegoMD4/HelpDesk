@@ -19,13 +19,14 @@ class TicketsController extends Controller
     public function index() : ViewContract
     {
         /* $tickets = DB::table('tickets', 'users')->where('id_usuario', '=', 'users.id')->paginate(); */ 
-         $tickets = Tickets::paginate(); 
+        $tickets = Tickets::paginate(); 
         $estados = Estados::Pluck('tipo_estado', 'id');
         return view('ticket.ticket_index', compact('tickets', 'estados'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());
     }
 
 
-    public function pendiente(): ViewContract{
+    public function pendiente() : ViewContract{
+        $tickets = Tickets::paginate();
         return view('ticket.pendiente', compact('tickets'));
     }
 

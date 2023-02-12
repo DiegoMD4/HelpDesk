@@ -30,7 +30,7 @@
 
 <div class="card">
         <div class="card-header">
-            <h1 style = "float: left">Historial</h1> 
+            <h1 style = "float: left">Tickets Pendientes</h1> 
             <form class="d-flex">
             <a style="margin-left: 80%; " href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">+ Nuevo Ticket</a>
         </form>
@@ -54,10 +54,10 @@
                 <tbody>
         @forelse( $tickets as $ticket)
       
-       @if($ticket->user->name == Auth::user()->name)
+       @if($ticket->id_estado == 1 && $ticket->user->name == Auth::user()->name)
                             <tr>
-                                <td>{{ ++$i }}</td>
-                           {{--  <td>{{ $ticket["id"] }}</td> --}}
+                                
+                            <td>{{ $ticket["id"] }}</td>
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket->user->name}}</td>
                             <td>{{ $ticket->estado->tipo_estado}}</td>
@@ -74,8 +74,6 @@
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
                 </form>
-                |
-                <a class="btn btn-info" href= "{{ route('ticket.show',$ticket->id) }}">Ver</a>
            @endif
                             </td>
                             </tr>
