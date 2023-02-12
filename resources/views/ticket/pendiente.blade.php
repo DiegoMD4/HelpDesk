@@ -32,7 +32,6 @@
         <div class="card-header">
             <h1 style = "float: left">Tickets Pendientes</h1> 
             <form class="d-flex">
-            <a style="margin-left: 80%; " href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">+ Nuevo Ticket</a>
         </form>
 <br/>
             <table class="table table-hover  {{-- table-bordered --}} table-responsive-xl ">
@@ -40,7 +39,7 @@
                     <thead class="table-dark">
                         <tr>
                         {{-- <th>#id_ticket</th> --}}
-                        <th>#</th>
+                        <th>#id de ticket</th>
                         <th>Descripcion</th>
                         <th>Nombre de Usuario</th>
                         <th>Estado</th>

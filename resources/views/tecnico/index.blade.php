@@ -25,7 +25,7 @@
 
                 <tbody>
         @forelse( $tickets as $ticket)
-      
+                @if($ticket->id_estado == 1)
                             <tr>
                                 <td>{{ ++$i }}</td>
                            {{--  <td>{{ $ticket["id"] }}</td> --}}
@@ -37,8 +37,6 @@
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>
                 
-                <a class="btn btn-warning" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}">Editar</a>
-                |
                 <form action="{{ url('/tecnico/'.$ticket["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
@@ -49,9 +47,8 @@
                 <a class="btn btn-info" href= "{{ route('tecnico.show',$ticket->id) }}">Ver</a>
                             </td>
                             </tr>
-                            @empty 
-                            
-                            
+                            @endif
+                    @empty       
             @endforelse
                 </tbody>
 
