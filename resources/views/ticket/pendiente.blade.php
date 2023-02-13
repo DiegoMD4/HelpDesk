@@ -53,7 +53,7 @@
                 <tbody>
         @forelse( $tickets as $ticket)
       
-       @if($ticket->id_estado == 1 && $ticket->user->name == Auth::user()->name)
+       @if(($ticket->id_estado == 3|| $ticket->id_estado == 1) && $ticket->user->name == Auth::user()->name)
                             <tr>
                                 
                             <td>{{ $ticket["id"] }}</td>

@@ -101,7 +101,10 @@ class TecnicoController extends Controller
         return redirect('tecnico')->with('mensaje', 'Elemento borrado');
     }
 
-    
+    public function aceptado() : ViewContract{
+        $tickets = Tickets::paginate();
+        return view('tecnico.aceptado', compact('tickets'));
+    }
 
     
 }

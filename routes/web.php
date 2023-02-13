@@ -54,10 +54,10 @@ Route::middleware('auth.admin')->group(function () {
 });
 Route::middleware('auth.admin')->group(function () {
     Route::get('/estados', [EstadosController::class, 'index'])->name('admin.estados.index');
-});
+}); */
 
 
 
 Route::middleware('auth.tecnico')->group(function () {
-    Route::get('/tecnico', [TecnicoController::class, 'index'])->name('tecnico.index');
-}); */
+    Route::get('/aceptado', [TecnicoController::class, 'aceptado'])->name('tecnico.aceptado');
+}); 
