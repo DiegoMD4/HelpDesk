@@ -30,14 +30,14 @@
     {{-- alerta --}}
 
 
-<div class="card">
+<div class="card table-responsive-xxl">
         <div class="card-header">
             <h1 style = "float: left">Historial</h1> 
             <form class="d-flex">
             <a style="margin-left: 80%; " href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">+ Nuevo Ticket</a>
         </form>
 <br/>
-            <table class="table table-hover  {{-- table-bordered --}} table-responsive-xl ">
+            <table class="table table-hover  {{-- table-bordered --}}  ">
                 <caption style="max-width: 50%">Lista de tickets enviados por {{Auth::user()->name}}</caption>
                     <thead class="table-dark">
                         <tr>

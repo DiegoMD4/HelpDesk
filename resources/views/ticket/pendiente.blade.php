@@ -30,7 +30,7 @@
 
 <div class="card">
         <div class="card-header">
-            <h1 style = "float: left">Tickets Pendientes</h1> 
+            <h1 style = "float: left">Tickets enviados</h1> 
             <form class="d-flex">
         </form>
 <br/>
