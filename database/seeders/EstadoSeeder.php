@@ -22,5 +22,9 @@ class EstadoSeeder extends Seeder
         $estado2 = new Estados;
         $estado2->tipo_estado = "Cerrado";
         $estado2->save();
+
+        $estado3 = new Estados;
+        $estado3->tipo_estado = "Aceptado";
+        $estado3->save();
     }
 }
