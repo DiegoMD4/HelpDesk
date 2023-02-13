@@ -1,32 +1,32 @@
-@if(count($errors)>0)
-
-
-<div class="alert alert-danger d-flex align-items-center" role="alert">
-   
-    <div>
-    @foreach($errors->all() as $error) 
-      <li>  {{ $error }} </li>
-    @endforeach
-    </div>
-</div>
-@endif
-
-    <label  for="descripcion"> Descripcion </label>
-        <textarea style="resize: none" rows="8" class="form-control" type="text" name="descripcion" 
-         id="decripcion" required>{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}</textarea> 
-
-    <label for="nombre_usuario"> Id de usuario: </label>
-        <input readonly="true" class="form-control-plaintext" type="text" name="id_usuario" value="{{ Auth::user()->id}}" id="id_usuario">
-
-        <label > Nombre de usuario: </label>
-        <label >{{ Auth::user()->name}}</label>
+<div class="card-body">
+        <div class="form-group">
+            <strong>id de ticket:</strong>
+            {{ $ticket->id}}
+        </div>
+        <div class="form-group">
+            <strong>Descripcion:</strong>
+            {{ $ticket->descripcion }}
+        </div>
+        <div class="form-group">
+            <strong>Estado:</strong>
+            {{ $ticket->estado->tipo_estado }}
+        </div>
+        <div class="form-group">
+            <strong>Area:</strong>
+            {{ $ticket->user->area->nombre_area }}
+        </div>
+        <div class="form-group">
+            <strong>Fecha de envio:</strong>
+            {{ $ticket->created_at }}
+        </div>
         
-    {{-- <label for="area"> Area </label>
-        <input readonly ="true" class="form-control" type="text" name="area" 
-        value="{{Auth::user()->area->nombre_area}}" id="area"> --}}
+        <input type="hidden" name="id_estado" value="3" id="id_estado">
 
 
 <br>
         <input  class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
 
         <a class="btn btn-secondary" href="{{ url('/tecnico') }}">Atrás</a>
+
+
+</div>

@@ -77,7 +77,7 @@ class TecnicoController extends Controller
 
     public function update(Request $request, $id)
     {
-        $campos_requeridos = [
+        /* $campos_requeridos = [
             'descripcion'=>'required|string|max:800',
            
         ];
@@ -85,7 +85,7 @@ class TecnicoController extends Controller
              'required'=>' :attribute no puede quedar vacío'
         ];
 
-        $this->validate($request, $campos_requeridos, $alert);
+        $this->validate($request, $campos_requeridos, $alert); */
 
         $datos_ticket = request()->except(['_token', '_method']);
         Tickets::where('id','=',$id)->update($datos_ticket);
@@ -100,6 +100,8 @@ class TecnicoController extends Controller
         User::destroy($id);
         return redirect('tecnico')->with('mensaje', 'Elemento borrado');
     }
+
+    
 
     
 }

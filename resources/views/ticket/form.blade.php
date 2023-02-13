@@ -20,13 +20,9 @@
 
         <label > Nombre de usuario: </label>
         <label >{{ Auth::user()->name}}</label>
-        
-    {{-- <label for="area"> Area </label>
-        <input readonly ="true" class="form-control" type="text" name="area" 
-        value="{{Auth::user()->area->nombre_area}}" id="area"> --}}
-
+    
 
 <br>
-        <input  class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
+        <input class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
 
         <a class="btn btn-secondary" href="{{ url('/ticket') }}">Atrás</a>

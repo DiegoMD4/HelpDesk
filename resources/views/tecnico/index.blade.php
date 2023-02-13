@@ -41,10 +41,11 @@
                     @csrf
                     {{ method_field('DELETE') }}
                   
-                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
+                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
                 </form>
                 |
-                <a class="btn btn-info" href= "{{ route('tecnico.show',$ticket->id) }}">Ver</a>
+                <a class="btn btn-info" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}">Ver detalles</a>
+                 
                             </td>
                             </tr>
                             @endif

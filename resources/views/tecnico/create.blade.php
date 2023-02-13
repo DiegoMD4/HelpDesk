@@ -1,4 +1,4 @@
-@extends('layouts.tecnico')
+{{-- @extends('layouts.tecnico')
 
 @section('content2')
 <div class="container" style="margin-top: 90px;"> 
@@ -14,4 +14,4 @@
 
 </div>
 
-@endsection
+@endsection --}}

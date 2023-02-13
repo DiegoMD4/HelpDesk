@@ -87,7 +87,7 @@
         <div id="page-content-wrapper">
 
         <nav class="navbar navbar-expand-lg border-bottom bg-dark navbar-dark">
-            <button class="btn btn-primary" id="menu-toggle">Menu</button>
+            <button class="btn btn-dark" id="menu-toggle">Menu</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -100,6 +100,9 @@
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="{{url('/ticket')}}">Regresar a vista de usuario</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/ticket')}}">Tickets Aceptados</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
