@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Areas;
 use App\Models\Roles;
+use App\Models\Tickets;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
@@ -103,5 +104,9 @@ class AdminController extends Controller
         return redirect('admin')->with('mensaje', 'Elemento borrado');
     }
 
+    public function entrada() : ViewContract{
+        $tickets = Tickets::paginate();
+        return view('admin.entrada', compact('tickets'));
+    }
     
 }

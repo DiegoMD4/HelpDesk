@@ -43,9 +43,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-/* Route::middleware('auth.admin')->group(function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-});
+/*
 Route::middleware('auth.admin')->group(function () {
     Route::get('/areas', [AreasController::class, 'index'])->name('admin.areas.index');
 });
@@ -61,3 +59,6 @@ Route::middleware('auth.admin')->group(function () {
 Route::middleware('auth.tecnico')->group(function () {
     Route::get('/aceptado', [TecnicoController::class, 'aceptado'])->name('tecnico.aceptado');
 }); 
+Route::middleware('auth.admin')->group(function () {
+    Route::get('/entrada', [AdminController::class, 'entrada'])->name('admin.entrada');
+});
