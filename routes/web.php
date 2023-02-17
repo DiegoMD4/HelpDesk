@@ -7,6 +7,7 @@ use App\Http\Controllers\AreasController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\TecnicoController;
 use App\Http\Controllers\EstadosController;
+use App\Http\Controllers\EntradaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,5 +61,5 @@ Route::middleware('auth.tecnico')->group(function () {
     Route::get('/aceptado', [TecnicoController::class, 'aceptado'])->name('tecnico.aceptado');
 }); 
 Route::middleware('auth.admin')->group(function () {
-    Route::get('/entrada', [AdminController::class, 'entrada'])->name('admin.entrada');
+    Route::get('/entrada', [EntradaController::class, 'entrada'])->name('Entrada.entrada');
 });

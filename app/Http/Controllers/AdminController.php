@@ -104,9 +104,9 @@ class AdminController extends Controller
         return redirect('admin')->with('mensaje', 'Elemento borrado');
     }
 
-    public function entrada() : ViewContract{
-        $tickets = Tickets::paginate();
-        return view('admin.entrada', compact('tickets'));
-    }
+   
+    
+
+
     
 }

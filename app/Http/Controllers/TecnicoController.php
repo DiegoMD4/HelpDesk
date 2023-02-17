@@ -75,17 +75,9 @@ class TecnicoController extends Controller
         return view('tecnico.edit', compact('ticket'));
     }
 
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        /* $campos_requeridos = [
-            'descripcion'=>'required|string|max:800',
-           
-        ];
-        $alert = [
-             'required'=>' :attribute no puede quedar vacío'
-        ];
-
-        $this->validate($request, $campos_requeridos, $alert); */
+       
 
         $datos_ticket = request()->except(['_token', '_method']);
         Tickets::where('id','=',$id)->update($datos_ticket);

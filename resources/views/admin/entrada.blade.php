@@ -44,7 +44,7 @@
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
                 </form>
                 |
-                <a class="btn btn-info" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}">Ver detalles</a>
+                <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Ver detalles</a>
                  
                             </td>
                             </tr>
