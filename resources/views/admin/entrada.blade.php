@@ -37,7 +37,7 @@
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>
                 
-                <form action="{{ url('/tecnico/'.$ticket["id"]) }}" class="d-inline" method="POST">
+                <form action="{{ url('/entrada/'.$ticket["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
                   

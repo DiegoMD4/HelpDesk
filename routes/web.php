@@ -61,5 +61,5 @@ Route::middleware('auth.tecnico')->group(function () {
     Route::get('/aceptado', [TecnicoController::class, 'aceptado'])->name('tecnico.aceptado');
 }); 
 Route::middleware('auth.admin')->group(function () {
-    Route::get('/entrada', [EntradaController::class, 'entrada'])->name('Entrada.entrada');
+    Route::get('/entrada', [EntradaController::class, 'entrada'])->name('admin.entrada');
 });

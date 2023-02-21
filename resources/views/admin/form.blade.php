@@ -26,7 +26,7 @@
 <br>
         <input  class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
 
-        <a class="btn btn-secondary" href="{{ url('/tecnico') }}">Atrás</a>
+        <a class="btn btn-secondary" href="{{ url('/entrada') }}">Atrás</a>
 
 
 </div>
