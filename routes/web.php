@@ -29,6 +29,7 @@ route::resource('admin', AdminController::class)->middleware('auth.admin');
 route::resource('areas', AreasController::class)->middleware('auth.admin');
 route::resource('roles', RolesController::class)->middleware('auth.admin');
 route::resource('estados', EstadosController::class)->middleware('auth.admin');
+route::resource('entrada', EntradaController::class)->middleware('auth.admin');
 route::resource('tecnico', TecnicoController::class)->middleware('auth.tecnico');
 
 
