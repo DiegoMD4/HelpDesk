@@ -75,8 +75,8 @@
         <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">HelpDesk Admin</div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action">Bandeja de Entrada</a>
             <a href="{{url('/admin')}}" class="list-group-item list-group-item-action ">Usuarios</a>
+            <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action">Bandeja de Entrada</a>
             <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">Areas</a>
             <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">Roles</a>
             <a href="{{url('/estados')}}" class="list-group-item list-group-item-action">Estados</a>
@@ -101,12 +101,12 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
                 <a class="nav-link" href="{{url('/ticket')}}">Regresar a vista de usuario</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/asignado')}}">Tickets asignados</a>
+                    </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{Auth::user()->name}}

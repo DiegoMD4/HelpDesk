@@ -21,6 +21,7 @@
         </div>
         
         <input type="hidden" name="id_estado" value="3" id="id_estado">
+        <input type="hidden" name="tecnico_asignado" value="{{Auth::user()->name}}" id="tecnico_asignado">
 
 
 <br>

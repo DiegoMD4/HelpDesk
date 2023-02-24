@@ -4,11 +4,11 @@
 <div class="container-fluid" style="margin-top: 90px;  max-width: 90%; "> 
 <div class="card">
         <div class="card-header">
-            <h1 style = "float: left">Bandeja de entrada</h1> 
+            <h1 style = "float: left">Tickets asignados</h1> 
             
 <br/>
             <table class="table table-hover  {{-- table-bordered --}} table-responsive-xl ">
-                <caption style="max-width: 50%">Tickets recibidos recientemente</caption>
+                <caption style="max-width: 50%">Tickets asignados recientemente</caption>
                     <thead class="table-dark">
                         <tr>
                         {{-- <th>#id_ticket</th> --}}
@@ -25,9 +25,9 @@
 
                 <tbody>
         @forelse( $tickets as $ticket)
-                @if($ticket->id_estado == 1)
+                @if($ticket->id_estado == 3)
                             <tr>
-                          
+
                             <td>{{ $ticket["id"] }}</td> 
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket->user->name}}</td>
@@ -37,14 +37,14 @@
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>
                 
-                <form action="{{ url('/entrada/'.$ticket["id"]) }}" class="d-inline" method="POST">
+                <form action="{{ url('/tecnico/'.$ticket["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
                 </form>
                 |
-                <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Asignar Ticket</a>
+                <a class="btn btn-info" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}">Ver detalles</a>
                  
                             </td>
                             </tr>

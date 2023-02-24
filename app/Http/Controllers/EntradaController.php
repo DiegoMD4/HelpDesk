@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Tickets;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class EntradaController extends Controller
@@ -42,7 +44,8 @@ class EntradaController extends Controller
     public function edit($id)
     {
         $ticket = Tickets::findOrFail($id);
-        return view('admin.edit', compact('ticket'));
+        $user = DB::table('users')->where('id_rol', '2')->Pluck('name', 'id');
+        return view('admin.edit', compact('ticket', 'user'));
     }
 
     public function update($id)
@@ -66,6 +69,11 @@ class EntradaController extends Controller
     public function entrada() : ViewContract{
         $tickets = Tickets::paginate();
         return view('admin.entrada', compact('tickets'));
+    }
+
+    public function asignado() : ViewContract{
+        $tickets = Tickets::paginate();
+        return view('admin.asignado', compact('tickets'));
     }
     
 }

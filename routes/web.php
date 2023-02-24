@@ -63,4 +63,5 @@ Route::middleware('auth.tecnico')->group(function () {
 }); 
 Route::middleware('auth.admin')->group(function () {
     Route::get('/entrada', [EntradaController::class, 'entrada'])->name('admin.entrada');
+    Route::get('/asignado', [EntradaController::class, 'asignado'])->name('admin.asignado');
 });
