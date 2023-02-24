@@ -44,13 +44,24 @@ class EntradaController extends Controller
     public function edit($id)
     {
         $ticket = Tickets::findOrFail($id);
-        $user = DB::table('users')->where('id_rol', '2')->Pluck('name', 'id');
+        $user = DB::table('users')->where('id_rol', '2');
         return view('admin.edit', compact('ticket', 'user'));
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
        
+
+        $campos_requeridos = [
+            'descripcion'=>'required|string|max:800',
+            'tecnico_asignado'=>'required|string|max:255',
+           
+        ];
+        $alert = [
+             'required'=>' Debe seleccionar tecnico'
+        ];
+
+        $this->validate($request, $campos_requeridos, $alert);
 
         $datos_ticket = request()->except(['_token', '_method']);
         Tickets::where('id','=',$id)->update($datos_ticket);

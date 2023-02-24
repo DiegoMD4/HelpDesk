@@ -105,6 +105,7 @@ class TicketsController extends Controller
     {
         $campos_requeridos = [
             'descripcion'=>'required|string|max:800',
+            'tecnico_asignado'=>'required|string|max:255',
            
         ];
         $alert = [

@@ -10,7 +10,7 @@ class Tickets extends Model
     
     static $rules = [
 		'descripcion' => 'required',
-
+        'tecnico_asignado' => 'required',
     ];
 
     protected $perPage = 20;
