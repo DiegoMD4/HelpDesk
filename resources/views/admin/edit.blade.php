@@ -9,7 +9,7 @@
 <form action="{{ url('/entrada/'.$ticket["id"]) }}" method="post" enctype="multipart/form-data">
     @csrf
     {{ method_field('PATCH') }}  
-    @include('admin.form', ['modo'=>'Aceptar'])
+    @include('admin.form', ['modo'=>'Asignar'])
     
 
 </form>

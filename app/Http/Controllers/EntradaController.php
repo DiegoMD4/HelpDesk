@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 class EntradaController extends Controller
 {
     
-    public function index(): ViewContract
+    /* public function index(): ViewContract
     {
 
     }
@@ -33,7 +33,7 @@ class EntradaController extends Controller
     {
        
     }
-
+ */
    
    /*  public function show($id)
     {
@@ -44,16 +44,15 @@ class EntradaController extends Controller
     public function edit($id)
     {
         $ticket = Tickets::findOrFail($id);
-        $user = DB::table('users')->where('id_rol', '2');
+        $user = User::where('id_rol', '2')->pluck('name', 'id');
         return view('admin.edit', compact('ticket', 'user'));
     }
 
     public function update(Request $request, $id)
     {
        
-
         $campos_requeridos = [
-            'descripcion'=>'required|string|max:800',
+            /* 'descripcion'=>'required|string|max:800', */
             'tecnico_asignado'=>'required|string|max:255',
            
         ];
@@ -67,7 +66,7 @@ class EntradaController extends Controller
         Tickets::where('id','=',$id)->update($datos_ticket);
 
         $ticket = Tickets::findOrFail($id);
-        return redirect('admin.entrada')->with('mensaje', 'Ticket Modificado');
+        return redirect('entrada')->with('mensaje', 'Ticket Modificado');
     }
 
     

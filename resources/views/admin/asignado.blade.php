@@ -7,7 +7,7 @@
             <h1 style = "float: left">Tickets asignados</h1> 
             
 <br/>
-            <table class="table table-hover  {{-- table-bordered --}} table-responsive-xl ">
+            <table class="table table-hover table-responsive-xl ">
                 <caption style="max-width: 50%">Tickets asignados recientemente</caption>
                     <thead class="table-dark">
                         <tr>
@@ -25,7 +25,7 @@
 
                 <tbody>
         @forelse( $tickets as $ticket)
-                @if($ticket->id_estado == 3)
+                @if($ticket->id_estado == 3 && ($ticket->tecnico_asignado != "Sin asignar"))
                             <tr>
 
                             <td>{{ $ticket["id"] }}</td> 

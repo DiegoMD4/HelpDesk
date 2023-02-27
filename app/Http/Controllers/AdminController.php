@@ -51,6 +51,8 @@ class AdminController extends Controller
         $request->validate([
            /*  'email' => ['required', 'email', 'unique:users', 'regex:/(.*)@chumbagua\.com$/i'], */
             'email' => ['required', 'email', 'unique:users'],
+            'id_area' => ['required', 'int'],
+            'id_rol' => ['required', 'int'],
         ]);
         $request->request->add([
            
@@ -83,6 +85,9 @@ class AdminController extends Controller
         $request->validate([
            /*  'email' => ['required', 'email', 'regex:/(.*)@chumbagua\.com$/i'], */
             'email' => ['required', 'email'],
+            'id_area' => ['required', 'int'],
+            'id_rol' => ['required', 'int'],
+
         ]);
         
         $request->merge([
