@@ -44,7 +44,7 @@ class EntradaController extends Controller
     public function edit($id)
     {
         $ticket = Tickets::findOrFail($id);
-        $user = User::where('id_rol', '2')->pluck('id', 'name');
+        $user = User::where('id_rol', '2')->pluck('name' , 'id');
         return view('admin.edit', compact('ticket', 'user'));
     }
 
@@ -73,7 +73,7 @@ class EntradaController extends Controller
     public function destroy($id)
     {
         Tickets::destroy($id);
-        return redirect('admin.entrada')->with('mensaje', 'Elemento borrado');
+        return redirect('asignado')->with('mensaje', 'Elemento borrado');
     }
 
     public function entrada() : ViewContract{

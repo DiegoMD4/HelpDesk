@@ -7,7 +7,7 @@
             <h1 style = "float: left">Tickets asignados</h1> 
             
 <br/>
-            <table class="table table-hover table-responsive-xl ">
+            <table class="table table-hover table-success table-responsive-xl ">
                 <caption style="max-width: 50%">Tickets asignados recientemente</caption>
                     <thead class="table-dark">
                         <tr>
@@ -37,14 +37,14 @@
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>
                 
-                <form action="{{ url('/tecnico/'.$ticket["id"]) }}" class="d-inline" method="POST">
+                <form action="{{ url('/entrada/'.$ticket["id"]) }}" class="d-inline" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
                   
                 <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
                 </form>
                 |
-                <a class="btn btn-info" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}">Ver detalles</a>
+                <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Ver detalles</a>
                  
                             </td>
                             </tr>
