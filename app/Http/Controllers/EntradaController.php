@@ -44,7 +44,7 @@ class EntradaController extends Controller
     public function edit($id)
     {
         $ticket = Tickets::findOrFail($id);
-        $user = User::where('id_rol', '2')->pluck('name', 'id');
+        $user = User::where('id_rol', '2')->pluck('id', 'name');
         return view('admin.edit', compact('ticket', 'user'));
     }
 
