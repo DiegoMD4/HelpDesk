@@ -27,7 +27,7 @@
         </div>  --}}
         <div class="form-group">
             <strong> {{ Form::label('Tecnico:') }} </strong>
-             {{ Form::select('tecnico_asignado',$user,$ticket->user, ['class' => 'form-control' . ($errors->has('tecnico_asignado') ? ' is-invalid' : ''), 'placeholder' => 'Asignar técnico']) }}
+             {{ Form::select('tecnico_asignado',$user,$ticket->$user, ['class' => 'form-control' . ($errors->has('tecnico_asignado') ? ' is-invalid' : ''), 'placeholder' => 'Asignar técnico']) }}
              {!! $errors->first('tecnico_asignado', '<div class="invalid-feedback">:message</div>') !!}
          </div> 
 

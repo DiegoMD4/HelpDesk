@@ -21,7 +21,7 @@
             <th>Correo</th>
             <th>Area</th>
             <th>Role</th>
-            <th>Opciones</th>
+            <th>Acción</th>
 
             
         </tr>

@@ -15,7 +15,7 @@
         <tr>
             <th>#id_area</th>
             <th>Area</th>
-            <th>Opciones</th>
+            <th>Acción</th>
         </tr>
     </thead>
 

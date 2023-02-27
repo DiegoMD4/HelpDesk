@@ -49,7 +49,7 @@
                         <th>Tecnico Asignado</th>
                         <th>Area</th>
                         <th>Fecha de envio</th>
-                        <th>Opciones</th>
+                        <th>Acción</th>
                         </tr>
                      </thead>
 

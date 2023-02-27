@@ -19,7 +19,7 @@
                         <th>Tecnico Asignado</th>
                         <th>Area</th>
                         <th>Fecha de envio</th>
-                        <th>Opciones</th>
+                        <th>Acción</th>
                         </tr>
                      </thead>
 
@@ -32,7 +32,7 @@
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket->user->name}}</td>
                             <td>{{ $ticket->estado->tipo_estado}}</td>
-                            <td>{{ $ticket["tecnico_asignado"] }}</td>
+                            <td>{{ $ticket->user->name }}</td>
                             <td>{{ $ticket->user->area->nombre_area}}</td>
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>

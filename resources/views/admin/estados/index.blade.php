@@ -17,7 +17,7 @@
         <tr>
             <th>#id_estados</th>
             <th>Estado</th>
-            <th>Opciones</th>
+            <th>Acción</th>
 
             
         </tr>

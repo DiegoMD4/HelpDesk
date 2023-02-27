@@ -14,7 +14,7 @@
         <tr>
             <th>#id_rol</th>
             <th>Rol</th>
-            <th>Opciones</th>
+            <th>Acción</th>
         </tr>
     </thead>
 
