@@ -75,11 +75,11 @@
         <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">HelpDesk Admin</div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/admin')}}" class="list-group-item list-group-item-action ">Usuarios</a>
+            <i class="fa-solid fa-users"></i><a href="{{url('/admin')}}" class="list-group-item list-group-item-action ">Usuarios</a>
             <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action">Bandeja de Entrada</a>
             <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">Areas</a>
-            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">Roles</a>
-            <a href="{{url('/estados')}}" class="list-group-item list-group-item-action">Estados</a>
+            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action "> Roles</a>
+            <a href="{{url('/estados')}}" class="list-group-item list-group-item-action"><i class="bi bi-arrow-up"></i> Estados</a>
             <a href="#" class="list-group-item list-group-item-action">Ver Calificaciones</a>
         </div>
         </div>
@@ -100,7 +100,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                <a class="nav-link" href="{{url('/ticket')}}">Regresar a vista de usuario</a>
+            
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/asignado')}}">Tickets asignados</a>
@@ -110,6 +110,7 @@
                     {{Auth::user()->name}}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{url('/ticket')}}">Regresar a vista de usuario</a>
                     <a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">Cerrar Sesión</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

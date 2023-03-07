@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreign('id_estado')->references('id')->on('estados')->onDelete('cascade');
 
              
-            $table->string('tecnico_asignado')->default('Sin asignar');
+            $table->string('tecnico_asignado')->default('Pendiente');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
             

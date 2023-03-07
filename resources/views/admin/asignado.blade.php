@@ -25,14 +25,14 @@
 
                 <tbody>
         @forelse( $tickets as $ticket)
-                @if($ticket->id_estado == 3 && ($ticket->tecnico_asignado != "Sin asignar"))
+                @if($ticket->id_estado == 3 && ($ticket->tecnico_asignado != "Pendiente"))
                             <tr>
 
                             <td>{{ $ticket["id"] }}</td> 
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket->user->name}}</td>
                             <td>{{ $ticket->estado->tipo_estado}}</td>
-                            <td>{{ $ticket->user->name }}</td>
+                            <td>{{ $ticket["tecnico_asignado"] }}</td>
                             <td>{{ $ticket->user->area->nombre_area}}</td>
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>
@@ -41,10 +41,10 @@
                     @csrf
                     {{ method_field('DELETE') }}
                   
-                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
+                <input class="btn btn-danger d-inline" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
                 </form>
                 |
-                <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Ver detalles</a>
+                <a class="btn btn-info d-inline" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Reasignar</a>
                  
                             </td>
                             </tr>

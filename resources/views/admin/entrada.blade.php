@@ -25,7 +25,7 @@
 
                 <tbody>
         @forelse( $tickets as $ticket)
-                @if($ticket->id_estado == 1  && ($ticket->tecnico_asignado == "Sin asignar"))
+                @if($ticket->id_estado == 1  && ($ticket->tecnico_asignado == "Pendiente"))
                             <tr>
                           
                             <td>{{ $ticket["id"] }}</td> 

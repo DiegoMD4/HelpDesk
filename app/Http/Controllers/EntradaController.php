@@ -9,8 +9,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class EntradaController extends Controller
 {
@@ -44,8 +42,10 @@ class EntradaController extends Controller
     public function edit($id)
     {
         $ticket = Tickets::findOrFail($id);
-        $user = User::where('id_rol', '2')->pluck('name' , 'id');
-        return view('admin.edit', compact('ticket', 'user'));
+        /* $users = User::where('id_rol', '2')->pluck('name', 'id'); */
+
+        $users = User::select('name')->where('id_rol', '2')->get();
+        return view('admin.edit', compact('ticket', 'users'));
     }
 
     public function update(Request $request, $id)
@@ -83,7 +83,8 @@ class EntradaController extends Controller
 
     public function asignado() : ViewContract{
         $tickets = Tickets::paginate();
-        return view('admin.asignado', compact('tickets'));
+        $users = User::where('id_rol', '2')->pluck('name', 'id');
+        return view('admin.asignado', compact('tickets', 'users'));
     }
     
 }
