@@ -7,7 +7,7 @@
             <h1 style = "float: left">Tickets asignados</h1> 
             
 <br/>
-            <table class="table table-hover table-success table-responsive-xl ">
+            <table class="table table-hover table-responsive-xl ">
                 <caption style="max-width: 50%">Tickets asignados recientemente</caption>
                     <thead class="table-dark">
                         <tr>

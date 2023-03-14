@@ -89,7 +89,7 @@ class TecnicoController extends Controller
     
     public function destroy($id)
     {
-        User::destroy($id);
+        Tickets::destroy($id);
         return redirect('tecnico')->with('mensaje', 'Elemento borrado');
     }
 

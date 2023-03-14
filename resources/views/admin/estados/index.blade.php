@@ -2,7 +2,8 @@
 @section('content1')
 
 <div class="container" style="margin-top: 90px;  max-width: 90%; "> 
-<div>
+<div class="card">
+    <div class="card-header">
 <h1 style = "float: left">Listado de Estados</h1> 
 
     <form class="d-flex">
@@ -11,7 +12,7 @@
   
 <br/>
 
-<table class="table table-hover {{-- table-bordered --}} table-responsive-xl ">
+<table class="table table-hover table-responsive-xl ">
     <caption style="max-width: 50%">Lista de Estados</caption>
     <thead class="table-dark">
         <tr>
@@ -51,6 +52,8 @@
 
 </table>
 <div style="max-width: 50%"> {!! $estados->links() !!} </div>
+</div>
+</div>
 </div>
 </div>
 @endsection

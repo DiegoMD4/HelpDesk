@@ -3,7 +3,8 @@
 <div class="container" style="margin-top: 90px;  max-width: 90%; "> 
 
 
-<div>
+<div class="card">
+<div class="card-header">
 <h1 style = "float: left">Listado de Usuarios</h1> 
 
     <form class="d-flex">
@@ -57,6 +58,8 @@
 
 </table>
 <div style="max-width: 50%"> {!! $users->links() !!} </div>
-</div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

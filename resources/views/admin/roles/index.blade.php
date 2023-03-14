@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('content1')
 <div class="container" style="margin-top: 90px;  max-width: 90%; "> 
-<div>
+<div class="card">
+    <div class="card-header">
 <h1 style = "float: left">Lista de Roles</h1> 
 <form class="d-flex">
     <a style="margin-left: 65%; " href="{{ url('/roles/create')}}"  class="btn btn-primary" type="submit">Nuevo Rol</a>
@@ -43,6 +44,8 @@
 
 </table>
 <div style="max-width: 50%"> {!! $roles->links() !!} </div>
+        </div>
+    </div>
 </div>
 </div>
 @endsection

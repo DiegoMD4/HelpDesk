@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Tickets;
 use App\Models\User;
-
+use App\Mail\EnviarEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
 
@@ -42,8 +43,6 @@ class EntradaController extends Controller
     public function edit($id)
     {
         $ticket = Tickets::findOrFail($id);
-        /* $users = User::where('id_rol', '2')->pluck('name', 'id'); */
-
         $users = User::select('name')->where('id_rol', '2')->get();
         return view('admin.edit', compact('ticket', 'users'));
     }
