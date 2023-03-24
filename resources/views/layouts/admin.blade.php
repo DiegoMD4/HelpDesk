@@ -78,9 +78,9 @@
             <i class="fa-solid fa-users"></i><a href="{{url('/admin')}}" class="list-group-item list-group-item-action ">Usuarios</a>
             <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action">Bandeja de Entrada</a>
             <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">Areas</a>
-            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action "> Roles</a>
-            <a href="{{url('/estados')}}" class="list-group-item list-group-item-action"><i class="bi bi-arrow-up"></i> Estados</a>
-            <a href="#" class="list-group-item list-group-item-action">Ver Calificaciones</a>
+            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">Roles</a>
+            <a href="{{url('/estados')}}" class="list-group-item list-group-item-action">Estados</a>
+            
         </div>
         </div>
         <!-- /#sidebar-wrapper -->

@@ -15,7 +15,8 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre completo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name"
+                                 autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -55,7 +56,7 @@
                             <label for="area" class="col-md-4 col-form-label text-md-end">{{ __('Departamento') }}</label>
                             <div class="col-md-6">
                            
-                                {{ Form::select('id_area', $areas, $users->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Id Area']) }}
+                                {{ Form::select('id_area', $areas, $users->id_area, ['class' => 'form-control' . ($errors->has('id_area') ? ' is-invalid' : ''), 'placeholder' => 'Departamento donde trabaja']) }}
                                 {!! $errors->first('id_area', '<div class="invalid-feedback">:message</div>') !!}
                             </div> 
                         </div>
