@@ -20,6 +20,9 @@
 
         <label > Nombre de usuario: </label>
         <label >{{ Auth::user()->name}}</label>
+<br>
+<input type="text" name="tecnico_asignado" id="tecnico_asignado" value="Sin asignar" style="visibility: hidden">
+
     
 
 <br>
