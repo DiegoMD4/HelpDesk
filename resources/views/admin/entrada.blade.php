@@ -11,8 +11,8 @@
                 <caption style="max-width: 50%">Tickets recibidos recientemente</caption>
                     <thead class="table-dark">
                         <tr>
-                        {{-- <th>#id_ticket</th> --}}
-                        <th>#</th>
+                         <th>#id_ticket</th> 
+                        
                         <th>Descripcion</th>
                         <th>Nombre de Usuario</th>
                         <th>Estado</th>
