@@ -16,15 +16,21 @@
          id="decripcion" required>{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}</textarea> 
 
     <label for="nombre_usuario"> Id de usuario: </label>
-        <input readonly="true" class="form-control-plaintext" type="text" name="id_usuario" value="{{ Auth::user()->id}}" id="id_usuario">
-
+    <label >{{ Auth::user()->id}}</label>
+        <br>
         <label > Nombre de usuario: </label>
         <label >{{ Auth::user()->name}}</label>
 <br>
-<input type="text" name="tecnico_asignado" id="tecnico_asignado" value="Sin asignar" style="visibility: hidden">
+<label > Tecnico asignado: </label>
+<label >
+@if( $modo == "Editar")
 
-    
-
+    <input type="text" class="form-control-plaintext" name="tecnico_asignado" id="tecnico_asignado"
+     value="{{ isset($ticket["tecnico_asignado"])?$ticket["tecnico_asignado"]:'' }}" readonly="true">
+@else
+<label >Pendiente</label>
+@endif
+</label>
 <br>
         <input class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
 
