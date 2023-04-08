@@ -39,7 +39,7 @@
                                                 {{ method_field('DELETE') }}
                                                 <input class="btn btn-danger m-1" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value="Descartar">
                                             </form>
-                                            <a class="btn btn-info m-1" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Reasignar</a>
+                                            <a class="btn btn-info m-1" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Asignar</a>
                                         </div>
                                     </div>
                                     
