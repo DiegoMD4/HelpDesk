@@ -1,14 +1,13 @@
 @extends('layouts.admin')
 
 @section('content1')
-<div class="container-fluid" style="margin-top: 90px;  max-width: 90%; "> 
+<div class="container-fluid" style="margin-top: 90px; max-width: 90%;"> 
 <div class="card">
         <div class="card-header">
             <h1 style = "float: left">Bandeja de entrada</h1> 
             
 <br/>
             <table class="table table-hover table-responsive-xl">
-                <caption style="max-width: 50%">Tickets recibidos recientemente</caption>
                     <thead class="table-dark">
                         <tr>
                          <th>#id_ticket</th> 
@@ -41,10 +40,10 @@
                     @csrf
                     {{ method_field('DELETE') }}
                   
-                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
+                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar">
                 </form>
-                |
-                <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Asignar Ticket</a>
+                
+                <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Asignar</a>
                  
                             </td>
                             </tr>
@@ -52,10 +51,11 @@
                     @empty       
             @endforelse
                 </tbody>
-
+                <caption style="max-width: 50%">Tickets recibidos recientemente</caption>
                 </table>
             <div style="max-width: 50%">{!! $tickets->links() !!}</div>
         </div>
+        
     </div>
 </div>
 @endsection
