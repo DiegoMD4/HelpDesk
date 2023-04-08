@@ -42,8 +42,6 @@
                                             <a class="btn btn-info m-1" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Asignar</a>
                                         </div>
                                     </div>
-                                    
-                                    </div>
                                 </td>
                             </tr>
                         @endif

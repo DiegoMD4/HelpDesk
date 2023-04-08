@@ -40,7 +40,6 @@
                                         </form>
                                         <a class="btn btn-info m-1" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Reasignar</a>
                                     </div>
-                                    
                                 </td>
                             </tr>
                         @endif
