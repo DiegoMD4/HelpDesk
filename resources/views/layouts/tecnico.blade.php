@@ -76,9 +76,6 @@
         <div class="sidebar-heading">HelpDesk Técnico</div>
         <div class="list-group list-group-flush">
             <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">Bandeja de entrada</a>
-            <a href="#" class="list-group-item list-group-item-action ">Usuarios</a>
-            <a href="#" class="list-group-item list-group-item-action ">Areas</a> 
-            <a href="#" class="list-group-item list-group-item-action">Estados</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -102,7 +99,7 @@
                 <a class="nav-link" href="{{url('/ticket')}}">Regresar a Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/aceptado')}}">Tickets Aceptados</a>
+                    <a class="nav-link" href="{{url('/aceptado')}}">Aceptados</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

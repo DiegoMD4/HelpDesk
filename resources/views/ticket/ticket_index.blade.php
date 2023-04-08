@@ -37,7 +37,7 @@
             <a style="margin-left: 80%; " href="{{ url('/ticket/create')}}"  class="btn btn-primary" type="submit">+ Nuevo Ticket</a>
         </form>
 <br/>
-            <table class="table table-hover  {{-- table-bordered --}}  ">
+            <table class="table table-hover ">
                 <caption style="max-width: 50%">Lista de tickets enviados por {{Auth::user()->name}}</caption>
                     <thead class="table-dark">
                         <tr>
@@ -58,8 +58,8 @@
       
        @if($ticket->user->name == Auth::user()->name)
                             <tr>
-                                <td>{{ ++$i }}</td>
-                           {{--  <td>{{ $ticket["id"] }}</td> --}}
+                                
+                            <td>{{ $ticket["id"] }}</td>
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket->user->name}}</td>
                             <td>{{ $ticket->estado->tipo_estado}}</td>

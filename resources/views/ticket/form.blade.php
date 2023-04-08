@@ -16,7 +16,7 @@
          id="decripcion" required>{{ isset($ticket["descripcion"])?$ticket["descripcion"]:'' }}</textarea> 
 
     <label for="nombre_usuario"> Id de usuario: </label>
-    <label >{{ Auth::user()->id}}</label>
+    <label ><input readonly="true" class="form-control-plaintext" type="text" name="id_usuario" value="{{ Auth::user()->id}}" id="id_usuario"></label>
         <br>
         <label > Nombre de usuario: </label>
         <label >{{ Auth::user()->name}}</label>
