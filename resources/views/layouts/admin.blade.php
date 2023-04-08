@@ -27,13 +27,16 @@
         }
 
         #sidebar-wrapper {
-        min-height: 100vh;
-        margin-left: -15rem;
-        -webkit-transition: margin .25s ease-out;
-        -moz-transition: margin .25s ease-out;
-        -o-transition: margin .25s ease-out;
-        transition: margin .25s ease-out;
-        }
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    background-color: #343a40FF; 
+    color: #ccc
+}
+
 
         #sidebar-wrapper .sidebar-heading {
         padding: 0.875rem 1.25rem;
@@ -68,8 +71,13 @@
 
         #icons {
             height: 1.5em;
-            width: 1.5em; margin-right: 10px
+            width: 1.5em; margin-right: 10px;
         }
+        .list-group-item {
+    background-color: #343a40FF;
+    color: #ccc;
+}
+
         }
         </style>    
     </head>
@@ -78,7 +86,7 @@
 
         <!-- Sidebar -->
         <div class=" border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">HelpDesk Admin</div>
+        <div class="sidebar-heading"><b>HelpDesk Admin</b></div>
         <div class="list-group list-group-flush">
             <a href="{{url('/admin')}}" class="list-group-item list-group-item-action "> <x-fas-users id="icons"/>Usuarios</a>
             <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action"><x-css-inbox id="icons"/>Bandeja de Entrada</a>

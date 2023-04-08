@@ -33,7 +33,9 @@
         -moz-transition: margin .25s ease-out;
         -o-transition: margin .25s ease-out;
         transition: margin .25s ease-out;
-        }
+        background-color:  #343a40FF; 
+        color: #ccc
+}
 
         #sidebar-wrapper .sidebar-heading {
         padding: 0.875rem 1.25rem;
@@ -69,6 +71,11 @@
             height: 1.5em;
             width: 1.5em; margin-right: 10px
         }
+        .list-group-item {
+    background-color: #343a40FF;
+    color: #ccc;
+}
+
         }
         </style>    
     </head>
@@ -77,7 +84,7 @@
 
         <!-- Sidebar -->
         <div class=" border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">HelpDesk Técnico</div>
+        <div class="sidebar-heading"><b>HelpDesk Técnico</b></div>
         <div class="list-group list-group-flush">
             <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action"><x-css-inbox id="icons"/>Bandeja de entrada</a>
         </div>
