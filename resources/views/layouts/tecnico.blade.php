@@ -65,6 +65,10 @@
         #wrapper.toggled #sidebar-wrapper {
             margin-left: -15rem;
         }
+        #icons {
+            height: 1.5em;
+            width: 1.5em; margin-right: 10px
+        }
         }
         </style>    
     </head>
@@ -75,7 +79,7 @@
         <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">HelpDesk Técnico</div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">Bandeja de entrada</a>
+            <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action"><x-css-inbox id="icons"/>Bandeja de entrada</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -92,9 +96,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                {{-- <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
-                </li> --}}
                 <li class="nav-item">
                 <a class="nav-link" href="{{url('/ticket')}}">Regresar a Inicio</a>
                 </li>
