@@ -8,7 +8,7 @@
             
 <br/>
             <table class="table table-hover table-responsive-xl ">
-                <caption style="max-width: 50%">Tickets aceptados recientemente</caption>
+                <caption style="max-width: 50%">Tickets que aceptaste o te asignaron recientemente</caption>
                     <thead class="table-dark">
                         <tr>
                         <th>#id_ticket</th>                        
@@ -24,7 +24,7 @@
 
                 <tbody>
         @forelse( $tickets as $ticket)
-                @if($ticket->id_estado == 3)
+                @if(($ticket->id_estado == 3) && $ticket["tecnico_asignado"] == Auth::user()->name)
                             <tr>
 
                             <td>{{ $ticket["id"] }}</td> 
@@ -35,17 +35,18 @@
                             <td>{{ $ticket->user->area->nombre_area}}</td>
                             <td>{{ $ticket["created_at"] }}</td>
                             <td>
-                
-                <form action="{{ url('/tecnico/'.$ticket["id"]) }}" class="d-inline" method="POST">
-                    @csrf
-                    {{ method_field('DELETE') }}
-                  
-                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar Ticket">
-                </form>
-                |
-                <a class="btn btn-info" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}">Ver detalles</a>
-                 
+                                <div class="d-flex flex-column text-center">
+                                    <form action="{{ url('/tecnico/'.$ticket["id"]) }}" class="d-inline" method="POST">
+                                        @csrf
+                                        {{ method_field('DELETE') }}
+                                        <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar">
+                                    </form>
+                                    <div class="d-flex flex-row justify-content-center mt-1">
+                                        <a class="btn btn-info mx-1" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}"> Detalles </a>
+                                    </div>
+                                </div>
                             </td>
+                            
                             </tr>
                             @endif
                     @empty       
