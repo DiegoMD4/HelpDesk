@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -22,60 +23,9 @@
         })
         </script>
         <style>
-            body {
-        overflow-x: hidden;
-        }
-
-        #sidebar-wrapper {
-        min-height: 100vh;
-        margin-left: -15rem;
-        -webkit-transition: margin .25s ease-out;
-        -moz-transition: margin .25s ease-out;
-        -o-transition: margin .25s ease-out;
-        transition: margin .25s ease-out;
-        background-color:  #343a40FF; 
-        color: #ccc
-}
-
-        #sidebar-wrapper .sidebar-heading {
-        padding: 0.875rem 1.25rem;
-        font-size: 1.2rem;
-        }
-
-        #sidebar-wrapper .list-group {
-        width: 15rem;
-        }
-
-        #page-content-wrapper {
-        min-width: 100vw;
-        }
-
-        #wrapper.toggled #sidebar-wrapper {
-        margin-left: 0;
-        }
-
-        @media (min-width: 768px) {
-        #sidebar-wrapper {
-            margin-left: 0;
-        }
-
-        #page-content-wrapper {
-            min-width: 0;
-            width: 100%;
-        }
-
-        #wrapper.toggled #sidebar-wrapper {
-            margin-left: -15rem;
-        }
-        #icons {
-            height: 1.5em;
-            width: 1.5em; margin-right: 10px
-        }
         .list-group-item {
-    background-color: #343a40FF;
-    color: #ccc;
-}
-
+        background-color: #343a40FF;
+        color: #ccc;
         }
         </style>    
     </head>
@@ -103,9 +53,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="{{url('/ticket')}}">Regresar a Inicio</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/aceptado')}}">Aceptados</a>
                 </li>

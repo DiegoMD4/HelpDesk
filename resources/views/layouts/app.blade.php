@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-dark bg-dark shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
             <div class="container" style="max-width: 90%">
                 <a class="navbar-brand"  href="{{ url('/') }}">
-                   <img class="" src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height= "35px";
+                    <img class="" src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height= "35px";
             width = "85px"> 
                     {{ config('app.name', 'Laravel') }}
                 </a>
