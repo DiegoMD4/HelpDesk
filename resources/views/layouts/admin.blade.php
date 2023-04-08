@@ -88,11 +88,11 @@
         <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading"><b>HelpDesk Admin</b></div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/admin')}}" class="list-group-item list-group-item-action "> <x-fas-users id="icons"/>Usuarios</a>
-            <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action"><x-css-inbox id="icons"/>Bandeja de Entrada</a>
-            <a href="{{url('/areas')}}" class="list-group-item list-group-item-action "><x-vaadin-office id="icons"/>Areas</a>
-            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action "><x-eos-role-binding-o id="icons"/>Roles</a>
-            <a href="{{url('/estados')}}" class="list-group-item list-group-item-action"><x-grommet-status-warning id="icons"/>Estados</a>
+            <a href="{{url('/admin')}}" class="list-group-item list-group-item-action "> {{-- <x-fas-users id="icons"/> --}}Usuarios</a>
+            <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action">{{-- <x-css-inbox id="icons"/> --}}Bandeja de Entrada</a>
+            <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">{{-- <x-vaadin-office id="icons"/> --}}Areas</a>
+            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">{{-- <x-eos-role-binding-o id="icons"/> --}}Roles</a>
+            <a href="{{url('/estados')}}" class="list-group-item list-group-item-action">{{-- <x-grommet-status-warning id="icons"/> --}}Estados</a>
             
         </div>
         </div>

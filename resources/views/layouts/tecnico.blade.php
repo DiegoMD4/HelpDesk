@@ -86,7 +86,7 @@
         <div class=" border-right" id="sidebar-wrapper">
         <div class="sidebar-heading"><b>HelpDesk Técnico</b></div>
         <div class="list-group list-group-flush">
-            <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action"><x-css-inbox id="icons"/>Bandeja de entrada</a>
+            <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">{{-- <x-css-inbox id="icons"/> --}}Bandeja de entrada</a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
