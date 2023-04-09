@@ -76,6 +76,7 @@ class EntradaController extends Controller
     }
 
     public function entrada() : ViewContract{
+        
         $tickets = Tickets::paginate(5);
         return view('admin.entrada', compact('tickets'));
     }

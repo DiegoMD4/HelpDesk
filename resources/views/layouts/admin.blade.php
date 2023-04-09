@@ -34,7 +34,7 @@
         <div class="d-flex" id="wrapper">
 
         <!-- Sidebar -->
-        <div class=" border-right" id="sidebar-wrapper">
+        <div class="border-right" id="sidebar-wrapper">
         <div class="sidebar-heading"><b>HelpDesk Admin</b></div>
         <div class="list-group list-group-flush">
             <a href="{{url('/admin')}}" class="list-group-item list-group-item-action"> 
@@ -55,7 +55,7 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
-        <nav id="navigation" class="navbar navbar-expand-lg border-bottom ">
+        <nav id="navigation" class="navbar navbar-expand-lg nav border-bottom ">
             <button class="btn btn-dark" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

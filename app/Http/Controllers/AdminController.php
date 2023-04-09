@@ -68,7 +68,7 @@ class AdminController extends Controller
    
     public function show(User $user)
     {
-        //
+        
     }
 
     
