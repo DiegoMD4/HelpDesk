@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estados;
+
 use App\Models\Tickets;
 use Illuminate\Contracts\View\View as ViewContract; 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 
 class TicketsController extends Controller
@@ -16,12 +16,20 @@ class TicketsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() : ViewContract
+    public function index(Request $request) : ViewContract
     {
-        /* $tickets = DB::table('tickets', 'users')->where('id_usuario', '=', 'users.id')->paginate(); */ 
-        $tickets = Tickets::paginate(10); 
-        $estados = Estados::Pluck('tipo_estado', 'id');
-        return view('ticket.ticket_index', compact('tickets', 'estados'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());
+        $busqueda = $request->busqueda;
+        $tickets = Tickets::where('id', 'LIKE', '%'.$busqueda.'%')
+        ->orWhere('tecnico_asignado', 'LIKE', '%'.$busqueda.'%')
+        ->orWhere('descripcion', 'LIKE', '%'.$busqueda.'%')
+        ->orWhere('id_estado', 'LIKE', '%'.$busqueda.'%')
+        ->latest('created_at')
+        ->paginate(5);
+        $data = [
+            'tickets' =>$tickets,
+            'busqueda' =>$busqueda,
+        ];
+        return view ('ticket.ticket_index', $data);
     }
 
 
@@ -135,4 +143,5 @@ class TicketsController extends Controller
         return redirect('ticket')->with('mensaje', 'Ticket borrado');
         
     }
+
 }

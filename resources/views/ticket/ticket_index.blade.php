@@ -32,11 +32,26 @@
     {{-- alerta --}}
 
 
-    <h1 class="float-start">Historial</h1>
-    <form class="d-flex">
-      <a href="{{ url('/ticket/create')}}" class="btn btn-primary ms-auto" type="submit">
-        <i class="bi bi-plus-lg"></i>Nuevo Ticket</a>
-    </form>
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-sm-8 col-md-6 col-lg-4">
+          <h1 class="float-start mb-0 me-3">Historial</h1>
+        </div>
+        <div class="col-sm-8 col-md-8 col-lg-6 text-center my-3 my-md-0">
+          <form class="d-flex" action="{{ route('ticket.index')}}" method="GET">
+            <div class="input-group">
+              <input class="form-control" name="busqueda" type="search" placeholder="Buscar..." aria-label="Search">
+              <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+              <a href="{{ url('/ticket')}}" class="btn btn-outline-secondary" type="submit">Limpiar búsqueda</a>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-4 col-md-6 col-lg-2 text-end">
+          <a href="{{ url('/ticket/create')}}" class="btn btn-primary" type="submit"><i class="bi bi-plus-lg me-2"></i>Nuevo Ticket</a>
+        </div>
+      </div>
+    </div>
+    
     <div class="clearfix"></div>
   
   <div class="table-responsive">
@@ -86,7 +101,7 @@
         @endforelse
       </tbody>
     </table>
-<div style="max-width: 50%">{!! $tickets->links() !!}</div>
+<div style="max-width: 50%">{!! $tickets->appends(['busqueda'=> $busqueda]) !!}</div>
   </div>
 </div>
 </div>
