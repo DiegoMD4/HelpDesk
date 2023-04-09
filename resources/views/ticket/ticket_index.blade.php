@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container-fluid" style="margin-top: 90px;  max-width: 90%; "> 
     <div class="card">
@@ -31,7 +30,6 @@
 
 
     {{-- alerta --}}
-
 
 
     <h1 class="float-start">Historial</h1>

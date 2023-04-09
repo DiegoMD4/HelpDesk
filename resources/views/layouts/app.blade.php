@@ -40,6 +40,7 @@
                         <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
                         <a href="{{url('/pendiente')}}" class="btn btn-dark">Tickets Enviados</a>
                       </div>
+                      
                     @else
                     
                     
