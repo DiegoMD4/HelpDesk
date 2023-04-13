@@ -36,10 +36,10 @@
                     
 
                     @auth
-                    <div class="btn-group">
+                    {{-- <div class="btn-group">
                         <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
                         <a href="{{url('/pendiente')}}" class="btn btn-dark">Tickets Enviados</a>
-                      </div>
+                      </div> --}}
                       
                     @else
                     
