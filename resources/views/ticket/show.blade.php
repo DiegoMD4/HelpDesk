@@ -12,7 +12,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Detalles de Ticket</span>
+                            <span class="card-title"><h2>Detalle del Ticket</h2></span>
                         </div>
                         <div class="float-left">
                             <a class="btn btn-primary" href="{{ route('ticket.index') }}">Volver</a>

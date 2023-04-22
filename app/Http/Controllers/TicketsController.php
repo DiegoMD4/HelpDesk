@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Tickets;
+use Auth;
 use Illuminate\Contracts\View\View as ViewContract; 
 use Illuminate\Http\Request;
 
@@ -17,20 +18,23 @@ class TicketsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) : ViewContract
-    {
-        $busqueda = $request->busqueda;
-        $tickets = Tickets::where('id', 'LIKE', '%'.$busqueda.'%')
-        ->orWhere('tecnico_asignado', 'LIKE', '%'.$busqueda.'%')
-        ->orWhere('descripcion', 'LIKE', '%'.$busqueda.'%')
-        ->orWhere('id_estado', 'LIKE', '%'.$busqueda.'%')
+{
+    $busqueda = $request->busqueda;
+    $tickets = Tickets::where('id_usuario', Auth::id())
+        ->where(function ($query) use ($busqueda) {
+            $query->where('id', 'LIKE', '%'.$busqueda.'%')
+                ->orWhere('tecnico_asignado', 'LIKE', '%'.$busqueda.'%')
+                ->orWhere('descripcion', 'LIKE', '%'.$busqueda.'%')
+                ->orWhere('id_estado', 'LIKE', '%'.$busqueda.'%');
+        })
         ->latest('created_at')
         ->paginate(5);
-        $data = [
-            'tickets' =>$tickets,
-            'busqueda' =>$busqueda,
-        ];
-        return view ('ticket.ticket_index', $data);
-    }
+    $data = [
+        'tickets' =>$tickets,
+        'busqueda' =>$busqueda,
+    ];
+    return view ('ticket.ticket_index', $data);
+}
 
 
     public function pendiente() : ViewContract{

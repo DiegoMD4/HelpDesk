@@ -28,7 +28,6 @@
     </div>
 @endif
 
-
     {{-- alerta --}}
 
 
@@ -51,7 +50,7 @@
         </div>
       </div>
     </div>
-    
+    <br>
     <div class="clearfix"></div>
   
   <div class="table-responsive">
@@ -71,7 +70,7 @@
       </thead>
       <tbody>
         @forelse( $tickets as $ticket)
-          @if($ticket->user->name == Auth::user()->name)
+         
             <tr>
               <td>{{ $ticket["id"] }}</td>
               <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
@@ -96,8 +95,9 @@
                 </div>
               </td>
             </tr>
-                @endif
+               
             @empty
+            
         @endforelse
       </tbody>
     </table>
