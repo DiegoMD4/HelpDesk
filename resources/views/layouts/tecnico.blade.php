@@ -38,7 +38,10 @@
         <div class="sidebar-heading"><b>HelpDesk Técnico</b></div>
         <div class="list-group list-group-flush">
             <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">
-                <i id="icons" class="bi bi-inbox-fill"></i>Bandeja de entrada</a>
+                <i id="icons" class="bi bi-inbox-fill"></i>Bandeja de entrada
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    99+
+                </span></a>
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
