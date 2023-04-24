@@ -96,7 +96,7 @@
                
             @empty
             <tr>
-              <td colspan="7">
+              <td colspan="8">
                 <h3 style="text-align: center">No se encontraron registros</h3>
               </td>
             </tr>

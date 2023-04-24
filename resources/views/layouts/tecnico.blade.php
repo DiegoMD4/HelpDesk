@@ -49,7 +49,7 @@
             <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">
                 <i id="icons" class="bi bi-inbox-fill"></i>Bandeja de entrada
                 @if(notificacion() !=0)
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ml-2">
                     {{notificacion()}}
                 </span>
                 @else 

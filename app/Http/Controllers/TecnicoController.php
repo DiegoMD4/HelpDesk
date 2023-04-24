@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Estados;
 use App\Models\Tickets;
 use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View as ViewContract;
 
@@ -95,7 +96,8 @@ class TecnicoController extends Controller
     }
 
     public function aceptado() : ViewContract{
-        $tickets = Tickets::paginate();
+        $tickets = Tickets::where('id_estado', 3)->where('tecnico_asignado', Auth::user()->name)
+        ->paginate(5);
         return view('tecnico.aceptado', compact('tickets'));
     }
 
