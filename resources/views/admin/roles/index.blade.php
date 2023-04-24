@@ -11,7 +11,7 @@
 
 <table class="table table-hover table-responsive-xl ">
     <caption style="max-width: 50%">Roles creados</caption>
-    <thead class="table-dark">
+    <thead class="thead-dark">
         <tr>
             <th>#id_rol</th>
             <th>Rol</th>

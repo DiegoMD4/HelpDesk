@@ -1,8 +1,11 @@
 @extends('layouts.tecnico')
+
 @section('content2')
+<div class="container-fluid"> 
 
-
-            <table class="table table-hover table-responsive-sm">
+            <h1 style="float: left;">Bandeja de entrada</h1> 
+            <br/>
+            <table class="table table-hover table-responsive-xl">
                 <caption style="max-width: 50%;">Tickets recibidos recientemente</caption>
                 <thead class="thead-dark">
                     <tr>
@@ -19,7 +22,6 @@
 
                 <tbody>
                     @forelse($tickets as $ticket)
-                    @if($ticket->id_estado == 1)
                     <tr>
                         <td>{{ $ticket["id"] }}</td>
                         <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold;">{{ $ticket["descripcion"] }}</td>
@@ -38,11 +40,16 @@
                             <a class="btn btn-info" href="{{ url('/tecnico/'.$ticket["id"].'/edit')}}">Detalles</a>
                         </td>
                     </tr>
-                    @endif
-                    @empty       
+                    @empty   
+                    <tr>
+                        <td colspan="8">
+                            <h3>No se han recibido tickets</h3>
+                        </td>
+                    </tr>    
                     @endforelse
                 </tbody>
             </table>
             <div style="max-width: 50%;">{!! $tickets->links() !!}</div>
      
+</div>
 @endsection

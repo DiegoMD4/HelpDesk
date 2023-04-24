@@ -14,7 +14,7 @@
 
 <table class="table table-hover table-responsive-xl ">
     <caption style="max-width: 50%">Lista de Estados</caption>
-    <thead class="table-dark">
+    <thead class="thead-dark">
         <tr>
             <th>#id_estados</th>
             <th>Estado</th>

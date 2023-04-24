@@ -8,7 +8,7 @@
             <br/>
             <table class="table table-hover table-responsive-xl">
                 <caption style="max-width: 50%">Tickets recibidos recientemente</caption>
-                <thead class="table-dark">
+                <thead class="thead-dark">
                     <tr>
                         <th>#id_ticket</th> 
                         <th>Descripcion</th>

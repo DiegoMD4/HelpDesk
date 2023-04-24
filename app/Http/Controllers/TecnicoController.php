@@ -19,7 +19,8 @@ class TecnicoController extends Controller
     {
        
         
-        $tickets = Tickets::paginate(8); 
+        $tickets = Tickets::where('id_estado', 1)
+        ->paginate(8); 
         $estados = Estados::Pluck('tipo_estado', 'id');
         return view('tecnico.index', compact('tickets', 'estados'))->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());
     }

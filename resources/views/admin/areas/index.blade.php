@@ -12,7 +12,7 @@
 
                         <table class="table table-hover table-responsive-xl ">
                             <caption style="max-width: 50%">Areas creadas</caption>
-                            <thead class="table-dark">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th>#id_area</th>
                                     <th>Area</th>

@@ -25,8 +25,8 @@
         </script>
           <style>
             .list-group-item {
-            background-color: #212529;
-            color: #ccc;
+            /* background-color: #212529;
+            color: #ccc; */
             }
             </style>
     </head>
@@ -56,7 +56,7 @@
         <div id="page-content-wrapper">
 
         <nav id="navigation" class="navbar navbar-expand-lg nav border-bottom ">
-            <button class="btn btn-dark" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
+            <button class="btn btn-primary" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
