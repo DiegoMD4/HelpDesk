@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Areas;
+
 use App\Models\Estados;
-use App\Models\Roles;
 use App\Models\Tickets;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,6 +18,7 @@ class TecnicoController extends Controller
     {
        
         
+
         $tickets = Tickets::where('id_estado', 1)
         ->paginate(8); 
         $estados = Estados::Pluck('tipo_estado', 'id');

@@ -2,7 +2,6 @@
 @section('content')
 <div class="container-fluid" style="margin-top: 90px;  max-width: 90%; "> 
     <div class="card">
-        <div class="card-header">
     {{-- alerta --}}
      <script src=
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
@@ -31,7 +30,7 @@
     {{-- alerta --}}
 
 
-    <div class="container-fluid">
+    <div class="container-fluid card-header" >
       <div class="row justify-content-center align-items-center">
         <div class="col-sm-8 col-md-6 col-lg-4">
           <h1 class="float-start mb-0 me-3">Historial</h1>
@@ -51,9 +50,8 @@
       </div>
     </div>
     <br>
-    <div class="clearfix"></div>
   
-  <div class="table-responsive">
+  <div class="table-responsive card-body">
     <table class="table table-hover">
       <caption>Lista de tickets enviados por {{Auth::user()->name}}</caption>
       <thead class="table-dark">
@@ -97,14 +95,18 @@
             </tr>
                
             @empty
-            
+            <tr>
+              <td colspan="7">
+                <h3 style="text-align: center">No se encontraron registros</h3>
+              </td>
+            </tr>
         @endforelse
       </tbody>
     </table>
 <div style="max-width: 50%">{!! $tickets->appends(['busqueda'=> $busqueda]) !!}</div>
-  </div>
-</div>
-</div>
-
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 @endsection

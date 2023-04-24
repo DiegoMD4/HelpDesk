@@ -1,10 +1,13 @@
 @extends('layouts.tecnico')
 
 @section('content2')
-<div class="container-fluid"> 
-
+<div class="container-fluid" style="margin-top: 90px;"> 
+    <div class="card">
+        <div class="container-fluid card-header">
             <h1 style="float: left;">Bandeja de entrada</h1> 
             <br/>
+        </div>        
+        <div class="container-fluid card-body">
             <table class="table table-hover table-responsive-xl">
                 <caption style="max-width: 50%;">Tickets recibidos recientemente</caption>
                 <thead class="thead-dark">
@@ -43,7 +46,7 @@
                     @empty   
                     <tr>
                         <td colspan="8">
-                            <h3>No se han recibido tickets</h3>
+                            <p style="text-align: center">No se han recibido tickets</p>
                         </td>
                     </tr>    
                     @endforelse
@@ -51,5 +54,10 @@
             </table>
             <div style="max-width: 50%;">{!! $tickets->links() !!}</div>
      
+        </div>
+    </div>
+</div>
+    </div>
+        
 </div>
 @endsection

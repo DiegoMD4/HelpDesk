@@ -23,6 +23,15 @@
             });
         })
         </script>
+          @php
+          use App\Models\Tickets;
+          function notificacion(){
+          $contador = Tickets::where('id_estado', 1)->where('tecnico_asignado','Pendiente')
+          ->get();
+          $notificador = $contador->count();
+          return($notificador);
+            }
+      @endphp
         <style>
         .list-group-item {
         /* background-color: #212529;
@@ -39,9 +48,15 @@
         <div class="list-group list-group-flush">
             <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">
                 <i id="icons" class="bi bi-inbox-fill"></i>Bandeja de entrada
+                @if(notificacion() !=0)
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    99+
-                  </span></a>
+                    {{notificacion()}}
+                </span>
+                @else 
+                @endif
+                </a> 
+                
+                
         </div>
         </div>
         <!-- /#sidebar-wrapper -->
