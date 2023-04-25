@@ -34,13 +34,13 @@
                             <td>{{ $ticket["created_at"] }}</td>
                             <td style="display: flex">
                                 
-                                    <form action="{{ url('/tecnico/'.$ticket["id"]) }}" class="d-inline" method="POST">
+                                    <form action="{{ route('tecnico.eliminar',$ticket->id) }}" class="d-inline" method="POST">
                                         @csrf
                                         {{ method_field('DELETE') }}
                                         <input class="btn btn-danger mr-2" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Descartar">
                                     </form>
                                     
-                                        <a class="btn btn-info" href= "{{ url('/tecnico/'.$ticket["id"].'/edit')}}"> Detalles </a>
+                                        <a class="btn btn-info" href= "{{ route('tecnico.show',$ticket->id) }}"> Detalles </a>
                             </td>
                             </tr>
                     @empty  

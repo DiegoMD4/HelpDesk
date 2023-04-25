@@ -33,7 +33,7 @@ class TecnicoController extends Controller
      */
     public function create(): ViewContract
     {
-        return view('tecnico.create');
+        return view('tecnico.edit');
     }
 
     /**
@@ -93,6 +93,12 @@ class TecnicoController extends Controller
     {
         Tickets::destroy($id);
         return redirect('tecnico')->with('mensaje', 'Elemento borrado');
+    }
+
+    public function eliminar($id)
+    {
+        Tickets::destroy($id);
+        return redirect('tecnico.aceptado')->with('mensaje', 'Elemento borrado');
     }
 
     public function aceptado() : ViewContract{

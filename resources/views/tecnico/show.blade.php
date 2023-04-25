@@ -15,7 +15,7 @@
                             <span class="card-title">Detalles de Ticket</span>
                         </div>
                         <div class="float-left">
-                            <a class="btn btn-primary" href="{{ route('tecnico.index') }}">Volver</a>
+                            <a class="btn btn-primary" href="{{ route('tecnico.aceptado') }}">Volver</a>
                         </div>
                     </div>
 
