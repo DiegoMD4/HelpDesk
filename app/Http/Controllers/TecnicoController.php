@@ -95,11 +95,6 @@ class TecnicoController extends Controller
         return redirect('tecnico')->with('mensaje', 'Elemento borrado');
     }
 
-    public function eliminar($id)
-    {
-        Tickets::destroy($id);
-        return redirect('tecnico.aceptado')->with('mensaje', 'Elemento borrado');
-    }
 
     public function aceptado() : ViewContract{
         $tickets = Tickets::where('id_estado', 3)->where('tecnico_asignado', Auth::user()->name)

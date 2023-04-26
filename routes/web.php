@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Tickets;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\AdminController;
@@ -60,7 +61,10 @@ Route::middleware('auth.admin')->group(function () {
 
 Route::middleware('auth.tecnico')->group(function () {
     Route::get('/aceptado', [TecnicoController::class, 'aceptado'])->name('tecnico.aceptado');
-    Route::get('/eliminar', [TecnicoController::class, 'eliminar'])->name('tecnico.eliminar');
+    Route::delete('aceptado/{id}', function ($id) {
+        Tickets::destroy($id);
+        return redirect('aceptado');
+    });
 }); 
 Route::middleware('auth.admin')->group(function () {
     Route::get('/entrada', [EntradaController::class, 'entrada'])->name('admin.entrada');
