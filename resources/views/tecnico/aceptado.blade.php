@@ -4,11 +4,11 @@
 <div class="container-fluid" style="margin-top: 90px; "> 
     <div class="card">
         <div class="container-fluid card-header">
-            <h1 style = "float: left">Tickets aceptados</h1> 
+            <h1 class="card-title" style = "float: left">Tickets aceptados</h1> 
             <br/>
         </div>
         <div class="card-body">
-            <table class="table table-hover table-info table-responsive-xl ">
+            <table class="table table-hover table-light table-responsive-xl ">
                 <caption style="max-width: 50%">Tickets que aceptaste o te asignaron recientemente</caption>
                     <thead class="thead-dark">
                         <tr>

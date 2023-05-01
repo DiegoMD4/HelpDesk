@@ -24,10 +24,10 @@
         })
         </script>
           <style>
-            .list-group-item {
-            /* background-color: #212529;
-            color: #ccc; */
-            }
+            /* .list-group-item {
+             background-color: #212529;
+            color: #ccc; 
+            } */
             </style>
     </head>
     <body>
@@ -41,9 +41,9 @@
                 <i id="icons" class="bi bi-people-fill"></i>Usuarios</a>
             <a href="{{url('/entrada')}}" class="list-group-item list-group-item-action">
                 <i id="icons" class="bi bi-inbox-fill"></i>Bandeja de Entrada</a>
-            <a href="{{url('/areas')}}" class="list-group-item list-group-item-action ">
+            <a href="{{url('/areas')}}" class="list-group-item list-group-item-action">
                 <i id="icons" class="bi bi-building-add"></i>Areas</a>
-            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action ">
+            <a href="{{url('/roles')}}" class="list-group-item list-group-item-action">
                 <i id="icons" class="bi bi-file-person"></i>Roles</a>
             <a href="{{url('/estados')}}" class="list-group-item list-group-item-action">
                 <i id="icons" class="bi bi-exclamation-triangle"></i>Estados</a>
@@ -55,8 +55,9 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
-        <nav id="navigation" class="navbar navbar-expand-lg nav border-bottom ">
-            <button class="btn btn-outline-primary" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
+        <nav id="navigation" class="navbar navbar-expand-lg nav border-bottom navbar-light">
+            <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
+                <i class="bi bi-arrow-left-right"></i>Menu</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

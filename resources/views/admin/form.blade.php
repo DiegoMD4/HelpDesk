@@ -1,6 +1,6 @@
 <div class="card-body">
         <div class="form-group">
-            <strong>id de ticket:</strong>
+            <strong>ID de ticket:</strong>
             {{ $ticket->id}}
         </div>
         <div class="form-group">
@@ -20,16 +20,15 @@
             {{ $ticket->created_at }}
         </div>
         
-         <div>
+         
             <strong> {{ Form::label('Tecnico:') }} </strong>
-            <select name="tecnico_asignado" id="tecnico_asignado">
-                @foreach ($users as $user)
+            <select class="form-select" name="tecnico_asignado" id="tecnico_asignado">
                 
-                    <option > {{$user->name}} </option>
-                    
+                @foreach ($users as $user)
+                    <option> {{$user->name}} </option>
                 @endforeach
-            </select>
-         </div>
+            </select> <br>
+         
 
 
         <input type="hidden" name="id_estado" value="3" id="id_estado">

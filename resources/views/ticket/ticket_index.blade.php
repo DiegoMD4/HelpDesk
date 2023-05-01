@@ -38,8 +38,8 @@
         <div class="col-sm-8 col-md-8 col-lg-6 text-center my-3 my-md-0">
           <form class="d-flex" action="{{ route('ticket.index')}}" method="GET">
             <div class="input-group">
-              <input class="form-control" name="busqueda" type="search" placeholder="Buscar..." aria-label="Search">
-              <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+              <input class="form-control" name="busqueda" type="search" placeholder="Buscar Ticket..." aria-label="Search">
+              <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i>Buscar</button>
               <a href="{{ url('/ticket')}}" class="btn btn-outline-secondary" type="submit">Limpiar búsqueda</a>
             </div>
           </form>

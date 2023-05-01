@@ -38,6 +38,10 @@
                             {{ $ticket->user->area->nombre_area }}
                         </div>
                         <div class="form-group">
+                            <strong>Tecnico encargado:</strong>
+                            {{ $ticket->tecnico_asignado }}
+                        </div>
+                        <div class="form-group">
                             <strong>Fecha de envio:</strong>
                             {{ $ticket->created_at }}
                         </div>

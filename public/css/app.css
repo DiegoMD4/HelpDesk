@@ -10,8 +10,9 @@ margin-left: -15rem;
 -moz-transition: margin .25s ease-out;
 -o-transition: margin .25s ease-out;
 transition: margin .25s ease-out;
-/* background-color: #212529; 
-color: #ccc; */
+ /* background-color: #212529; 
+color: #ccc;  */
+
 }
 
 
@@ -51,21 +52,15 @@ height: 1.5em;
 width: 1.5em; margin-right: 10px;
 }
 
-#navigation{
-   /* background-color:  #212529;
-   color: #ccc; */
+/* #navigation{
+   background-color:  #212529;
+   color: #ccc; 
 }
 
-#navbarDropdown{
-    /* background-color:  #212529;
-   color: #ccc; */
-}
+
 #link{
-    /* background-color:  #212529;
-   color: #ccc; */
+     background-color:  #212529;
+   color: #ccc; 
 }
-#menu-toggle{
-   /*  background-color:  #212529;
-   color: #ccc; */
-}
+ */
 }

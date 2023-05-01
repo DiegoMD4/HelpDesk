@@ -33,10 +33,10 @@
             }
       @endphp
         <style>
-        .list-group-item {
-        /* background-color: #212529;
-        color: #ccc; */
-        }
+        /* .list-group-item {
+         background-color: #212529;
+        color: #ccc; 
+        }  */
         </style>    
     </head>
     <body>
@@ -44,7 +44,7 @@
 
         <!-- Sidebar -->
         <div class="border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading"><b>HelpDesk Técnico</b></div>
+        <div class="sidebar-heading"><h4>HelpDesk Técnico</h4></div>
         <div class="list-group list-group-flush">
             <a href="{{url('/tecnico')}}" class="list-group-item list-group-item-action">
                 <i id="icons" class="bi bi-inbox-fill"></i>Bandeja de entrada
@@ -67,11 +67,11 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
-        <nav id="navigation" class="navbar navbar-expand-lg border-bottom">
-            <button class="btn btn-outline-primary" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
+        <nav id="navigation" class="navbar navbar-expand-lg border-bottom navbar-light">
+            <button class="btn btn-outline-secondary btn-sm" id="menu-toggle"><i class="bi bi-arrow-left-right"></i>Menu</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span> 
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
