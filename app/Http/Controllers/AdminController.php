@@ -19,7 +19,7 @@ class AdminController extends Controller
     {
        
         
-        $datos['users'] = User::paginate(10);
+        $datos['users'] = User::paginate(5);
         return view('admin.usuarios.index', $datos);
     }
 

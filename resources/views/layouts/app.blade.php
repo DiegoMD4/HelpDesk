@@ -17,15 +17,16 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+
 <body class="" >
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-dark bg-dark shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
-            <div class="container" style="max-width: 90%">
-                <a class="navbar-brand"  href="{{ url('/') }}">
-                    <img class="" src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height= "35px";
-            width = "85px"> 
+        <nav class="navbar navbar-expand-md navbar-light navbar-light bg-light shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
+            <div class="container" style="max-width: 90%" >
+                <a class="navbar-brand" href="{{ url('/') }}" style="display: flex; align-items: center;">
+                    <img src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height="35px" style="margin-right: 10px;">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

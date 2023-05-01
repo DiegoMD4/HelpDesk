@@ -35,7 +35,7 @@
 
         <!-- Sidebar -->
         <div class="border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading"><b>HelpDesk Admin</b></div>
+        <div class="sidebar-heading"><h4>HelpDesk Admin</h4></div>
         <div class="list-group list-group-flush">
             <a href="{{url('/admin')}}" class="list-group-item list-group-item-action"> 
                 <i id="icons" class="bi bi-people-fill"></i>Usuarios</a>
