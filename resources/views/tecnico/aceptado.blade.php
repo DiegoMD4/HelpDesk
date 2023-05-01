@@ -16,7 +16,7 @@
                         <th>Descripcion</th>
                         <th>Nombre de Usuario</th>
                         <th>Estado</th>
-                        <th>Tecnico Asignado</th>
+                        {{-- <th>Tecnico Asignado</th> --}}
                         <th>Area</th>
                         <th>Fecha de envio</th>
                         <th>Opciones</th>
@@ -29,7 +29,7 @@
                             <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                             <td>{{ $ticket->user->name}}</td>
                             <td>{{ $ticket->estado->tipo_estado}}</td>
-                            <td>{{ $ticket["tecnico_asignado"] }}</td>
+                            {{-- <td>{{ $ticket["tecnico_asignado"] }}</td> --}}
                             <td>{{ $ticket->user->area->nombre_area}}</td>
                             <td>{{ $ticket["created_at"] }}</td>
                             <td style="display: flex">

@@ -54,6 +54,9 @@
                 </span>
                 @else 
                 @endif
+                </a>
+                <a href="{{url('/aceptado')}}" class="list-group-item list-group-item-action">
+                    <i id="icons" class="bi bi-pin-angle-fill"></i>Aceptados
                 </a> 
                 
                 
@@ -65,7 +68,7 @@
         <div id="page-content-wrapper">
 
         <nav id="navigation" class="navbar navbar-expand-lg border-bottom">
-            <button class="btn btn-primary" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
+            <button class="btn btn-outline-primary" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,9 +76,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a id="link" class="nav-link" href="{{url('/aceptado')}}"><i class="bi bi-pin-angle-fill"></i>Aceptados</a>
-                </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{Auth::user()->name}}
