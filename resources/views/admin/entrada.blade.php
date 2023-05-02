@@ -1,11 +1,12 @@
 @extends('layouts.admin')
-
 @section('content1')
-<div class="container-fluid" style="margin-top: 90px; max-width: 90%;"> 
+<div style="margin-top: 70px"> 
     <div class="card">
-        <div class="card-header">
+        <div class="container-fluid card-header">
             <h1 style="float: left">Bandeja de entrada</h1> 
             <br/>
+        </div>
+        <div class="card-body">
             <table class="table table-hover table-responsive-xl">
                 <caption style="max-width: 50%">Tickets recibidos recientemente</caption>
                 <thead class="thead-dark">
@@ -14,7 +15,7 @@
                         <th>Descripcion</th>
                         <th>Nombre de Usuario</th>
                         <th>Estado</th>
-                        <th>Tecnico Asignado</th>
+                        {{-- <th>Tecnico Asignado</th> --}}
                         <th>Area</th>
                         <th>Fecha de envio</th>
                         <th>Acción</th>
@@ -22,13 +23,12 @@
                 </thead>
                 <tbody>
                     @forelse( $tickets as $ticket)
-                        @if($ticket->id_estado == 1  && ($ticket->tecnico_asignado == "Pendiente"))
                             <tr>
                                 <td>{{ $ticket["id"] }}</td> 
                                 <td style="max-width: 200px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold">{{ $ticket["descripcion"] }}</td>
                                 <td>{{ $ticket->user->name}}</td>
                                 <td>{{ $ticket->estado->tipo_estado}}</td>
-                                <td>{{ $ticket["tecnico_asignado"] }}</td>
+                                {{-- <td>{{ $ticket["tecnico_asignado"] }}</td> --}}
                                 <td>{{ $ticket->user->area->nombre_area}}</td>
                                 <td>{{ $ticket["created_at"] }}</td>
                                 <td>
@@ -44,13 +44,19 @@
                                     </div>
                                 </td>
                             </tr>
-                        @endif
-                    @empty       
+                    @empty
+                    <tr>
+                        <td colspan="8">
+                            <p style="text-align: center">No se han recibido tickets</p>
+                        </td>
+                    </tr>       
                     @endforelse
                 </tbody>
             </table>
             <div style="max-width: 50%">{!! $tickets->links() !!}</div>
         </div>
+            
+        
     </div>
 </div>
 @endsection

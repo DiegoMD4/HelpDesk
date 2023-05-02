@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content1')
-<div class="container" style="margin-top: 90px;"> 
+<div class="container content-fluid"> 
 
 <h1>Editar Usuario</h1>
 

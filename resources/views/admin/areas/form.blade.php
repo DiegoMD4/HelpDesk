@@ -10,12 +10,13 @@
 </div>
 @endif
 
-
-<label for="nombre_area">Area</label>
-    <input class="form-control" type="text" name="nombre_area"  id="nombre_area">
+<div class="container content-fluid" style="max-width: 75%">
+  <label for="nombre_area">Area</label>
+  <input class="form-control" type="text" name="nombre_area"  id="nombre_area">
 
 
 <br>
-        <input  class="btn btn-primary" type="submit" value="{{$modo}} Area">
+      <input  class="btn btn-primary" type="submit" value="{{$modo}} Area">
 
-        <a class="btn btn-secondary" href="{{ url('/areas') }}">Atrás</a>
+      <a class="btn btn-secondary" href="{{ url('/areas') }}">Atrás</a>
+</div>

@@ -20,7 +20,7 @@
 
 <body class="" >
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-light bg-light shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
             <div class="container" style="max-width: 90%" >
                 <a class="navbar-brand" href="{{ url('/') }}" style="display: flex; align-items: center;">
                     <img src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height="35px" style="margin-right: 10px;">

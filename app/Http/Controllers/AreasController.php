@@ -15,7 +15,7 @@ class AreasController extends Controller
      */
     public function index(): ViewContract
     {
-        $datos['areas'] = Areas::paginate(10);
+        $datos['areas'] = Areas::paginate(5);
         return view('admin.areas.index', $datos);
     }
 

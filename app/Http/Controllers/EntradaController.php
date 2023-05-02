@@ -77,12 +77,13 @@ class EntradaController extends Controller
 
     public function entrada() : ViewContract{
         
-        $tickets = Tickets::paginate(5);
+        $tickets = Tickets::where('id_estado', 1)->where('tecnico_asignado', 'Pendiente')->paginate(5);
         return view('admin.entrada', compact('tickets'));
     }
 
     public function asignado() : ViewContract{
-        $tickets = Tickets::paginate(5);
+        $tickets = Tickets::where('id_estado', 3)->where('tecnico_asignado', '!=', 'Pendiente')
+        ->paginate(2);
         $users = User::where('id_rol', '2')->pluck('name', 'id');
         return view('admin.asignado', compact('tickets', 'users'));
     }

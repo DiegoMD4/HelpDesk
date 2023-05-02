@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content1')
-<div  style="margin-top: 70px;"> 
-
+<div style="margin-top: 70px;"> 
 <div class="card">
     <div class="container-fluid card-header d-flex justify-content-between align-items-center">
         <h1>Listado de Usuarios</h1> 
