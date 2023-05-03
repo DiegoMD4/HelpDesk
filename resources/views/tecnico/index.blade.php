@@ -1,7 +1,7 @@
 @extends('layouts.tecnico')
 
 @section('content2')
-<div class="container-fluid" style="margin-top: 90px;"> 
+<div class="container-fluid" style="margin-top: 70px;"> 
     <div class="card">
         <div class="container-fluid card-header">
             <h1 style="float: left;">Bandeja de entrada</h1> 

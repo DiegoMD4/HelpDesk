@@ -9,7 +9,7 @@
             <div class="card-body">
                 <table class="table table-hover table-responsive-xl">
                     <caption style="max-width: 50%">Tickets asignados recientemente</caption>
-                    <thead class="table-dark">
+                    <thead class="thead-dark">
                         <tr>
                             <th>#id_ticket</th> 
                             <th>Descripcion</th>
@@ -31,15 +31,13 @@
                                     <td>{{ $ticket["tecnico_asignado"] }}</td>
                                     <td>{{ $ticket->user->area->nombre_area}}</td>
                                     <td>{{ $ticket["created_at"] }}</td>
-                                    <td>
-                                        <div class="d-flex flex-row justify-content-center flex-wrap">
+                                    <td style="display: flex">
                                             <form action="{{ url('/entrada/'.$ticket["id"]) }}" method="POST">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
-                                                <input class="btn btn-danger m-1" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value="Descartar">
+                                                <input class="btn btn-danger mr-2" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value="Descartar">
                                             </form>
-                                            <a class="btn btn-info m-1" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Reasignar</a>
-                                        </div>
+                                            <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Reasignar</a>
                                     </td>
                                 </tr>
                         @empty

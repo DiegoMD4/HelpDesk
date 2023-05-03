@@ -83,7 +83,7 @@ class EntradaController extends Controller
 
     public function asignado() : ViewContract{
         $tickets = Tickets::where('id_estado', 3)->where('tecnico_asignado', '!=', 'Pendiente')
-        ->paginate(2);
+        ->paginate(5);
         $users = User::where('id_rol', '2')->pluck('name', 'id');
         return view('admin.asignado', compact('tickets', 'users'));
     }

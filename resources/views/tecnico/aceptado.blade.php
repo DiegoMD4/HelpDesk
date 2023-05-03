@@ -1,7 +1,7 @@
 @extends('layouts.tecnico')
 
 @section('content2')
-<div class="container-fluid" style="margin-top: 90px; "> 
+<div class="container-fluid" style="margin-top: 70px; "> 
     <div class="card">
         <div class="container-fluid card-header">
             <h1 class="card-title" style = "float: left">Tickets aceptados</h1> 

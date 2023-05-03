@@ -26,10 +26,9 @@
                                 <td style="max-width: 200px; text-overflow: ellipsis; 
                                 overflow: hidden; white-space: nowrap; font-weight: bold;">
                                     {{ $area["nombre_area"] }}</td>
-                                <td>
+                                <td style="display: flex">
                                     
-                                    <a class="btn btn-warning" href= "{{ url('/areas/'.$area["id"].'/edit')}}">Editar</a>
-                                    |
+                                    <a class="btn btn-warning mr-2" href= "{{ url('/areas/'.$area["id"].'/edit')}}">Editar</a>
                                     <form action="{{ url('/areas/'.$area["id"]) }}" class="d-inline" method="POST">
                                         @csrf
                                         {{ method_field('DELETE') }}
@@ -45,11 +44,8 @@
 
                     </table>
         <div style="max-width: 50%"> {!! $areas->links() !!} </div>
-                </div>
-
-                        
-            
+                </div> 
             </div>
     </div>
-</div>
+
 @endsection
