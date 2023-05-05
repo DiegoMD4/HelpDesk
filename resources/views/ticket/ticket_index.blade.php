@@ -54,7 +54,7 @@
   <div class="table-responsive card-body">
     <table class="table table-hover">
       <caption>Lista de tickets enviados por {{Auth::user()->name}}</caption>
-      <thead class="table-light">
+      <thead>
         <tr>
           <th>#</th>
           <th>Descripción</th>

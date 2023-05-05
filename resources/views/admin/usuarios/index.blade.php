@@ -32,12 +32,13 @@
                             <td>{{ $user->area->nombre_area }}</td>
                             <td>{{ $user->role->nombre_rol }}</td>
                             <td  style="display: flex">
+                                <a class="btn btn-warning  mr-2" href="{{ url('/admin/'.$user["id"].'/edit')}}">Editar</a>
                                 <form action="{{ url('/admin/'.$user["id"]) }}" class="d-inline" method="POST">
                                     @csrf
                                     {{ method_field('DELETE') }}
-                                    <input class="btn btn-danger mr-2" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
+                                    <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value = "Borrar">
                                 </form>
-                                <a class="btn btn-warning" href="{{ url('/admin/'.$user["id"].'/edit')}}">Editar</a>
+                               
                             </td>
                             
                         </tr>

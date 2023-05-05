@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content1')
-<div class="container" style="margin-top: 70px; max-width: 90%; "> 
+<div class="container-fluid" style="margin-top: 70px"> 
     <div class="card">
         <div class="container-fluid card-header d-flex justify-content-between align-items-center">
             <h1>Listado de Areas</h1> 
@@ -23,8 +23,7 @@
                             @foreach( $areas as $area)
                             <tr>
                                 <td>{{ $area["id"] }}</td>
-                                <td style="max-width: 200px; text-overflow: ellipsis; 
-                                overflow: hidden; white-space: nowrap; font-weight: bold;">
+                                <td>
                                     {{ $area["nombre_area"] }}</td>
                                 <td style="display: flex">
                                     

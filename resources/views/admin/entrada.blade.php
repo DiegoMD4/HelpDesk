@@ -32,13 +32,13 @@
                                 <td>{{ $ticket->user->area->nombre_area}}</td>
                                 <td>{{ $ticket["created_at"] }}</td>
                                 <td style="display: flex">
-                                    
+                                    <a class="btn btn-info mr-2" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Asignar</a>
                                             <form action="{{ url('/entrada/'.$ticket["id"]) }}" method="POST">
                                                 @csrf
                                                 {{ method_field('DELETE') }}
-                                                <input class="btn btn-danger mr-2" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value="Descartar">
+                                                <input class="btn btn-danger" type="submit" onclick="return confirm('¿Desea eliminar este elemento?')" value="Descartar">
                                             </form>
-                                            <a class="btn btn-info" href= "{{ url('/entrada/'.$ticket["id"].'/edit')}}">Asignar</a>
+                                            
                                 </td>
                             </tr>
                     @empty
