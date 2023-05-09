@@ -1,0 +1,11 @@
+
+.container-centered {
+    width: 55%; /* Ancho inicial reducido */
+    margin: 0 auto; /* Centrado horizontal */
+  }
+
+  @media screen and (max-width: 700px) {
+    .container-centered {
+      width: 95%; /* Ocupar todo el ancho cuando se reduce el tamaño */
+    }
+  }
