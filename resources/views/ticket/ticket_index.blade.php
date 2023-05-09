@@ -21,12 +21,12 @@
 @endif
 
 
-<div class="container" style="margin-top: 90px;" >
-  <div class="row">
-    <div class="col">
-      <h1>Historial</h1>
+<div class="container" style="margin-top: 35px;" >
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h1><strong>Historial</strong></h1>
     </div>
-    <div class="col-md-auto">
+    {{-- <div class="col-md-auto">
       <form class="d-flex" action="{{ route('ticket.index') }}" method="GET">
         <div class="input-group">
           <input class="form-control" name="busqueda" type="search" placeholder="Buscar Ticket..." aria-label="Search">
@@ -34,8 +34,8 @@
           <a href="{{ url('/ticket') }}" class="btn btn-outline-secondary" type="submit">Limpiar búsqueda</a>
         </div>
       </form>
-    </div>
-    <div class="col">
+    </div> --}}
+    <div class="col-8 text-end">
       <a href="{{ url('/ticket/create') }}" class="btn btn-primary mt-2 mt-md-0" type="submit">
         <i class="bi bi-plus-lg me-2"></i>Nuevo Ticket
       </a>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<div class="container-centered" style="margin-top: 30px">
+<div class="container-centered" style="margin-top: 15px">
 @forelse( $tickets as $ticket)
     <div class="card">
       <div class=" card-header d-flex justify-content-between">
