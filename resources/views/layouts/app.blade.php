@@ -22,83 +22,77 @@
 
 <body class="" >
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm" style="position: fixed; width: 100%; top: 0; z-index: 100">
-            <div class="container" style="max-width: 90%" >
-                <a class="navbar-brand" href="{{ url('/') }}" style="display: flex; align-items: center;">
-                    <img src="https://funazucar.org/modules/my-apostrophe-assets/img/ingenios/ser.png" alt="logo" height="35px" style="margin-right: 10px;">
-                    {{ config('app.name', 'Laravel') }}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url('/') }}">
+        <img src="images/ser.png" width="45" height="24" class="d-inline-block align-text-top" alt="logo">
+        {{ config('app.name', 'Laravel') }}</a>
+        
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        @auth
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Historial</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Calificaciones</a>
+        </li>
+        @endauth
+        @guest
+        @if (Route::has('login'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
+            </li>
+        @endif
+
+        @if (Route::has('register'))
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+            </li>
+        @endif
+    @else
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ Auth::user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>@if(Auth()->check() && auth()->user()->id_rol == '1')
+                                    
+                <a class="dropdown-item" href="{{url('/admin')}}">
+                    {{ __('Panel de Administrador') }}
                 </a>
+                @endif
+                @if(Auth()->check() && auth()->user()->id_rol == '2')
                 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-             
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    
-
-                    @auth
-                    {{-- <div class="btn-group">
-                        <a href="{{url('/ticket')}}" class="btn btn-dark">Historial</a>
-                        <a href="{{url('/pendiente')}}" class="btn btn-dark">Tickets Enviados</a>
-                      </div> --}}
-                      
-                    @else
-                    
-                    
-                    @endauth
-                   
-                  
-                    <ul class="navbar-nav ms-auto">
-                       
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    @if(Auth()->check() && auth()->user()->id_rol == '1')
-                                    
-                                    <a class="dropdown-item" href="{{url('/admin')}}">
-                                        {{ __('Panel de Administrador') }}
-                                    </a>
-                                    @endif
-                                    @if(Auth()->check() && auth()->user()->id_rol == '2')
-                                    
-                                    <a class="dropdown-item" href="{{url('/tecnico')}}">
-                                        {{ __('Panel de Técnico') }}
-                                    </a>
-                                    @endif
-
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar Sesión') }}
-                                    </a>
-                                    
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <a class="dropdown-item" href="{{url('/tecnico')}}">
+                    {{ __('Panel de Técnico') }}
+                </a>
+                @endif</li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">{{ __('Cerrar Sesión') }}</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
+            @endguest
+          </ul>
+        </li>
+      </ul>
+      {{-- <form class="d-flex" action="{{ route('ticket.index') }}" method="GET">
+        <div class="input-group">
+          <input class="form-control" name="busqueda" type="search" placeholder="Buscar Ticket..." aria-label="Search">
+          <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
+          <a href="{{ url('/ticket') }}" class="btn btn-outline-secondary" type="submit">Limpiar búsqueda</a>
+        </div>
+      </form> --}}
+    </div>
+  </div>
+</nav>
 
         <main class="py-4;">
             @yield('content')
