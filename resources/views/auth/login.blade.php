@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Inicio de sesión') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('https://helpdesk-production-8db9.up.railway.app/login') }}">
                         @csrf
 
                         <div class="row mb-3">
