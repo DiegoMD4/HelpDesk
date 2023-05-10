@@ -5,17 +5,17 @@
 @endsection
 
 @section('content')
-<div class="container" style="margin-top: 90px;  max-width: 90%; "> 
+<div class="container" style="margin-top: 50px;  max-width: 98%; "> 
     <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class=" card-header d-flex justify-content-between">
                         <div class="float-left">
                             <span class="card-title"><h2>Detalle del Ticket</h2></span>
                         </div>
                         <div class="float-left">
-                            <a class="btn btn-primary" href="{{ route('ticket.index') }}">Volver</a>
+                            <a class="btn btn-primary flex" href="{{ route('ticket.index') }}">Volver</a>
                         </div>
                     </div>
 
