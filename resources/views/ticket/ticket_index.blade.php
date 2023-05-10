@@ -27,7 +27,7 @@
       <h1><strong>Historial</strong></h1>
     </div>
     <div class="col-6 text-center">
-      <a href="{{ url('https://helpdesk-production-8db9.up.railway.app/ticket/create') }}" class="btn btn-primary" type="submit">
+      <a href="{{ url('/ticket/create') }}" class="btn btn-primary" type="submit">
         <i class="bi bi-plus-lg me-2"></i>Nuevo Ticket</a>
     </div>
   </div>
