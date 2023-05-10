@@ -48,8 +48,13 @@
       <ul class="navbar-nav ms-auto">
         {{-- Searchbar --}}
         <form class="d-flex">
-          <input name="busqueda" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+          <div class="input-group">
+            <input name="busqueda" class="form-control me-2" type="search" placeholder="Buscar Ticket" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+            <a href="{{ url('/ticket')}}" class="btn btn-outline-dark" type="submit">Deshacer</a>
+          </div>
+          
+          
         </form>
         {{-- Searchbar --}}
         @endauth
