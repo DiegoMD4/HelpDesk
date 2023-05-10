@@ -34,4 +34,4 @@
 <br>
         <input class="btn btn-primary" type="submit" value="{{$modo}} Ticket">
 
-        <a class="btn btn-secondary" href="{{ url('/ticket') }}">Atrás</a>
+        <a class="btn btn-secondary" href="{{ url('https://helpdesk-production-8db9.up.railway.app/ticket') }}">Atrás</a>
