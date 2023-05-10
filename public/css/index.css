@@ -3,7 +3,7 @@
 } */
 
 .container-centered {
-    width: 55%; /* Ancho inicial reducido */
+    width: 60%; /* Ancho inicial reducido */
     margin: 0 auto; /* Centrado horizontal */
   }
 

@@ -12,6 +12,7 @@
     <!-- Fonts -->
 
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
@@ -22,16 +23,19 @@
 
 <body class="" >
     <div id="app">
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container-fluid" style="max-width: 90%">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="images/ser.png" width="45" height="24" class="d-inline-block align-text-top" alt="logo">
+        <img src="{{ asset('images/ser.png') }}" width="55" height="24" class="d-inline-block align-text-top" alt="logo">
         {{ config('app.name', 'Laravel') }}</a>
         
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
       <ul class="navbar-nav me-auto">
         @auth
         <li class="nav-item">
@@ -40,6 +44,14 @@
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Calificaciones</a>
         </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        {{-- Searchbar --}}
+        <form class="d-flex">
+          <input name="busqueda" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+        {{-- Searchbar --}}
         @endauth
         @guest
         @if (Route::has('login'))
@@ -83,13 +95,7 @@
           </ul>
         </li>
       </ul>
-      {{-- <form class="d-flex" action="{{ route('ticket.index') }}" method="GET">
-        <div class="input-group">
-          <input class="form-control" name="busqueda" type="search" placeholder="Buscar Ticket..." aria-label="Search">
-          <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
-          <a href="{{ url('/ticket') }}" class="btn btn-outline-secondary" type="submit">Limpiar búsqueda</a>
-        </div>
-      </form> --}}
+        
     </div>
   </div>
 </nav>

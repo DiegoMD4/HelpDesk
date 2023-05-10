@@ -23,22 +23,12 @@
 
 <div class="container" style="margin-top: 35px;" >
   <div class="row justify-content-center">
-    <div class="col-4">
+    <div class="col-5 text-center">
       <h1><strong>Historial</strong></h1>
     </div>
-    {{-- <div class="col-md-auto">
-      <form class="d-flex" action="{{ route('ticket.index') }}" method="GET">
-        <div class="input-group">
-          <input class="form-control" name="busqueda" type="search" placeholder="Buscar Ticket..." aria-label="Search">
-          <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-search"></i></button>
-          <a href="{{ url('/ticket') }}" class="btn btn-outline-secondary" type="submit">Limpiar búsqueda</a>
-        </div>
-      </form>
-    </div> --}}
-    <div class="col-8 text-end">
-      <a href="{{ url('/ticket/create') }}" class="btn btn-primary mt-2 mt-md-0" type="submit">
-        <i class="bi bi-plus-lg me-2"></i>Nuevo Ticket
-      </a>
+    <div class="col-6 text-center">
+      <a href="{{ url('/ticket/create') }}" class="btn btn-primary" type="submit">
+        <i class="bi bi-plus-lg me-2"></i>Nuevo Ticket</a>
     </div>
   </div>
 </div>
@@ -55,7 +45,19 @@
         
         <strong>Descripción:</strong><p class="card-text">{{$ticket["descripcion"]}}</p>
         <strong>Usuario: </strong>{{$ticket->user->name}}<br>
-        <strong>Estado: </strong>{{$ticket->tecnico_asignado}}<br>
+
+        @switch($ticket->estado->tipo_estado)
+            @case("Pendiente")
+            <strong>Estado: </strong><label class="text-danger">{{$ticket->estado->tipo_estado}}</label><br>
+                @break
+            @case("Aceptado")
+            <strong>Estado: </strong><label class="text-success">{{$ticket->estado->tipo_estado}}</label><br>
+                @break
+            @default
+                
+        @endswitch
+        
+        <strong>Tecnico Asignado: </strong>{{$ticket->tecnico_asignado}}<br>
         <strong>Area: </strong>{{$ticket->user->area->nombre_area}}<br>
         <strong>Fecha: </strong>{{$ticket["created_at"]}}<br>
         <a class="btn btn-warning btn-sm" href="{{ url('/ticket/'.$ticket["id"].'/edit')}}">
@@ -75,7 +77,7 @@
     @empty
     <br>
     <div class="container" style="text-align: center">
-        <h3>No se encontraron registros</h3>
+        <h3 class="text-danger">No se encontraron registros</h3>
     </div>
     @endforelse
   
