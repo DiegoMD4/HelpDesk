@@ -56,8 +56,8 @@
         <div id="page-content-wrapper">
 
         <nav id="navigation" class="navbar navbar-expand-lg nav border-bottom navbar-light">
-            <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
-                <i class="bi bi-arrow-left-right"></i>Menu</button>
+            <button class="btn btn-outline-secondary btn" id="menu-toggle">
+                <i class="bi bi-arrow-left-right"></i> Menu</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

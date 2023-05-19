@@ -3,6 +3,11 @@ overflow-x: hidden;
 
 }
 
+ /* .col{
+  border: 1px solid black;
+}  */
+
+
 #sidebar-wrapper {
 min-height: 100vh;
 margin-left: -15rem;
@@ -49,7 +54,7 @@ margin-left: -15rem;
 
 #icons {
 height: 1.5em;
-width: 1.5em; margin-right: 10px;
+width: 1.5em; margin-right: 15px;
 }
 
 /* #navigation{
@@ -63,4 +68,9 @@ width: 1.5em; margin-right: 10px;
    color: #ccc; 
 }
  */
+
+ #menu-toggle{
+   visibility: hidden;
+ }
 }
+

@@ -7,7 +7,7 @@
 </div>
 @endif
    
-<div class="container content-fluid" style="max-width: 60%">
+<div class="container content-fluid">
 
     <label for="name">Nombre usuario </label>
     <input  class="form-control" type="text" name="name"  id="name" value="{{ isset($user["name"])?$user["name"]:'' }}" required>

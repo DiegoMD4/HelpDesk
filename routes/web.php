@@ -44,21 +44,6 @@ Route::middleware('auth')->group(function () {
 
 });
 
-
-
-/*
-Route::middleware('auth.admin')->group(function () {
-    Route::get('/areas', [AreasController::class, 'index'])->name('admin.areas.index');
-});
-Route::middleware('auth.admin')->group(function () {
-    Route::get('/roles', [RolesController::class, 'index'])->name('admin.roles.index');
-});
-Route::middleware('auth.admin')->group(function () {
-    Route::get('/estados', [EstadosController::class, 'index'])->name('admin.estados.index');
-}); */
-
-
-
 Route::middleware('auth.tecnico')->group(function () {
     Route::get('/aceptado', [TecnicoController::class, 'aceptado'])->name('tecnico.aceptado');
     Route::delete('aceptado/{id}', function ($id) {

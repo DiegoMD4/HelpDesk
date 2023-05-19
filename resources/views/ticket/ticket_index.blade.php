@@ -59,7 +59,10 @@
         
         <strong>Tecnico Asignado: </strong>{{$ticket->tecnico_asignado}}<br>
         <strong>Area: </strong>{{$ticket->user->area->nombre_area}}<br>
-        <strong>Fecha: </strong>{{$ticket["created_at"]}}<br>
+        <strong>Fecha: </strong>{{$ticket["created_at"]}}<br>        
+      </div>
+
+      <div class="card-footer">
         <a class="btn btn-warning btn-sm" href="{{ url('/ticket/'.$ticket["id"].'/edit')}}">
           <i class="bi bi-pencil-fill"></i>Editar</a>
         <form action="{{ url('/ticket/'.$ticket["id"]) }}" class="d-inline" method="POST">
@@ -68,9 +71,7 @@
           <button type="input" class="btn btn-danger btn-sm" type="submit" 
           onclick="return confirm('¿Desea eliminar este elemento?')" value="Borrar">
           <i class="bi bi-trash"></i>Borrar</button>
-          
         </form>
-        
       </div>
     </div>
     <br>

@@ -45,6 +45,7 @@
             <a class="nav-link active" aria-current="page" href="#">Calificaciones</a>
         </li>
       </ul>
+      
       <ul class="navbar-nav ms-auto">
         {{-- Searchbar --}}
         <form class="d-flex">
@@ -53,8 +54,6 @@
             <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
             <a href="{{ url('/ticket')}}" class="btn btn-outline-dark" type="submit">Deshacer</a>
           </div>
-          
-          
         </form>
         {{-- Searchbar --}}
         @endauth
